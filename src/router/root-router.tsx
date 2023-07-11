@@ -1,8 +1,9 @@
 import {createBrowserRouter} from "react-router-dom"
 import {
    AdminPage,
-   DashboardPage,
+   HomePage,
    DriverLayout,
+   InitProfilePage,
    IntroductionPage,
    ProtectedDriverLayout,
    ProtectedSystemLayout,
@@ -31,8 +32,12 @@ const RootRouter = createBrowserRouter([
                   element: <ProtectedDriverLayout/>,
                   children: [
                      {
+                        path: Route.initProfile,
+                        element: <InitProfilePage/>
+                     },
+                     {
                         path: Route.driver,
-                        element: <DashboardPage/>
+                        element: <HomePage/>
                      }
                   ]
                }

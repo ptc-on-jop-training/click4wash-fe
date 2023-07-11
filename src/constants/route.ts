@@ -5,6 +5,7 @@ const Route = Object.freeze({
 
    driver: rootRoute,
    introduction: `${rootRoute}/introduction`,
+   initProfile: `${rootRoute}/init-profile`,
 
    system: `${rootRoute}/system`,
    admin: `${rootRoute}/system/admin`,
