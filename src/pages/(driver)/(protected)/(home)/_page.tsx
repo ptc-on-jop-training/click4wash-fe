@@ -1,10 +1,10 @@
 import {Container} from "@mui/material"
 
-function DashboardPage()
+function HomePage()
 {
    return (
       <Container>this is driver main page</Container>
    )
 }
 
-export default DashboardPage
+export default HomePage
