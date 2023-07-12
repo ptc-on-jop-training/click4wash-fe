@@ -14,16 +14,15 @@ function IntroductionPage()
    }
 
    return (
-      <Container {...cfn.introductionPage}>
-
-         <Button {...cfn.optionBtn} onClick={handleClickSignIn}>
-            <Typography {...cfn.optionBtnFont}>
+      <Container {...styles.introductionPage}>
+         <Button {...styles.optionBtn} onClick={handleClickSignIn}>
+            <Typography {...styles.optionBtnFont}>
                Sign In
             </Typography>
          </Button>
 
-         <Button {...cfn.optionBtn} onClick={handleClickSignUp}>
-            <Typography {...cfn.optionBtnFont}>
+         <Button {...styles.optionBtn} onClick={handleClickSignUp}>
+            <Typography {...styles.optionBtnFont}>
                Sign Up
             </Typography>
          </Button>
@@ -33,8 +32,7 @@ function IntroductionPage()
 }
 
 
-const cfn = {
-
+const styles = {
    introductionPage: {
       sx: {
          height: "100vh",
