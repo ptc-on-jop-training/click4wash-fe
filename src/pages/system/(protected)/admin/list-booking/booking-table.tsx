@@ -52,7 +52,7 @@ function BookingTable(props:BookingTableProps) {
         },
         [props.bookingList]
     )
-    console.log(rows);
+
     return (
         <DataGrid
             columns={columns}
