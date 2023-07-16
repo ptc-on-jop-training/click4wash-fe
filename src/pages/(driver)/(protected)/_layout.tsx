@@ -12,18 +12,26 @@ function ProtectedLayout()
 
    useEffect(() => {
       if (!isLoading) {
+         handleAuthDecision()
+      }
+   }, [isLoading, isAuthenticated, nav, getIdTokenClaims])
+
+   function handleAuthDecision() {
+      if (isAuthenticated) {
          void getIdTokenClaims()
             .then(claims => {
                setRenderNode(<Outlet/>)
-               handleAuthDecision(claims?.login_count as number)
+               handleAuthRedirection(claims?.login_count as number)
             })
             .catch(() => {
                nav(Route.introduction, {replace: true})
             })
+      } else {
+         nav(Route.introduction, {replace: true})
       }
-   }, [isLoading, isAuthenticated, nav, getIdTokenClaims])
+   }
 
-   function handleAuthDecision(loginCount: number) {
+   function handleAuthRedirection(loginCount: number) {
       if (loginCount === 1) {
          handleRegisterUser()
       } else if (loginCount >= 1) {
