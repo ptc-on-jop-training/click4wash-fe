@@ -15,7 +15,7 @@ function AccountStatus(props: AccountStatusProps)
       if (props.isActive) {
          setState({color: "success", label: "active"})
       } else {
-         setState({color: "default", label: "disable"})
+         setState({color: "default", label: "suspend "})
       }
    }, [props.isActive])
 
