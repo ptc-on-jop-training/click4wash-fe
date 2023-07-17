@@ -41,7 +41,7 @@ interface BookingTableProps
 
 
 function BookingTable(props:BookingTableProps) {
-   const [rows,setRows] = useState<any>([])
+   const [rows,setRows] = useState<any[]>([])
 
 
    useEffect(() =>{
