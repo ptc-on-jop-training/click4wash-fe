@@ -1,5 +1,4 @@
-import {DataGrid, GridRenderCellParams} from '@mui/x-data-grid'
-import {GridColDef} from "@mui/x-data-grid-premium"
+import {DataGrid, GridRenderCellParams,GridColDef} from '@mui/x-data-grid'
 import { useEffect, useState} from "react"
 import AccountStatus from "./account-status.tsx"
 import AccountToolbar from "./account-tool-bar.tsx"
