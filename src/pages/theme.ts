@@ -16,10 +16,10 @@ const Theme = createTheme({
          styleOverrides: {
             root: {
                boxShadow: "none",
-               borderRadius: 30,
+               // borderRadius: 30,
             },
             sizeLarge: {
-               padding: 13
+               // padding: 13
             }
          }
       }
