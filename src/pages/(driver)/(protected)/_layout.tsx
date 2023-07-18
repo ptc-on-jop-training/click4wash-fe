@@ -2,7 +2,7 @@ import {Outlet, useNavigate} from "react-router-dom"
 import {useAuth0} from "@auth0/auth0-react"
 import {ReactNode, useEffect, useState} from "react"
 import {PageLoading} from "../../../components"
-import {Route} from "../../../constants"
+import {RouteConst} from "../../../router"
 
 function ProtectedLayout()
 {
@@ -15,7 +15,7 @@ function ProtectedLayout()
          if (isAuthenticated) {
             setRenderNode(<Outlet/>)
          } else {
-            nav(Route.introduction, {replace: true})
+            nav(RouteConst.introduction, {replace: true})
          }
       }
    }, [isLoading, isAuthenticated, nav])

@@ -10,12 +10,13 @@ import {
    SystemLayout,
    TeamMemberPage
 } from "../pages"
-import {Route} from "../constants"
+import RouteConst from "./route-const.ts"
+
 
 // well I think the classic way is better
 const RootRouter = createBrowserRouter([
    {
-      path: Route.root,
+      path: RouteConst.root,
       element: <RootLayout/>,
       children: [
          {
@@ -23,7 +24,7 @@ const RootRouter = createBrowserRouter([
             element: <DriverLayout/>,
             children: [
                {
-                  path: Route.introduction,
+                  path: RouteConst.introduction,
                   element: <IntroductionPage/>
                },
                {
@@ -31,7 +32,7 @@ const RootRouter = createBrowserRouter([
                   element: <ProtectedDriverLayout/>,
                   children: [
                      {
-                        path: Route.driver,
+                        path: RouteConst.driver,
                         element: <DashboardPage/>
                      }
                   ]
@@ -40,7 +41,7 @@ const RootRouter = createBrowserRouter([
          },
 
          {
-            path: Route.system,
+            path: RouteConst.system,
             element: <SystemLayout/>,
             children: [
                {
@@ -48,11 +49,11 @@ const RootRouter = createBrowserRouter([
                   element: <ProtectedSystemLayout/>,
                   children: [
                      {
-                        path: Route.admin,
+                        path: RouteConst.admin,
                         element: <AdminPage/>,
                      },
                      {
-                        path: Route.teamMember,
+                        path: RouteConst.teamMember,
                         element: <TeamMemberPage/>
                      }
                   ]

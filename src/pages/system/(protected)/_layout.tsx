@@ -3,7 +3,7 @@ import {useAuth0} from "@auth0/auth0-react"
 import {ReactNode, useEffect, useState} from "react"
 import {PageLoading} from "../../../components"
 import role from "../../../constants/role.ts"
-import {Route} from "../../../constants"
+import {RouteConst} from "../../../router"
 
 function ProtectedLayout()
 {
@@ -30,9 +30,9 @@ function ProtectedLayout()
          .then(claims => {
             setRenderNode(<Outlet/>)
             if (claims?.role === role.admin) {
-               nav(Route.admin, {replace: true})
+               nav(RouteConst.admin, {replace: true})
             } else if (claims?.role === role.teamMember) {
-               nav(Route.teamMember, {replace: true})
+               nav(RouteConst.teamMember, {replace: true})
             } else {
                void loginWithRedirect()
             }

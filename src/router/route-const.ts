@@ -1,6 +1,6 @@
 const rootRoute = ""
 
-const Route = Object.freeze({
+const RouteConst = Object.freeze({
    root: rootRoute,
    driver: rootRoute,
    introduction: `${rootRoute}/introduction`,
@@ -10,4 +10,4 @@ const Route = Object.freeze({
    teamMember: `${rootRoute}/system/team-member`,
 })
 
-export default Route
+export default RouteConst

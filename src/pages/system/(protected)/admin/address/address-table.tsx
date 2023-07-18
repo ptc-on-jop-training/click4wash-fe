@@ -1,7 +1,5 @@
 import Box from '@mui/material/Box'
-import {
-   DataGrid, GridColDef,
-} from '@mui/x-data-grid'
+import {DataGrid, GridColDef} from '@mui/x-data-grid'
 import AddressToolBar from "./address-tool-bar.tsx"
 import {Address} from "../packing-slot/data/address.ts"
 
