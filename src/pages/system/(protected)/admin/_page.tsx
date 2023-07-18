@@ -1,10 +1,11 @@
 import DashboardLayout from "./_layout/_layout.tsx"
 import {TabNav, TabRouteType} from "../../../../components"
 import {useMemo} from "react"
-import {NotificationsSharp, RequestPageSharp,Language} from "@mui/icons-material"
+import {NotificationsSharp, RequestPageSharp} from "@mui/icons-material"
 import UsersTable from "./users-table.tsx"
 import {Box, Typography} from "@mui/material"
-
+import PackingSlotTable from "./packing-slot/packing-slot-table.tsx"
+import AddressTable from "./address/address-table.tsx"
 function AdminDashboardPage() {
    const routes = useMemo<TabRouteType[]>(() => {
       return [
@@ -32,9 +33,16 @@ function AdminDashboardPage() {
          {
             label: <Box {...styles.tab}>
                <RequestPageSharp fontSize={"small"}/>
+               <Typography>Address</Typography>
+            </Box>,
+            element: <AddressTable/>
+         },
+         {
+            label: <Box {...styles.tab}>
+               <RequestPageSharp fontSize={"small"}/>
                <Typography>Parking Slots</Typography>
             </Box>,
-            element: <UsersTable/>
+            element: <PackingSlotTable/>
          },
          {
             label: <Box {...styles.tab}>
@@ -57,9 +65,6 @@ function AdminDashboardPage() {
       <DashboardLayout
          main={<Box {...styles.mainLayout}>
             <TabNav routes={routes}/>
-            <Box {...styles.tabLanguage}>
-               <Language fontSize={"large"} color={"info"}/>
-            </Box>
          </Box>}
       />
    )
@@ -70,7 +75,6 @@ const styles = {
       sx: {
          display: "flex",
          flexDirection: "column",
-         position: "relative"
       }
    },
    tab: {
@@ -80,15 +84,6 @@ const styles = {
          gap: "4px"
       }
    },
-   tabLanguage: {
-      sx: {
-         display: "flex",
-         alignItems: "center",
-         position:"absolute",
-         right:30,
-         top:5
-      }
-   }
 }
 
 export default AdminDashboardPage

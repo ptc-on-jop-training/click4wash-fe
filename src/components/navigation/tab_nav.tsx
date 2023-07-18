@@ -23,7 +23,7 @@ function TabNav(props: TabNavProps) {
    }
    return (
       <>
-         <Box {...styles.tabWrapper}>
+         <Box {...cfn.tabWrapper}>
             <Tabs scrollButtons="auto" value={tab} onChange={handleChange}>
                {
                   props.routes.map((route, index) => {
@@ -58,7 +58,7 @@ type ClosableLabelProps = {
 
 function ClosableLabel(props: ClosableLabelProps) {
    return (
-      <Box {...styles.closable}>
+      <Box {...cfn.closable}>
          <Box component="span">{props.label}</Box>
          <IconButton
             sx={{padding: 0}}
@@ -79,7 +79,7 @@ function getTabAccessibilityProps(index: number) {
    }
 }
 
-const styles = {
+const cfn = {
    tabWrapper: {
       sx: {
          borderBottom: 1,

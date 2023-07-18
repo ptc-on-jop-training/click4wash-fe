@@ -10,7 +10,7 @@ function PackingSlotToolbar(){
                size={"small"}
                variant="contained"
                startIcon={<AddBox sx={{color: "white"}}/>}
-            >new Address</Button>
+            >new Packing Slot</Button>
          </>
       }/>
    )
