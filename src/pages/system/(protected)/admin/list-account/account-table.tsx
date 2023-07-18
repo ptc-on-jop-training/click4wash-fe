@@ -3,9 +3,6 @@ import { useEffect, useState} from "react"
 import AccountStatus from "./account-status.tsx"
 import AccountToolbar from "./account-tool-bar.tsx"
 import RoleChip from "./role-chip.tsx"
-
-
-
 export interface AccountRes {
     id:string
     fullName:string
@@ -16,14 +13,10 @@ export interface AccountRes {
 
 }
 
-
-
-
 interface BookingTableProps
 {
     accountList:AccountRes[]
 }
-
 
 function AccountTable(props:BookingTableProps) {
    const [rows,setRows] = useState<any[]>([])
@@ -37,17 +30,21 @@ function AccountTable(props:BookingTableProps) {
    )
    return (
       <DataGrid
+         sx={cfg.sx}
          columns={columns}
          rows={rows}
          slots={{
             toolbar: AccountToolbar,
          }}
       />
-
-
    )
 }
-
+const cfg = {
+   sx: {
+      border: "none",
+      height:777
+   }
+}
 
 const columns: GridColDef[] = [
    {field: 'id', headerName: 'Id',flex: 0.3, headerClassName: 'bold-header', align:"center", headerAlign:"center"},
