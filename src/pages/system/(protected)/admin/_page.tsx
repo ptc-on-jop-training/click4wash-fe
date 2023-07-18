@@ -7,6 +7,8 @@ import {Box, Typography} from "@mui/material"
 import PackingSlotTable from "./packing-slot/packing-slot-table.tsx"
 import AddressTable from "./address/address-table.tsx"
 import BookingTable from "./list-booking/booking-table.tsx"
+import AccountTable from "./list-account/account-table.tsx"
+import {accountData} from "./list-account/data/account-data.tsx"
 
 function AdminDashboardPage() {
    const data = [
@@ -75,7 +77,7 @@ function AdminDashboardPage() {
                <RequestPageSharp fontSize={"small"}/>
                <Typography>user management</Typography>
             </Box>,
-            element: <UsersTable/>
+            element: <AccountTable accountList={accountData}/>
          },
          {
             label: <Box {...styles.tab}>
