@@ -3,7 +3,6 @@ import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 
-
 interface DashboardLayoutProps {
    leftSide?: ReactNode
    main?: ReactNode

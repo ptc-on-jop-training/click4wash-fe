@@ -12,15 +12,20 @@ type TabRouteType = {
 
 type TabNavProps = {
    routes: TabRouteType[]
-   onTabChange?: () => void
+   onTabChange?: () => void,
+
+   rightSlot?: ReactNode
 }
 
-function TabNav(props: TabNavProps) {
+function TabNav(props: TabNavProps)
+{
    const [tab, setTab] = useState(0)
+
    const handleChange = (_event: SyntheticEvent, newValue: number) => {
       props.onTabChange && props.onTabChange()
       setTab(newValue)
    }
+
    return (
       <>
          <Box {...styles.tabWrapper}>
@@ -38,6 +43,7 @@ function TabNav(props: TabNavProps) {
                   })
                }
             </Tabs>
+            <div>{props.rightSlot}</div>
          </Box>
          {
             props.routes.map((route, index) => {
@@ -83,7 +89,10 @@ const styles = {
    tabWrapper: {
       sx: {
          borderBottom: 1,
-         borderColor: 'divider'
+         borderColor: 'divider',
+         display: "flex",
+         alignItems: "center",
+         justifyContent: "space-between"
       }
    },
    closable: {
