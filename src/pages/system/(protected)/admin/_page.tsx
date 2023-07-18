@@ -1,4 +1,4 @@
-import DashboardLayout from "./_layout/_layout.tsx"
+import DashboardLayout from "./_layout.tsx"
 import {TabNav, TabRouteType} from "../../../../components"
 import {useMemo} from "react"
 import {NotificationsSharp, RequestPageSharp} from "@mui/icons-material"
