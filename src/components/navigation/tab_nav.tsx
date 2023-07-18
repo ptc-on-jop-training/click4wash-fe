@@ -1,8 +1,6 @@
-import {Box, Tab, Tabs, IconButton} from "@mui/material"
-import {Close} from '@mui/icons-material'
+import {Box, Tab, Tabs} from "@mui/material"
 import {TabPanel} from "../index.ts"
 import {ReactNode, SyntheticEvent, useState} from "react"
-import {MouseEvent} from "react"
 
 type TabRouteType = {
    label: ReactNode
@@ -13,12 +11,10 @@ type TabRouteType = {
 type TabNavProps = {
    routes: TabRouteType[]
    onTabChange?: () => void,
-
    rightSlot?: ReactNode
 }
 
-function TabNav(props: TabNavProps)
-{
+function TabNav(props: TabNavProps) {
    const [tab, setTab] = useState(0)
 
    const handleChange = (_event: SyntheticEvent, newValue: number) => {
@@ -28,17 +24,13 @@ function TabNav(props: TabNavProps)
 
    return (
       <>
-         <Box {...styles.tabWrapper}>
+         <Box {...cfn.tabWrapper}>
             <Tabs scrollButtons="auto" value={tab} onChange={handleChange}>
                {
                   props.routes.map((route, index) => {
                      return <Tab
                         key={index}
-                        label={
-                           route.isClosable
-                              ? <ClosableLabel label={route.label} tabNum={index}/>
-                              : route.label
-                        }
+                        label={route.label}
                         {...getTabAccessibilityProps(index)} />
                   })
                }
@@ -56,28 +48,6 @@ function TabNav(props: TabNavProps)
    )
 }
 
-type ClosableLabelProps = {
-   tabNum: number
-   handleClose?: (event: MouseEvent<HTMLDivElement>, tab: number) => void
-   label: ReactNode
-}
-
-function ClosableLabel(props: ClosableLabelProps) {
-   return (
-      <Box {...styles.closable}>
-         <Box component="span">{props.label}</Box>
-         <IconButton
-            sx={{padding: 0}}
-            size="small"
-            component="div"
-            onClick={(event) => props.handleClose?.(event, props.tabNum)}
-         >
-            <Close fontSize="small"/>
-         </IconButton>
-      </Box>
-   )
-}
-
 function getTabAccessibilityProps(index: number) {
    return {
       id: `simple-tab-${index}`,
@@ -85,7 +55,7 @@ function getTabAccessibilityProps(index: number) {
    }
 }
 
-const styles = {
+const cfn = {
    tabWrapper: {
       sx: {
          borderBottom: 1,
@@ -96,7 +66,7 @@ const styles = {
       }
    },
    closable: {
-      width:"100%",
+      width: "100%",
       sx: {
          display: "flex",
          alignItems: "center",

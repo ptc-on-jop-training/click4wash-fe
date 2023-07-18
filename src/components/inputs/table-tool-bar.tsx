@@ -14,18 +14,18 @@ type TableToolBarProps = {
 
 function TableToolBar(props:TableToolBarProps) {
    return (
-      <GridToolbarContainer {...styles.gridToolBarStyles}>
-         <Box {...styles.gridToolBarBox}>
+      <GridToolbarContainer {...cfn.gridToolBarStyles}>
+         <Box {...cfn.gridToolBarBox}>
             {props.leftTool}
             <GridToolbarFilterButton/>
             <GridToolbarColumnsButton size="small"/>
             <GridToolbarExport size="small"/>
          </Box>
-         <GridToolbarQuickFilter {...styles.gridToolbarQuickFilter} size="small"/>
+         <GridToolbarQuickFilter {...cfn.gridToolbarQuickFilter} size="small"/>
       </GridToolbarContainer>
    )
 }
-const styles = {
+const cfn = {
    gridToolBarStyles: {
       sx: {
          display: "flex",
