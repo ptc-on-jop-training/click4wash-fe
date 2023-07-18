@@ -1,10 +1,10 @@
-import DashboardLayout from "./_layout/_layout.tsx"
+import DashboardLayout from "./_layout.tsx"
 import {TabNav, TabRouteType} from "../../../../components"
 import {useMemo} from "react"
 import {NotificationsSharp, RequestPageSharp,Language} from "@mui/icons-material"
 import UsersTable from "./users-table.tsx"
 import {Box, Typography} from "@mui/material"
-import BookingTable from "./list-booking/booking-table.tsx";
+import BookingTable from "./list-booking/booking-table.tsx"
 
 function AdminDashboardPage() {
    const data= [
@@ -58,7 +58,8 @@ function AdminDashboardPage() {
          rating: 5,
          feedback: "Very satisfied with the washing service.",
       },
-   ];
+   ]
+
    const routes = useMemo<TabRouteType[]>(() => {
       return [
          {
@@ -109,10 +110,7 @@ function AdminDashboardPage() {
    return (
       <DashboardLayout
          main={<Box {...styles.mainLayout}>
-            <TabNav routes={routes}/>
-            <Box {...styles.tabLanguage}>
-               <Language fontSize={"large"} color={"info"}/>
-            </Box>
+            <TabNav routes={routes} rightSlot={<Language fontSize={"large"} color={"info"}/>}/>
          </Box>}
       />
    )
@@ -123,7 +121,6 @@ const styles = {
       sx: {
          display: "flex",
          flexDirection: "column",
-         position: "relative"
       }
    },
    tab: {
@@ -134,13 +131,13 @@ const styles = {
       }
    },
    tabLanguage: {
-      sx: {
-         display: "flex",
-         alignItems: "center",
-         position:"absolute",
-         right:30,
-         top:5
-      }
+      // sx: {
+      //    display: "flex",
+      //    alignItems: "center",
+      //    position:"absolute",
+      //    right:30,
+      //    top:5
+      // }
    }
 }
 

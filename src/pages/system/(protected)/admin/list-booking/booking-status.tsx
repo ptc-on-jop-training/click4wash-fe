@@ -1,12 +1,18 @@
 import {Chip} from "@mui/material"
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
+
 interface BookingStatusProps
 {
     status: "requested" | "accepted" | "done"
     size?: "small" | "medium"
 }
-function BookingStatus(props:BookingStatusProps) {
-   const [state, setState] = useState<{color: any, label: string}>()
+
+type BookingStatusColor = 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
+
+function BookingStatus(props:BookingStatusProps)
+{
+   const [state, setState] = useState<{color: BookingStatusColor, label: string}>()
+
    useEffect(()=>{
       if(props.status == "requested"){
          setState({color:"warning", label:"requested"})
@@ -16,10 +22,9 @@ function BookingStatus(props:BookingStatusProps) {
       }
       else {
          setState({color:"success", label:"done"})
-
-
       }
-   })
+   }, [])
+
    return <Chip color={state?.color} size={props.size} variant={"filled"} label={state?.label}/>
 }
 export default BookingStatus
