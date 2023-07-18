@@ -6,7 +6,6 @@ import AddressToolBar from "./address-tool-bar.tsx"
 import {Address} from "../packing-slot/data/address.ts"
 
 function AddressTable() {
-
    return (
       <Box {...cfn.wrapper}>
          <DataGrid
@@ -19,9 +18,9 @@ function AddressTable() {
 }
 
 const columns: GridColDef[] = [
-   {field: 'id', headerName: 'N.o', flex: 0.05, headerAlign: 'center', align: 'center'},
-   {field: 'name', headerName: 'Name', flex: 0.1,headerAlign: 'center', align: 'center'},
-   {field: 'address', headerName: 'Address', flex: 0.2,headerAlign: 'center', align: 'center'},
+   {field: 'id', headerName: 'ID', flex: 0.05, headerAlign: 'center', align: 'center'},
+   {field: 'name', headerName: 'Name', flex: 0.1, headerAlign: 'center', align: 'center'},
+   {field: 'address', headerName: 'Address', flex: 0.2, headerAlign: 'center', align: 'center'},
    {field: 'time', headerName: 'Time lot', flex: 0.1},
 ]
 

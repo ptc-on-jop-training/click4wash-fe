@@ -2,14 +2,14 @@ import {Box, Typography} from "@mui/material"
 
 function EmptySide() {
    return (
-      <Box {...styles.wrapper}>
-         <Typography {...styles.emptyHeading}>Nothing To Show</Typography>
+      <Box {...cfn.wrapper}>
+         <Typography {...cfn.emptyHeading}>Nothing To Show</Typography>
          <Typography>Select something to see the detail</Typography>
       </Box>
    )
 }
 
-const styles = {
+const cfn = {
    wrapper: {
       sx: {
          display: "flex",

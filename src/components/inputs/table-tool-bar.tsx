@@ -12,7 +12,7 @@ type TableToolBarProps = {
    leftTool?: ReactNode
 }
 
-function TableToolBar(props:TableToolBarProps) {
+function TableToolBar(props: TableToolBarProps) {
    return (
       <GridToolbarContainer {...cfn.gridToolBarStyles}>
          <Box {...cfn.gridToolBarBox}>
@@ -25,6 +25,7 @@ function TableToolBar(props:TableToolBarProps) {
       </GridToolbarContainer>
    )
 }
+
 const cfn = {
    gridToolBarStyles: {
       sx: {
@@ -33,8 +34,8 @@ const cfn = {
          justifyContent: "space-between",
          borderBottom: 1,
          borderColor: 'divider',
-         paddingBottom:1,
-         paddingTop:1,
+         paddingBottom: 1,
+         paddingTop: 1,
       },
    },
    gridToolBarBox: {

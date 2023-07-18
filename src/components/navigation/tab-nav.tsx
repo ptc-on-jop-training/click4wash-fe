@@ -16,7 +16,6 @@ type TabNavProps = {
 
 function TabNav(props: TabNavProps) {
    const [tab, setTab] = useState(0)
-
    const handleChange = (_event: SyntheticEvent, newValue: number) => {
       props.onTabChange && props.onTabChange()
       setTab(newValue)
@@ -35,7 +34,7 @@ function TabNav(props: TabNavProps) {
                   })
                }
             </Tabs>
-            <div>{props.rightSlot}</div>
+            {props.rightSlot}
          </Box>
          {
             props.routes.map((route, index) => {
@@ -62,7 +61,7 @@ const cfn = {
          borderColor: 'divider',
          display: "flex",
          alignItems: "center",
-         justifyContent: "space-between"
+         justifyContent: "space-around"
       }
    },
    closable: {

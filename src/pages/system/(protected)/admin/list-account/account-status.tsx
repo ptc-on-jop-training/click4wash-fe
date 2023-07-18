@@ -1,15 +1,13 @@
 import {Chip} from "@mui/material"
 import {useEffect, useState} from "react"
 
-interface AccountStatusProps
-{
-    isActive: boolean
-    size?: "small" | "medium"
+interface AccountStatusProps {
+   isActive: boolean
+   size?: "small" | "medium"
 }
 
-function AccountStatus(props: AccountStatusProps)
-{
-   const [state, setState] = useState<{color: any, label: string}>()
+function AccountStatus(props: AccountStatusProps) {
+   const [state, setState] = useState<{ color: any, label: string }>()
 
    useEffect(() => {
       if (props.isActive) {

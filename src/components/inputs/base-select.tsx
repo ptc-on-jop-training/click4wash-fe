@@ -14,10 +14,9 @@ type SelectProps = {
 };
 const BaseSelect = (props: SelectProps) => {
    const {id, name, labelId, label, value, options, onChange, onBlur} = props
-
    return (
       <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
-         <InputLabel id={labelId} className="text-D1">
+         <InputLabel id={labelId}>
             {label}
          </InputLabel>
          <Select

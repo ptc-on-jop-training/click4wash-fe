@@ -10,10 +10,10 @@ interface DashboardLayoutProps {
 
 function DashboardLayout(props: DashboardLayoutProps) {
    return (
-      <Box {...styles.wrapper}>
-         <Box {...styles.wrap.main}>
-            <Box {...styles.wrap.leftSide}>
-               <>{props.leftSide ?? <EmptySide/>}</>
+      <Box {...cfn.wrapper}>
+         <Box {...cfn.wrap.main}>
+            <Box {...cfn.wrap.leftSide}>
+               {props.leftSide ?? <EmptySide/>}
                <LeftSide/>
             </Box>
             <Box>
@@ -24,7 +24,7 @@ function DashboardLayout(props: DashboardLayoutProps) {
    )
 }
 
-const styles = {
+const cfn = {
    wrapper: {
       sx: {
          height: "100vh",
@@ -55,7 +55,7 @@ const styles = {
          sx: {
             display: "flex",
             flexDirection: "row",
-            justifyContent:"space-between",
+            justifyContent: "space-between",
          },
       },
    },

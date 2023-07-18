@@ -1,7 +1,7 @@
 import {Box, Fade, IconButton, Menu, MenuItem, Typography} from "@mui/material"
 import {useState, MouseEvent} from "react"
 import {ChangeCircle, Email, MoreVert} from "@mui/icons-material"
-import {Chip} from "@mui/material"
+import {RoleChip} from "../../../../components"
 
 function LeftSide() {
    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -13,11 +13,11 @@ function LeftSide() {
       setAnchorEl(null)
    }
    return (
-      <Box {...styles.wrapper}>
+      <Box {...cfn.wrapper}>
          <Box>
-            <Box {...styles.topSection}>
+            <Box {...cfn.topSection}>
                <Typography>Ho Thi Nguyet</Typography>
-               <Chip {...styles.role} label={<Typography>admin</Typography>}/>
+               <RoleChip role={"admin"}/>
             </Box>
             <Typography>nguyet123@gmail.com <Email fontSize={"small"}/></Typography>
          </Box>
@@ -26,12 +26,12 @@ function LeftSide() {
                <MoreVert/>
             </IconButton>
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose} TransitionComponent={Fade}>
-               <MenuItem >
-                  <Typography {...styles.textOption}>Logout</Typography>
+               <MenuItem>
+                  <Typography {...cfn.textOption}>Logout</Typography>
                </MenuItem>
-               <MenuItem >
+               <MenuItem>
                   <ChangeCircle/>
-                  <Typography {...styles.textOption}>Change Password</Typography>
+                  <Typography {...cfn.textOption}>Change Password</Typography>
                </MenuItem>
             </Menu>
          </Box>
@@ -39,7 +39,7 @@ function LeftSide() {
    )
 }
 
-const styles = {
+const cfn = {
    wrapper: {
       sx: {
          borderTop: "1px solid #c7c3c3",
@@ -59,13 +59,13 @@ const styles = {
          gap: "0.5rem",
       }
    },
-   role:{
-      size:"small" as const,
-      variant:"filled" as const,
-      color:"secondary" as const,
+   role: {
+      size: "small" as const,
+      variant: "filled" as const,
+      color: "secondary" as const,
    },
-   textOption:{
-      sx:{
+   textOption: {
+      sx: {
          marginLeft: "12px",
       }
    }

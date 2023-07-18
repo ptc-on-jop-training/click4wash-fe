@@ -10,12 +10,12 @@ import {
    TextField
 } from "@mui/material"
 
-interface CreateUserFormModalProps
-{
+interface CreateUserFormModalProps {
    isOpen: boolean
    handleClose: () => void
 }
-function CreateAccountFormModel(props:CreateUserFormModalProps) {
+
+function CreateAccountFormModel(props: CreateUserFormModalProps) {
    return (
       <Dialog open={props.isOpen} onClose={props.handleClose}>
          <DialogTitle>Create New Account</DialogTitle>
@@ -28,23 +28,20 @@ function CreateAccountFormModel(props:CreateUserFormModalProps) {
                <MenuItem value={"team-member"}>team-member</MenuItem>
             </Select>
             <FormHelperText>The admin just allow create Team Member</FormHelperText>
-            <TextField fullWidth required name={"email"}
-               margin={"dense"} label={"Full Name"} type={"text"}/>
-            <TextField fullWidth required name={"email"}
-               margin={"dense"} label={"Email"} type={"text"}/>
-            <TextField fullWidth required name={"email"}
-               margin={"dense"} label={"Phone Number"} type={"text"}/>
-
+            <TextField fullWidth required name={"email"} margin={"dense"} label={"Full Name"} type={"text"}/>
+            <TextField fullWidth required name={"email"} margin={"dense"} label={"Email"} type={"text"}/>
+            <TextField fullWidth required name={"email"} margin={"dense"} label={"Phone Number"} type={"text"}/>
          </DialogContent>
          <DialogActions>
-            <Button onClick={props.handleClose}  color="secondary">
+            <Button onClick={props.handleClose} color="secondary">
                Cancel
             </Button>
-            <Button  variant={"contained"} color="primary">
+            <Button variant={"contained"} color="primary">
                Submit
             </Button>
          </DialogActions>
       </Dialog>
    )
 }
+
 export default CreateAccountFormModel

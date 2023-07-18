@@ -4,8 +4,7 @@ import {TableToolBar} from "../../../../../components"
 import AddNewAddressForm from "./add-new-address-form.tsx"
 import {useState} from "react"
 
-function AddressToolBar()
-{
+function AddressToolBar() {
    const [isCreateUserFormOpen, setIsCreateUserFormOpen] = useState<boolean>(false)
 
    const handleClose = () => {
@@ -17,14 +16,22 @@ function AddressToolBar()
          <>
             <Button
                onClick={() => setIsCreateUserFormOpen(true)}
-               size={"small"}
-               variant="contained"
+               {...cfn.button}
                startIcon={<AddBox sx={{color: "white"}}/>}
-            >new Address</Button>
+            >
+               new Address
+            </Button>
             <AddNewAddressForm handleClose={handleClose} isOpen={isCreateUserFormOpen}/>
          </>
       }/>
    )
+}
+
+const cfn = {
+   button: {
+      size: "small" as const,
+      variant: "contained" as const,
+   }
 }
 
 export default AddressToolBar

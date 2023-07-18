@@ -3,9 +3,6 @@ import {Box} from "@mui/material"
 import {useState} from "react"
 import {SelectChangeEvent} from "@mui/material/Select"
 
-// type AssignParkingSlotProps = {
-//    params: any;
-// };
 function AssignParkingSlot() {
    const ValueSelect = ["Ho Thi Nguyet", "Dang Xuan Vinh"]
    const [value, setValue] = useState<string>("")

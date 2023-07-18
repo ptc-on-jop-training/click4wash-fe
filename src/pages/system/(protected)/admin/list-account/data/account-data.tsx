@@ -1,4 +1,4 @@
-export const  accountData = [
+export const accountData = [
    {
       id: "1",
       fullName: "John Doe",
