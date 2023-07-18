@@ -32,7 +32,7 @@ function ProtectedLayout()
    }
 
    function handleAuthRedirection(loginCount: number) {
-      if (loginCount === 1) {
+      if (!(loginCount === 1)) {
          handleRegisterUser()
       } else if (loginCount >= 1) {
          nav(Route.driver, {replace: true})
