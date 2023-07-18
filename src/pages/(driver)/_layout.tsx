@@ -1,5 +1,5 @@
 import {Auth0Provider} from "@auth0/auth0-react"
-import {Box} from "@mui/material"
+import {Container} from "@mui/material"
 import {Outlet} from "react-router-dom"
 import Header from "./header.tsx"
 
@@ -8,7 +8,7 @@ function DriverLayout()
    return (
       <Auth0Provider {...cfn.authProvider}>
          <Header/>
-         <Box {...cfn.outletContainer}><Outlet/></Box>
+         <Container {...cfn.outletContainer}><Outlet/></Container>
       </Auth0Provider>
    )
 }
@@ -24,7 +24,9 @@ const cfn = {
    },
 
    outletContainer: {
-      marginTop: 9
+      sx: {
+         marginTop: 9
+      }
    }
 }
 
