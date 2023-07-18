@@ -4,8 +4,6 @@ import PackingSlotToolbar from "./packing-slot-tool-bar.tsx"
 import {RoleChip} from "../../../../../components"
 import {PackingSlot} from "./data/packing-slot.tsx"
 import AssignParkingSlot from "./assign-parking-slot.tsx"
-
-
 function PackingSlotTable()
 {
    return (
