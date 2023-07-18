@@ -13,12 +13,12 @@ export interface AccountRes {
 
 }
 
-interface BookingTableProps
+interface AccountTableProps
 {
     accountList:AccountRes[]
 }
 
-function AccountTable(props:BookingTableProps) {
+function AccountTable(props:AccountTableProps) {
    const [rows,setRows] = useState<any[]>([])
    useEffect(() =>{
       setRows( props.accountList?.map((account)=> {
