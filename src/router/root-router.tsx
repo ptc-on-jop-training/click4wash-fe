@@ -49,7 +49,7 @@ const RootRouter = createBrowserRouter([
                   children: [
                      {
                         path: Route.admin,
-                        element: <AdminPage/>
+                        element: <AdminPage/>,
                      },
                      {
                         path: Route.teamMember,
