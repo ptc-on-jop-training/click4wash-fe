@@ -6,6 +6,7 @@ function RootRouter()
    return (
       <BrowserRouter>
          <Routes>
+
             <Route path={""} element={<RootLayout/>}>
 
                <Route path={"welcome"} element={<WelcomePage/>}/>
@@ -21,6 +22,7 @@ function RootRouter()
                </Route>
 
             </Route>
+
          </Routes>
       </BrowserRouter>
    )

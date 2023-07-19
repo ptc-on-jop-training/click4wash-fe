@@ -2,7 +2,7 @@ import {useAuth0} from "@auth0/auth0-react"
 import {useEffect, useState} from "react"
 import {Outlet, useNavigate} from "react-router-dom"
 import {PageLoading} from "../../components"
-import {Role} from "../../constants"
+import {Role} from "../../services/auth0"
 
 function ProtectedLayout()
 {
