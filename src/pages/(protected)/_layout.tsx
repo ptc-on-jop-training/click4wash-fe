@@ -23,7 +23,6 @@ function ProtectedLayout()
       {
          const claims = await getIdTokenClaims()
          const role = claims?.role
-
          setRenderNode(<Outlet/>)
 
          switch (role)

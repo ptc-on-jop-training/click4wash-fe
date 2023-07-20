@@ -1,5 +1,12 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import {AdminPage, DriverPage, ProtectedLayout, RootLayout, TeamMemberPage, WelcomePage} from "../pages"
+import {
+   AdminPage, CarPage,
+   DriverAppLayout, DriverHomePage,
+   ProtectedLayout,
+   RootLayout,
+   TeamMemberPage,
+   WelcomePage
+} from "../pages"
 
 function RootRouter()
 {
@@ -13,7 +20,10 @@ function RootRouter()
 
                <Route path={""} element={<ProtectedLayout/>}>
 
-                  <Route path={""} element={<DriverPage/>}/>
+                  <Route path={""} element={<DriverAppLayout/>}>
+                     <Route path={""} element={<DriverHomePage/>}/>
+                     <Route path={"car"} element={<CarPage/>}/>
+                  </Route>
 
                   <Route path={"admin"} element={<AdminPage/>}/>
 
