@@ -5,5 +5,5 @@ import BookingPreview from "./surfaces/booking-preview.tsx"
 export {
    PageLoading,
    SectionTitle,
-   BookingPreview
+   BookingPreview,
 }

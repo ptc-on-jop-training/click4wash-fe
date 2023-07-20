@@ -1,0 +1,90 @@
+import {ReactNode, SyntheticEvent, useEffect, useState} from "react"
+import {useLocation, useNavigate} from "react-router-dom"
+import {Box, Tab, Tabs} from "@mui/material"
+import {
+   NotificationsSharp,
+   People,
+   PlaylistAddCheckCircle,
+   Garage,
+   Article,
+   PrivacyTip,
+   LocationOn,
+   Language
+} from '@mui/icons-material'
+
+import {TabLabel} from "../../index.ts"
+
+interface TabRouteType {
+   label: ReactNode
+   value: string
+}
+
+const TabNav = () => {
+   const location = useLocation()
+   const nav = useNavigate()
+   const [currentTabIndex, setCurrentTabIndex] = useState(0)
+
+   useEffect(() => {
+      const tabIndex = navData.findIndex((route) => route.value === location.pathname)
+      setCurrentTabIndex(tabIndex !== -1 ? tabIndex : 0)
+   }, [location.pathname])
+
+   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) => {
+      setCurrentTabIndex(newValue)
+      nav(navData[newValue].value)
+   }
+
+   const navData: TabRouteType[] = [
+      {
+         label: <TabLabel label={"notifications"} icon={<NotificationsSharp fontSize="medium"/>}/>,
+         value: "/admin/notification",
+      },
+      {
+         label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
+         value: "/admin/user-management",
+      },
+      {
+         label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
+         value: "/admin/list-booking",
+      },
+      {
+         label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
+         value: "/admin/address",
+      },
+      {
+         label: <TabLabel label={"Parking Slots"} icon={<Garage fontSize="medium"/>}/>,
+         value: "/admin/packing-slot",
+      },
+      {
+         label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,
+         value: "/admin/general-condition",
+      },
+      {
+         label: <TabLabel label={"Privacy Policy"} icon={<PrivacyTip fontSize="medium"/>}/>,
+         value: "/admin/privacy-policy",
+      },
+   ]
+
+   return (
+      <Box sx={cfn.tabWrapper}>
+         <Tabs scrollButtons="auto" value={currentTabIndex} onChange={handleSwitchRoute}>
+            {navData.map((route, index) => (
+               <Tab key={index} label={route.label}/>
+            ))}
+         </Tabs>
+         <Language fontSize={"large"} color={"info"}/>
+      </Box>
+   )
+}
+
+const cfn = {
+   tabWrapper: {
+      borderBottom: 1,
+      borderColor: 'divider',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-around",
+   },
+}
+
+export default TabNav
