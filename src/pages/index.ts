@@ -1,23 +1,22 @@
-import RootLayout from "./root-layout.tsx"
-import DashboardPage from "./(driver)/(protected)/dashboard/_page.tsx"
-import IntroductionPage from "./(driver)/introduction/_page.tsx"
-import DriverLayout from "./(driver)/_layout.tsx"
-import ProtectedDriverLayout from "./(driver)/(protected)/_layout.tsx"
-import SystemLayout from "./system/_layout.tsx"
-import ProtectedSystemLayout from "./system/(protected)/_layout.tsx"
-import AdminPage from "./system/(protected)/admin/_page.tsx"
-import TeamMemberPage from "./system/(protected)/team-member/_page.tsx"
+import RootLayout from "./_layout.tsx"
+import WelcomePage from "./welcome/_page.tsx"
+import ProtectedLayout from "./(protected)/_layout.tsx"
+import AdminPage from "./(protected)/admin/_page.tsx"
+import TeamMemberPage from "./(protected)/team-member/_page.tsx"
+import DriverAppLayout from "./(protected)/(driver)/(driver-app)/_layout.tsx"
+import DriverHomePage from "./(protected)/(driver)/(driver-app)/(home)/_page.tsx"
+import CarPage from "./(protected)/(driver)/(driver-app)/car/_page.tsx"
 
 export {
    RootLayout,
 
-   IntroductionPage,
-   DriverLayout,
-   ProtectedDriverLayout,
-   DashboardPage,
+   WelcomePage,
 
-   SystemLayout,
-   ProtectedSystemLayout,
+   ProtectedLayout,
+
+   DriverAppLayout,
+   DriverHomePage,
+   CarPage,
 
    AdminPage,
 
