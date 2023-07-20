@@ -1,10 +1,10 @@
-import Status from "../consts/status.ts"
+import AccountStatus from "../consts/account-status.ts"
 interface AccountResponse
 {
     id?:string
     username?:string
     email?:string
     role?: string
-    status?:Status
+    status?:AccountStatus
 }
 export default AccountResponse

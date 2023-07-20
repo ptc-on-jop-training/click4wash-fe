@@ -1,6 +1,6 @@
-enum Status {
+enum AccountStatus {
     active = "active",
     suspend = "suspend",
 }
 
-export default Status
+export default AccountStatus
