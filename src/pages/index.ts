@@ -6,6 +6,7 @@ import TeamMemberPage from "./(protected)/team-member/_page.tsx"
 import DriverAppLayout from "./(protected)/(driver)/(driver-app)/_layout.tsx"
 import DriverHomePage from "./(protected)/(driver)/(driver-app)/(home)/_page.tsx"
 import CarPage from "./(protected)/(driver)/(driver-app)/car/_page.tsx"
+import DriverNoticePage from "./(protected)/(driver)/(driver-app)/notice/_page.tsx"
 
 export {
    RootLayout,
@@ -17,6 +18,7 @@ export {
    DriverAppLayout,
    DriverHomePage,
    CarPage,
+   DriverNoticePage,
 
    AdminPage,
 
