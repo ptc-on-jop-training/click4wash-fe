@@ -1,4 +1,4 @@
-import {Box} from "@mui/material"
+import {Box, Typography} from "@mui/material"
 import {ReactNode} from "react"
 
 type TabLableProps = {
@@ -10,7 +10,7 @@ function TabLabel(props: TabLableProps) {
    return (
       <Box {...cfn.wrapper}>
          {props.icon}
-         <p style={cfn.label}>{props.label}</p>
+         <Typography>{props.label}</Typography>
       </Box>
    )
 }
@@ -22,10 +22,6 @@ const cfn = {
          alignItems: "center",
          gap: "4px"
       }
-   },
-   label: {
-      fontSize: '15px',
-      fontWeight: 'bold'
    }
 }
 

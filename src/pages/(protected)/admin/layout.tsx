@@ -3,7 +3,7 @@ import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import {Outlet} from "react-router-dom"
-import {TabNav} from "../../index.ts"
+import TabNav from "./tab-nav.tsx"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -19,7 +19,7 @@ function Layout(props: DashboardLayoutProps) {
                <LeftSide/>
             </Box>
             <Box>
-               <TabNav/>
+               <TabNav {...cfn.rightIcon}/>
                <Box sx={{height: "100%"}}>
                   <Outlet/>
                </Box>
@@ -64,5 +64,10 @@ const cfn = {
          },
       },
    },
+   rightIcon: {
+      sx: {
+         marginRight: 2
+      }
+   }
 }
 export default Layout

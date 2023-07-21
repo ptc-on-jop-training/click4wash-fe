@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
 
-function ListAccountPage() {
+function AccountPage() {
    return (
       <Box>
          <p>This is list account page</p>
@@ -8,4 +8,4 @@ function ListAccountPage() {
    )
 }
 
-export default ListAccountPage
+export default AccountPage

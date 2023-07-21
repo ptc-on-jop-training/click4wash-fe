@@ -1,20 +1,19 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import {
-   CarPage,
-   DriverAppLayout, DriverHomePage,
-   ProtectedLayout,
-   RootLayout,
-   TeamMemberPage,
-   WelcomePage,
-   AddressPage,
-   GeneralConditionPage,
-   ListAccountPage,
-   ListBookingPage,
-   NotificationPage,
-   PackingSlotPage,
-   PrivacyPolicyPage
-} from "../pages"
-import Layout from "../pages/(protected)/admin/layout.tsx";
+import {CarPage} from "../pages"
+import {DriverAppLayout} from "../pages"
+import {DriverHomePage} from "../pages"
+import {ProtectedLayout} from "../pages"
+import {RootLayout} from "../pages"
+import {TeamMemberPage} from "../pages"
+import {WelcomePage} from "../pages"
+import {AddressPage} from "../pages"
+import {GeneralConditionPage} from "../pages"
+import {AccountPage} from "../pages"
+import {BookingPage} from "../pages"
+import {NotificationPage} from "../pages"
+import {PackingSlotPage} from "../pages"
+import {PrivacyPolicyPage} from "../pages"
+import {Layout} from "../pages"
 
 function RootRouter() {
    return (
@@ -32,14 +31,15 @@ function RootRouter() {
                   </Route>
 
                   <Route path={"admin"} element={<Layout/>}>
-                     <Route path={"user-management"} element={<ListAccountPage/>}/>
+                     <Route path={"users"} element={<AccountPage/>}/>
                      <Route path={"notification"} element={<NotificationPage/>}/>
                      <Route path={"address"} element={<AddressPage/>}/>
-                     <Route path={"list-booking"} element={<ListBookingPage/>}/>
+                     <Route path={"bookings"} element={<BookingPage/>}/>
                      <Route path={"packing-slot"} element={<PackingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
                      <Route path={"privacy-policy"} element={<PrivacyPolicyPage/>}/>
                   </Route>
+
                   <Route path={"team-member"} element={<TeamMemberPage/>}/>
 
                </Route>

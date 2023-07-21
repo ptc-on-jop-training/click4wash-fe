@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
 
-function ListBookingPage() {
+function BookingPage() {
    return (
       <Box>
          <p>This is list booking page</p>
@@ -8,4 +8,4 @@ function ListBookingPage() {
    )
 }
 
-export default ListBookingPage
+export default BookingPage

@@ -1,6 +1,6 @@
-import {ReactNode, SyntheticEvent, useEffect, useState} from "react"
+import { SyntheticEvent, useEffect, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
-import {Box, Tab, Tabs} from "@mui/material"
+import {Box, SxProps, Tab, Tabs} from "@mui/material"
 import {
    NotificationsSharp,
    People,
@@ -12,14 +12,13 @@ import {
    Language
 } from '@mui/icons-material'
 
-import {TabLabel} from "../../index.ts"
+import {TabLabel} from "../../../components"
 
 interface TabRouteType {
-   label: ReactNode
-   value: string
+   sx?: SxProps
 }
 
-const TabNav = () => {
+const TabNav = (props: TabRouteType) => {
    const location = useLocation()
    const nav = useNavigate()
    const [currentTabIndex, setCurrentTabIndex] = useState(0)
@@ -34,18 +33,18 @@ const TabNav = () => {
       nav(navData[newValue].value)
    }
 
-   const navData: TabRouteType[] = [
+   const navData = [
       {
          label: <TabLabel label={"notifications"} icon={<NotificationsSharp fontSize="medium"/>}/>,
          value: "/admin/notification",
       },
       {
          label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "/admin/user-management",
+         value: "/admin/users",
       },
       {
          label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
-         value: "/admin/list-booking",
+         value: "/admin/bookings",
       },
       {
          label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
@@ -67,12 +66,14 @@ const TabNav = () => {
 
    return (
       <Box sx={cfn.tabWrapper}>
+
          <Tabs scrollButtons="auto" value={currentTabIndex} onChange={handleSwitchRoute}>
             {navData.map((route, index) => (
                <Tab key={index} label={route.label}/>
             ))}
          </Tabs>
-         <Language fontSize={"large"} color={"info"}/>
+
+         <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )
 }
@@ -83,7 +84,7 @@ const cfn = {
       borderColor: 'divider',
       display: "flex",
       alignItems: "center",
-      justifyContent: "space-around",
+      justifyContent: "space-between",
    },
 }
 

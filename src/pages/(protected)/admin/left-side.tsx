@@ -1,18 +1,8 @@
-import {Box, Chip, Fade, IconButton, ListItemText, Menu, MenuItem} from "@mui/material"
-import {useState, MouseEvent} from "react"
-import {ChangeCircle, Email, MoreVert} from "@mui/icons-material"
-import {useAuth0} from "@auth0/auth0-react"
+import {Box, Chip} from "@mui/material"
+import {Email} from "@mui/icons-material"
+import {UserOptionMenu} from "../../../components"
 
 function LeftSide() {
-   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-   const open = Boolean(anchorEl)
-   const {logout} = useAuth0()
-   const handleOpen = (event: MouseEvent<HTMLElement>) => {
-      setAnchorEl(event.currentTarget)
-   }
-   const handleClose = () => {
-      setAnchorEl(null)
-   }
    return (
       <Box {...cfn.wrapper}>
          <Box>
@@ -22,20 +12,7 @@ function LeftSide() {
             </Box>
             <p style={cfn.userEmail}>nguyet123@gmail.com <Email fontSize={"small"}/></p>
          </Box>
-         <Box>
-            <IconButton onClick={handleOpen}>
-               <MoreVert/>
-            </IconButton>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose} TransitionComponent={Fade}>
-               <MenuItem>
-                  <ListItemText {...cfn.textOption} onClick={() => logout()}>Logout</ListItemText>
-               </MenuItem>
-               <MenuItem>
-                  <ChangeCircle/>
-                  <ListItemText {...cfn.textOption}>Change Password</ListItemText>
-               </MenuItem>
-            </Menu>
-         </Box>
+         <UserOptionMenu/>
       </Box>
    )
 }
@@ -58,11 +35,6 @@ const cfn = {
          display: "flex",
          alignItems: "center",
          gap: "0.5rem",
-      }
-   },
-   textOption: {
-      sx: {
-         marginLeft: "12px",
       }
    },
    userName: {
