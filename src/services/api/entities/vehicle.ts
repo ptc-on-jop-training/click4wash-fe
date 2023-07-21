@@ -4,6 +4,7 @@ import User from "./user.ts"
 
 interface Vehicle extends BaseEntity
 {
+   numberPlate: string
    driverId: string
    color: string
    model: VehicleModels
