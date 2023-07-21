@@ -8,7 +8,7 @@ import User from "./entities/user.ts"
 import Vehicle from "./entities/vehicle.ts"
 import BookingStatus from "./consts/booking-status.ts"
 import TimeSlots from "./consts/time-slots.ts"
-import VehicleModels from "./consts/vehicle-models.ts"
+import VehicleType from "./consts/vehicle-type.ts"
 
 export {
    type BaseEntity,
@@ -22,5 +22,5 @@ export {
 
    BookingStatus,
    TimeSlots,
-   VehicleModels
+   VehicleType
 }

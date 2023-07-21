@@ -1,7 +1,7 @@
-enum VehicleModels
+enum VehicleType
 {
    motorcycle = "motorcycle",
    car = "car"
 }
 
-export default VehicleModels
+export default VehicleType
