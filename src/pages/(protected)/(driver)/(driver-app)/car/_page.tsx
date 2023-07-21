@@ -15,7 +15,7 @@ function CarPage()
                {...cfn.rightTitleBtn}
                onClick={() => setIsCreateCarFormOpen(true)}>add new</Button>}/>
 
-         <CarListEmpty/>
+         <CarListEmpty onClickAddNewBtn={() => setIsCreateCarFormOpen(true)}/>
 
          <CreateVehicleProfileFormModal
             isOpen={isCreateCarFormOpen}
