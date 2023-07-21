@@ -1,7 +1,7 @@
 import {BottomNavigation, BottomNavigationAction, Paper, SxProps} from "@mui/material"
 import {DirectionsCar, Notifications, AddBox, Home} from '@mui/icons-material'
 import {merge} from "lodash"
-import {SyntheticEvent, useEffect, useState} from "react"
+import {SyntheticEvent, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
 
 interface BottomNavProps
@@ -37,10 +37,6 @@ function BottomNav(props: BottomNavProps)
    const location = useLocation()
    const [value, setValue] = useState(location.pathname.substring(1))
    const nav = useNavigate()
-
-   useEffect(() => {
-      setValue(location.pathname.substring(1))
-   }, [location.pathname])
 
    const handleSwitchRoute = (_: SyntheticEvent, newValue: any) => {
       setValue(newValue)
