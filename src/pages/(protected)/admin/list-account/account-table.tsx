@@ -1,12 +1,16 @@
 import {DataGrid, GridRenderCellParams, GridColDef,GridToolbar} from '@mui/x-data-grid'
 import {useEffect, useState} from "react"
-import {RoleChip} from "../../../../../components"
+import RoleChip from "../../../../components/data-display/role-chip.tsx"
 import AccountResponse from "../../../../services/auth0/dtos/account-response.ts"
 import AccountStatus from "./account-status.tsx"
+import {SxProps} from "@mui/material"
+import {merge} from "lodash"
 
 interface AccountTableProps {
-    accountList: AccountResponse[]
+    accountList: AccountResponse[],
+    sx?: SxProps
 }
+
 
 
 function AccountTable(props: AccountTableProps) {
@@ -24,7 +28,7 @@ function AccountTable(props: AccountTableProps) {
    )
    return (
       <DataGrid
-         sx={cfg.sx}
+         {...merge(cfg.sx,{sx: props.sx})}
          columns={columns}
          rows={rows}
          slots={{
@@ -37,8 +41,7 @@ function AccountTable(props: AccountTableProps) {
 
 const cfg = {
    sx: {
-      border: "none",
-      height: 770
+      border: "none"
    }
 }
 
@@ -47,18 +50,8 @@ const columns: GridColDef[] = [
    {field: 'id', headerName: 'Id', flex: 0.3, headerClassName: 'bold-header', align: "center", headerAlign: "center"},
    {field: 'fullName', headerName: 'Full Name', flex: 0.5},
    {field: 'email', headerName: 'Email', flex: 0.5},
-   {
-      field: 'role',
-      headerName: 'Role',
-      flex: 0.5,
-      renderCell: (params: GridRenderCellParams) => <RoleChip role={params.value}/>
-   },
-   {
-      field: 'status',
-      headerName: 'Status',
-      flex: 0.5,
-      renderCell: (params: GridRenderCellParams) => <AccountStatus status={params.value}/>
-   }
+   {field: 'role', headerName: 'Role', flex: 0.5, renderCell: (params: GridRenderCellParams) => <RoleChip role={params.value}/>},
+   {field: 'status', headerName: 'Status', flex: 0.5, renderCell: (params: GridRenderCellParams) => <AccountStatus status={params.value}/>}
 ]
 
 
