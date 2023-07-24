@@ -10,6 +10,6 @@ export {
    SectionTitle,
    BookingPreview,
    TabLabel,
-   UserOptionMenu
+   UserOptionMenu,
    CreateVehicleProfileFormModal
 }

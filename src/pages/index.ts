@@ -22,8 +22,6 @@ export {
    DriverAppLayout,
    DriverHomePage,
    CarPage,
-
-  TeamMemberPage,
    AddressPage,
    GeneralConditionPage,
    AccountPage,
@@ -31,10 +29,7 @@ export {
    NotificationPage,
    PackingSlotPage,
    PrivacyPolicyPage,
-   AdminLayout
+   AdminLayout,
    DriverNoticePage,
-
-   AdminPage,
-
    TeamMemberPage
 }

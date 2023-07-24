@@ -1,9 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {
    CarPage,
-   DriverAppLayout,
-   DriverHomePage,
-   AdminPage, CarPage,
    DriverAppLayout, 
    DriverHomePage,
    DriverNoticePage,
