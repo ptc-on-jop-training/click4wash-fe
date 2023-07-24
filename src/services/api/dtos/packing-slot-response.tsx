@@ -6,7 +6,8 @@ interface PackingSlotResponse
    teamMember?: User
 
    packingName:string
-   packingNumber:string
+   packingPhoneNumber:string
+
 }
 
 export default PackingSlotResponse
