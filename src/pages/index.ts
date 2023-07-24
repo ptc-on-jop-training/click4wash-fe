@@ -12,7 +12,7 @@ import BookingPage from "./(protected)/admin/list-booking/_page.tsx"
 import NotificationPage from "./(protected)/admin/notification/_page.tsx"
 import PackingSlotPage from "./(protected)/admin/packing-slot/_page.tsx"
 import PrivacyPolicyPage from "./(protected)/admin/privacy-policy/_page.tsx"
-import Layout from "./(protected)/admin/layout.tsx"
+import AdminLayout from "./(protected)/admin/_layout.tsx"
 export {
    RootLayout,
    WelcomePage,
@@ -28,5 +28,5 @@ export {
    NotificationPage,
    PackingSlotPage,
    PrivacyPolicyPage,
-   Layout
+   AdminLayout
 }

@@ -40,11 +40,11 @@ const TabNav = (props: TabRouteType) => {
       },
       {
          label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "/admin/users",
+         value: "/admin/user",
       },
       {
          label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
-         value: "/admin/bookings",
+         value: "/admin/booking",
       },
       {
          label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,

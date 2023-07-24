@@ -10,7 +10,7 @@ interface DashboardLayoutProps {
    main?: ReactNode
 }
 
-function Layout(props: DashboardLayoutProps) {
+function AdminLayout(props: DashboardLayoutProps) {
    return (
       <Box {...cfn.wrapper}>
          <Box {...cfn.wrap.main}>
@@ -70,4 +70,4 @@ const cfn = {
       }
    }
 }
-export default Layout
+export default AdminLayout
