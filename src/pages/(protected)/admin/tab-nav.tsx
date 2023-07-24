@@ -72,7 +72,6 @@ const TabNav = (props: TabRouteType) => {
                <Tab key={index} label={route.label}/>
             ))}
          </Tabs>
-
          <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )

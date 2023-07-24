@@ -6,7 +6,7 @@ interface PackingSlotResponse
    teamMember?: User
 
    packingName:string
-   packingPhoneNumber:string
+   packingNumber:string
 
 }
 
