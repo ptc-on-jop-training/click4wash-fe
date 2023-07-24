@@ -20,6 +20,8 @@ const Theme = createTheme({
          styleOverrides: {
             root: {
                boxShadow: "none",
+            },
+            contained: {
                fontWeight: "bold"
             }
          }
