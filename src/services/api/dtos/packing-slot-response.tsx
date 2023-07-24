@@ -4,7 +4,7 @@ interface PackingSlotResponse
 {
    location?: Location
    teamMember?: User
-   email: string
+
    packingName:string
    packingNumber:string
 }
