@@ -3,6 +3,10 @@ import {
    CarPage,
    DriverAppLayout,
    DriverHomePage,
+   AdminPage, CarPage,
+   DriverAppLayout, 
+   DriverHomePage,
+   DriverNoticePage,
    ProtectedLayout,
    RootLayout,
    TeamMemberPage,
@@ -30,6 +34,7 @@ function RootRouter() {
                   <Route path={""} element={<DriverAppLayout/>}>
                      <Route path={""} element={<DriverHomePage/>}/>
                      <Route path={"car"} element={<CarPage/>}/>
+                     <Route path={"notice"} element={<DriverNoticePage/>}/>
                   </Route>
 
                   <Route path={"admin"} element={<AdminLayout/>}>

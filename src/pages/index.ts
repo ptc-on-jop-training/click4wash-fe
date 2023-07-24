@@ -13,6 +13,8 @@ import NotificationPage from "./(protected)/admin/notification/_page.tsx"
 import PackingSlotPage from "./(protected)/admin/packing-slot/_page.tsx"
 import PrivacyPolicyPage from "./(protected)/admin/privacy-policy/_page.tsx"
 import AdminLayout from "./(protected)/admin/_layout.tsx"
+import DriverNoticePage from "./(protected)/(driver)/(driver-app)/notice/_page.tsx"
+
 export {
    RootLayout,
    WelcomePage,
@@ -20,7 +22,8 @@ export {
    DriverAppLayout,
    DriverHomePage,
    CarPage,
-   TeamMemberPage,
+
+  TeamMemberPage,
    AddressPage,
    GeneralConditionPage,
    AccountPage,
@@ -29,4 +32,9 @@ export {
    PackingSlotPage,
    PrivacyPolicyPage,
    AdminLayout
+   DriverNoticePage,
+
+   AdminPage,
+
+   TeamMemberPage
 }
