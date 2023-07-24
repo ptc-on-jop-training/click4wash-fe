@@ -1,4 +1,4 @@
-import AccountStatus from "../consts/account-status.ts"
+import {AccountStatus as AccountStatusEnum} from "../consts/account-status.ts";
 import Role from "../consts/role.ts"
 
 interface AccountResponse
@@ -7,7 +7,7 @@ interface AccountResponse
     username: string
     email: string
     role: Role
-    status: AccountStatus
+    status: AccountStatusEnum
 }
 
 export default AccountResponse
