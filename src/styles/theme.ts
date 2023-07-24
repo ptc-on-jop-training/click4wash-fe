@@ -19,7 +19,8 @@ const Theme = createTheme({
       MuiButton: {
          styleOverrides: {
             root: {
-               boxShadow: "none"
+               boxShadow: "none",
+               fontWeight: "bold"
             }
          }
       }
