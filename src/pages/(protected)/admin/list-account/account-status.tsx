@@ -11,7 +11,6 @@ interface AccountStatusProps {
 
 function AccountStatus(props: AccountStatusProps) {
    const [state, setState] = useState<{ color: 'default' | 'primary' | 'secondary' | 'success' | 'error' | undefined, label: string }>()
-    
    useEffect(() => {
       switch (props.status) {
       case AccountStatusEnum.active:
