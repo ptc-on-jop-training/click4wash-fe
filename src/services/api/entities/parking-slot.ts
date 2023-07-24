@@ -6,6 +6,8 @@ interface ParkingSlot extends BaseEntity
 {
    locationId: string
    teamMemberId: string
+   packingName:string
+   packingPhoneNumber:string
 
    teamMember?: User
    location?: Location
