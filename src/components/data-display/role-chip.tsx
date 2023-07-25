@@ -1,6 +1,6 @@
-import {Chip, Typography} from "@mui/material"
+import {Chip} from "@mui/material"
 import {useEffect, useState} from "react"
-import Role from "../../services/auth0/consts/role.ts";
+import Role from "../../services/auth0/consts/role.ts"
 
 interface RoleChipProps {
     role: string
@@ -24,7 +24,7 @@ function RoleChip(props: RoleChipProps) {
       }
    }, [props.role])
 
-   return <Chip  size={props.size ?? "medium"} variant={"filled"} color={state?.color} label={<Typography className={"text-white"}>{state?.label}</Typography>}/>
+   return <Chip  size={props.size ?? "medium"} variant={"filled"} color={state?.color} label={state?.label}/>
 }
 
 export default RoleChip
