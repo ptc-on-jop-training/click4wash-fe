@@ -1,11 +1,9 @@
-import {accountsData} from "./list-data-account/list-data-account.tsx"
 import AccountTable from "./account-table.tsx"
 
-function AccountPage() {
-
-
+function AccountPage()
+{
    return (
-      <AccountTable accountList={accountsData} {...cfn.accountTable}/>
+      <AccountTable  {...cfn.accountTable}/>
    )
 }
 
