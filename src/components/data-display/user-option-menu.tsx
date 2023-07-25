@@ -1,5 +1,5 @@
 
-import {MouseEvent, useState} from "react";
+import {MouseEvent, useState} from "react"
 import { Menu, MenuItem, IconButton, Fade, ListItemText } from "@mui/material"
 import { ChangeCircle, MoreVert } from "@mui/icons-material"
 import { useAuth0 } from "@auth0/auth0-react"
