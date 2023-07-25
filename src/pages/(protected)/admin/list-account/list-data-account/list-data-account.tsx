@@ -1,6 +1,6 @@
-import {Role,AccountStatusEnum} from "../../../../../services/auth0"
+import {Role, AccountStatusEnum, AccountResponse} from "../../../../../services/auth0"
 
-export const accountsData = [
+export const accountsData: AccountResponse[] = [
    {
       id: "1",
       username: "John Doe",

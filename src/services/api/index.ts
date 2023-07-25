@@ -9,6 +9,8 @@ import Vehicle from "./entities/vehicle.ts"
 import BookingStatus from "./consts/booking-status.ts"
 import TimeSlots from "./consts/time-slots.ts"
 import VehicleType from "./consts/vehicle-type.ts"
+import GetVehicleList from "./usecases/get-vehicle-list.ts"
+import VehicleResponse from "./dtos/vehicle-response.ts"
 
 export {
    type BaseEntity,
@@ -19,6 +21,11 @@ export {
    type TimeSlot,
    type User,
    type Vehicle,
+
+   type VehicleResponse,
+   GetVehicleList,
+
+
 
    BookingStatus,
    TimeSlots,
