@@ -1,16 +1,14 @@
 import {Chip} from "@mui/material"
 import {useEffect, useState} from "react"
-import { AccountStatus as AccountStatusEnum } from "../../../../services/auth0/consts/account-status"
-
+import {AccountStatusEnum} from "../../../../services/auth0"
 
 interface AccountStatusProps {
     status: AccountStatusEnum
     size?: "small" | "medium"
 }
 
-
 function AccountStatus(props: AccountStatusProps) {
-   const [state, setState] = useState<{ color: 'default' | 'primary' | 'secondary' | 'success' | 'error' | undefined, label: string }>()
+   const [state, setState] = useState<{ color: any, label: string }>()
    useEffect(() => {
       switch (props.status) {
       case AccountStatusEnum.active:
