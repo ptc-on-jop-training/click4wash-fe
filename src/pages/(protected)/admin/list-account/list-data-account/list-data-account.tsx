@@ -1,8 +1,4 @@
-import Role from "../../../../../services/auth0/consts/role.ts"
-import {
-   AccountStatus,
-   AccountStatus as AccountStatusEnum
-} from "../../../../../services/auth0/consts/account-status.ts"
+import {Role,AccountStatusEnum} from "../../../../../services/auth0"
 
 export const accountsData = [
    {
@@ -31,13 +27,13 @@ export const accountsData = [
       username: "Emily Davis",
       email: "emily.davis@example.com",
       role: Role.driver,
-      status: AccountStatus.suspend
+      status: AccountStatusEnum.suspend
    },
    {
       id: "5",
       username: "David Wilson",
       email: "david.wilson@example.com",
       role: Role.teamMember,
-      status: AccountStatus.suspend
+      status: AccountStatusEnum.suspend
    }
 ]
