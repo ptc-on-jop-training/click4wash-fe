@@ -1,5 +1,5 @@
 import {Box} from "@mui/material"
-import PackingSlotTable from "./packing-slot-table.tsx";
+import PackingSlotTable from "./packing-slot-table.tsx"
 function PackingSlotPage() {
    return (
       <Box>
