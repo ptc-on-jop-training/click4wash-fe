@@ -5,6 +5,7 @@ import TabLabel from "./layer/tab-label.tsx"
 import UserOptionMenu from "./data-display/user-option-menu.tsx"
 import CreateVehicleProfileFormModal from "./inputs/create-vehicle-profile-form-modal.tsx"
 import TableToolbar from "./inputs/table-toolbar.tsx"
+import RoleChip from "./data-display/role-chip.tsx"
 
 export {
    PageLoading,
@@ -13,5 +14,6 @@ export {
    TabLabel,
    UserOptionMenu,
    CreateVehicleProfileFormModal,
-   TableToolbar
+   TableToolbar,
+   RoleChip
 }
