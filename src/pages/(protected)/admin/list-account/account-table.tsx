@@ -39,7 +39,7 @@ const cfg = {
 
 const columns: GridColDef[] = [
    {field: 'id', headerName: 'Id', flex: 0.3, headerClassName: 'bold-header', align: "center", headerAlign: "center"},
-   {field: 'username', headerName: 'Full Name', flex: 0.5}, {field: 'email', headerName: 'Email', flex: 0.5},
+   {field: 'username', headerName: 'User Name', flex: 0.5}, {field: 'email', headerName: 'Email', flex: 0.5},
    {field: 'role', headerName: 'Role', flex: 0.5, renderCell: (params: GridRenderCellParams) => <RoleChip role={params.value}/>},
    {field: 'status', headerName: 'Status', flex: 0.5, renderCell: (params: GridRenderCellParams) => <AccountStatus status={params.value}/>}
 ]
