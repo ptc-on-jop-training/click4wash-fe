@@ -1,13 +1,16 @@
 import BaseEntity from "./base-entity.ts"
 import ParkingSlot from "./parking-slot.ts"
+import User from "./user.ts"
+import Address from "./address.ts"
 
 interface Location extends BaseEntity
 {
-   line1: string
-   line2: string
-   line3: string
-   line4?: string
+   name: string
+   teamMemberId: string
+   addressId: string
 
+   address?: Address
+   teamMemberList?: User[]
    parkingSlotList?: ParkingSlot[]
 }
 

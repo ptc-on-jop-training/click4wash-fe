@@ -1,13 +1,11 @@
-import User from "../entities/user.ts"
 
 interface PackingSlotResponse
+
 {
-   location?: Location
-   teamMember?: User
-
-   packingName:string
-   packingNumber:string
-
+   locationId: string
+   name: string
+   address: string
+   teamMember?: string
 }
 
 export default PackingSlotResponse
