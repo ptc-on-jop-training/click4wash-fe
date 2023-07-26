@@ -19,6 +19,7 @@ interface TabRouteType {
 }
 
 const TabNav = (props: TabRouteType) => {
+
    const location = useLocation()
    const nav = useNavigate()
    const [currentTabIndex, setCurrentTabIndex] = useState(0)
@@ -66,13 +67,11 @@ const TabNav = (props: TabRouteType) => {
 
    return (
       <Box sx={cfn.tabWrapper}>
-
          <Tabs scrollButtons="auto" value={currentTabIndex} onChange={handleSwitchRoute}>
             {navData.map((route, index) => (
                <Tab key={index} label={route.label}/>
             ))}
          </Tabs>
-
          <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )
