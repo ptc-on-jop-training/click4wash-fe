@@ -1,10 +1,8 @@
-
-interface PackingSlotResponse
-
-{
-   locationId: string
-   name: string
+interface PackingSlotResponse {
+   id: string
+   locationName: string
    address: string
+   name: string
    teamMember?: string
 }
 
