@@ -14,7 +14,7 @@ function VehiclePage()
    const renderVehicleList = () => {
       return (
          <Stack spacing={1}>
-            {vehicleList.map((vehicle: VehicleResponse) => (<VehicleCard {...vehicle} key={vehicle.id}/>))}
+            {vehicleList?.map((vehicle: VehicleResponse) => (<VehicleCard {...vehicle} key={vehicle.id}/>))}
          </Stack>
       )
    }
