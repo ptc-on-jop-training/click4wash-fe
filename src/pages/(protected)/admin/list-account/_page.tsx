@@ -1,11 +1,19 @@
-import {Box} from "@mui/material"
+import AccountTable from "./account-table.tsx"
 
-function AccountPage() {
+function AccountPage()
+{
    return (
-      <Box>
-         <p>This is list account page</p>
-      </Box>
+      <AccountTable  {...cfn.accountTable}/>
    )
+}
+
+const cfn = {
+   accountTable:{
+      sx:{
+         height: "100%",
+         maxHeight: "calc(100vh - 129px)",
+      }
+   }
 }
 
 export default AccountPage
