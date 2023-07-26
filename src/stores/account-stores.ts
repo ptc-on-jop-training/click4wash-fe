@@ -1,5 +1,5 @@
 import {AccountResponse} from "../services/auth0"
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit"
 import {GetAccountList} from "../services/auth0"
 
 interface AccountStoresType
@@ -21,6 +21,9 @@ const AccountSlice = createSlice({
    initialState,
 
    reducers: {
+      pushToAllAccountList: (state, action: PayloadAction<AccountResponse>) => {
+         state.accountList = [action.payload, ...(state.accountList ?? [])]
+      },
 
    },
 
@@ -32,4 +35,5 @@ const AccountSlice = createSlice({
    }
 })
 export {FetchAccountList}
+export const {pushToAllAccountList} = AccountSlice.actions
 export default AccountSlice.reducer
