@@ -2,9 +2,17 @@ import {Box, Container} from "@mui/material"
 import {Outlet} from "react-router-dom"
 import Header from "./header.tsx"
 import BottomNav from "./bottom-nav.tsx"
+import {useEffect} from "react"
+import {FetchVehicleList, useRootDispatch} from "../../../../stores";
 
 function DriverAppLayout()
 {
+   const rootDispatch = useRootDispatch()
+
+   useEffect(() => {
+      rootDispatch(FetchVehicleList())
+   }, [])
+
    return (
       <Box>
          <Header {...cfn.header}/>

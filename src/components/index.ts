@@ -6,6 +6,7 @@ import UserOptionMenu from "./data-display/user-option-menu.tsx"
 import CreateVehicleProfileFormModal from "./inputs/create-vehicle-profile-form-modal.tsx"
 import TableToolbar from "./inputs/table-toolbar.tsx"
 import RoleChip from "./data-display/role-chip.tsx"
+import VehicleCard from "./surfaces/vehicle-card.tsx"
 
 export {
    PageLoading,
@@ -15,5 +16,6 @@ export {
    UserOptionMenu,
    CreateVehicleProfileFormModal,
    TableToolbar,
-   RoleChip
+   RoleChip,
+   VehicleCard
 }

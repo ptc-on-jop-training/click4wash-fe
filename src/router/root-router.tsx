@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {
-   CarPage,
+   VehiclePage,
    DriverAppLayout, 
    DriverHomePage,
    DriverNoticePage,
@@ -15,7 +15,8 @@ import {
    NotificationPage,
    PackingSlotPage,
    PrivacyPolicyPage,
-   AdminLayout
+   AdminLayout,
+   InitVehicleProfilePage
 } from "../pages"
 
 function RootRouter() {
@@ -30,9 +31,11 @@ function RootRouter() {
                <Route path={""} element={<ProtectedLayout/>}>
                   <Route path={""} element={<DriverAppLayout/>}>
                      <Route path={""} element={<DriverHomePage/>}/>
-                     <Route path={"car"} element={<CarPage/>}/>
+                     <Route path={"car"} element={<VehiclePage/>}/>
                      <Route path={"notice"} element={<DriverNoticePage/>}/>
                   </Route>
+
+                  <Route path={"init-vehicle-profile"} element={<InitVehicleProfilePage/>}/>
 
                   <Route path={"admin"} element={<AdminLayout/>}>
                      <Route path={"user"} element={<AccountPage/>}/>

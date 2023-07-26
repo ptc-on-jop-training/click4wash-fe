@@ -1,13 +1,18 @@
 import {Box, Button, Typography} from "@mui/material"
 import CarImage from "../../../../../assets/images/sammy-line-white-car.png"
 
-function CarListEmpty()
+interface CarListEmptyProps
+{
+   onClickAddNewBtn: () => void
+}
+
+function VehicleListEmpty(props: CarListEmptyProps)
 {
    return (
       <Box {...cfn.container}>
          <img src={CarImage} alt={"yeah"}/>
-         <Typography {...cfn.message}>You are currently have no car profile</Typography>
-         <Button {...cfn.addNewCarBtn}>add new?</Button>
+         <Typography {...cfn.message}>You are currently have no vehicle profile</Typography>
+         <Button {...cfn.addNewCarBtn} onClick={props.onClickAddNewBtn}>add new?</Button>
       </Box>
    )
 }
@@ -36,4 +41,4 @@ const cfn = {
    }
 }
 
-export default CarListEmpty
+export default VehicleListEmpty
