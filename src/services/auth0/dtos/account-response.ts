@@ -1,13 +1,10 @@
-import AccountStatus from "../consts/account-status.ts"
-import Role from "../consts/role.ts"
-
-interface AccountResponse
+import {AccountStatusEnum,Role} from "../index.ts"
+export default interface AccountResponse
 {
     id: string
     username: string
     email: string
     role: Role
-    status: AccountStatus
+    status: AccountStatusEnum
 }
 
-export default AccountResponse
