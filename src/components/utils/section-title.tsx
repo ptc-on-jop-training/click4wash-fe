@@ -24,7 +24,8 @@ const cfn = {
       sx: {
          display: "flex",
          justifyContent: "space-between",
-         alignItems: "center"
+         alignItems: "center",
+         marginBottom: 1
       }
    },
    title: {
