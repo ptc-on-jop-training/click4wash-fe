@@ -4,7 +4,7 @@ import Booking from "./booking.ts"
 interface ParkingSlot extends BaseEntity
 {
    locationId: string
-   parkingSlotName:string
+   name:string
 
    location?: Location
    bookingList?: Booking[]
