@@ -2,6 +2,7 @@ import BaseEntity from "./entities/base-entity.ts"
 import Booking from "./entities/booking.ts"
 import BookingHistory from "./entities/booking-history.ts"
 import Location from "./entities/location.ts"
+import Address from "./entities/address.ts"
 import ParkingSlot from "./entities/parking-slot.ts"
 import TimeSlot from "./entities/time-slot.ts"
 import User from "./entities/user.ts"
@@ -17,6 +18,7 @@ export {
    type Booking,
    type BookingHistory,
    type Location,
+   type Address,
    type ParkingSlot,
    type TimeSlot,
    type User,
