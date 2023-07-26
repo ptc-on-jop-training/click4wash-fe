@@ -1,5 +1,5 @@
 import {GetVehicleList, VehicleResponse} from "../services/api"
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 interface VehicleStoresType
 {
@@ -20,7 +20,9 @@ const VehicleSlice = createSlice({
    initialState,
 
    reducers: {
-
+      AddToHeadVehicleList: (state, action: PayloadAction<VehicleResponse>) => {
+         state.vehicleList = [action.payload, ...(state.vehicleList ?? [])]
+      }
    },
 
    extraReducers: (builder) => {
@@ -32,4 +34,5 @@ const VehicleSlice = createSlice({
 })
 
 export {FetchVehicleList}
+export const {AddToHeadVehicleList} = VehicleSlice.actions
 export default VehicleSlice.reducer

@@ -1,5 +1,5 @@
 import RootStore, {useRootDispatch, RootStateType} from "./root-store.ts"
-import {FetchVehicleList} from "./vehicle-stores.ts"
+import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
 import {FetchAccountList} from "./account-stores.ts"
 
 export {
@@ -9,5 +9,8 @@ export {
 
    // vehicle store
    FetchVehicleList,
-   FetchAccountList
+   AddToHeadVehicleList,
+
+   // account store
+   FetchAccountList,
 }
