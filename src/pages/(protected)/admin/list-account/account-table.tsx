@@ -1,9 +1,10 @@
-import {DataGrid, GridColDef, GridRenderCellParams, GridToolbar} from '@mui/x-data-grid'
+import {DataGrid, GridColDef, GridRenderCellParams} from '@mui/x-data-grid'
 import {RoleChip} from "../../../../components"
 import AccountStatus from "./account-status.tsx"
 import {Box, SxProps} from "@mui/material"
 import { useSelector } from "react-redux"
 import {RootStateType} from "../../../../stores"
+import AccountTableToolBar from "./account-table-tool-bar.tsx"
 
 interface AccountTableProps {
    sx?: SxProps
@@ -19,7 +20,7 @@ function AccountTable(props: AccountTableProps)
             {...cfg.table}
             columns={columns}
             rows={accountList ?? []}
-            slots={{toolbar: GridToolbar}}
+            slots={{toolbar: AccountTableToolBar}}
          />
       </Box>
    )
