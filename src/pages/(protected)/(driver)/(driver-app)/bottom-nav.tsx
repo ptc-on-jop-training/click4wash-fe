@@ -3,6 +3,7 @@ import {DirectionsCar, Notifications, AddBox, Home} from '@mui/icons-material'
 import {merge} from "lodash"
 import {SyntheticEvent, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
+import CreateBookingModal from "./create-booking-modal.tsx"
 
 interface BottomNavProps
 {
@@ -35,28 +36,32 @@ const navData = [
 function BottomNav(props: BottomNavProps)
 {
    const location = useLocation()
-   const [value, setValue] = useState(location.pathname.substring(1))
    const nav = useNavigate()
 
-   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) => {
-      setValue(newValue)
+   const [value, setValue] = useState(location.pathname.substring(1))
+   const [isCreateBookingModalOpen, setIsCreateBookingModalOpen] = useState<boolean>(false)
 
+   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) =>
+   {
       if (newValue === "wash") {
-         console.log("wash")
-         return
+         setIsCreateBookingModalOpen(true)
+      } else {
+         setValue(newValue)
+         nav(newValue)
       }
-
-      nav(newValue)
    }
 
    return (
-      <Paper {...merge(cfn.container, {sx: props.sx})}>
-         <BottomNavigation {...cfn.bottomNav} value={value} onChange={handleSwitchRoute}>
-            {navData.map((item, index) => (
-               <BottomNavigationAction {...item} key={index}/>
-            ))}
-         </BottomNavigation>
-      </Paper>
+      <>
+         <Paper {...merge(cfn.container, {sx: props.sx})}>
+            <BottomNavigation {...cfn.bottomNav} value={value} onChange={handleSwitchRoute}>
+               {navData.map((item, index) => (
+                  <BottomNavigationAction {...item} key={index}/>
+               ))}
+            </BottomNavigation>
+         </Paper>
+         <CreateBookingModal isOpen={isCreateBookingModalOpen} handleClose={() => setIsCreateBookingModalOpen(false)}/>
+      </>
    )
 }
 

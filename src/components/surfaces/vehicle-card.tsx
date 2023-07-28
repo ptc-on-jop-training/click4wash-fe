@@ -11,7 +11,7 @@ function VehicleCard(props: VehicleCardProps)
    return (
       <Box sx={{
          width: "100%",
-         height: "90px",
+         minHeight: "90px",
          borderRadius: "5px",
          border: "1px solid #9BABB8"
       }}>
