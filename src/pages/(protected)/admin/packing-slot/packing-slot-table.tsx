@@ -5,7 +5,7 @@ import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 
 interface PackingSlotTableProps {
-    sx?: SxProps
+   sx?: SxProps
 }
 
 function PackingSlotTable(props: PackingSlotTableProps) {
