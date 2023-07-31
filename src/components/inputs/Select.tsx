@@ -14,14 +14,13 @@ type SelectProps = {
    id?: string
    error?: boolean
    fullWidth?: boolean
-   className?: string
    margin?: "normal" | "dense" | "none"
 }
 
 function Select(props: SelectProps)
 {
    return (
-      <FormControl margin={props.margin} className={props.className} fullWidth={props.fullWidth} error={props.error}>
+      <FormControl margin={props.margin} fullWidth={props.fullWidth} error={props.error}>
          <InputLabel required={props.required}>{props.label}</InputLabel>
          <MuiSelect
             fullWidth={props.fullWidth}
