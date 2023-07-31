@@ -14,23 +14,24 @@ function AssignTeamMember(props: AssignTeamMemberProps) {
    const accountList = useSelector((state: RootStateType) => state.account.accountList)
 
    const teamMembers = accountList?.filter(user => user.role === "team-member").map(user => user.username) ?? []
-   
+
    const handleChange = (event: SelectChangeEvent) => {
       setTeamMember(event.target.value)
    }
 
    return (
-      <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+      <FormControl variant="outlined" {...cfn.formControl}>
          <Select
             id="teamMember" required fullWidth margin={"dense"}
             value={teamMember}
             onChange={handleChange}
+            sx={{color:'#E06700'}}
          >
-            <MenuItem value="" {...cfn.select}>
+            <MenuItem value="" {...cfn.menuItem}>
                <>None</>
             </MenuItem>
             {teamMembers.map((option: string) => (
-               <MenuItem key={option} value={option} {...cfn.select}>
+               <MenuItem key={option} value={option} {...cfn.menuItem}>
                   {option}
                </MenuItem>
             ))}
@@ -40,16 +41,27 @@ function AssignTeamMember(props: AssignTeamMemberProps) {
 }
 
 const cfn = {
-   select: {
+   formControl:{
+      sx: {
+         m: 1, 
+         maxWidth: '100%',
+         minWidth: '50%',
+         boxShadow: "none",
+         ".MuiOutlinedInput-notchedOutline": {border: 0},
+         "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {border: 0,},
+         "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {border: 0,},
+      }
+   },
+   menuItem: {
       sx: {
          borderRadius: 8,
          margin: 1,
          '&:hover': {
             backgroundColor: '#f0f0f0',
          },
+         color:"#407E2D"
       }
    }
 }
-
 
 export default AssignTeamMember
