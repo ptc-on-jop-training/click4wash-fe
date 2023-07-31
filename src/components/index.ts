@@ -7,7 +7,7 @@ import CreateVehicleProfileFormModal from "./inputs/create-vehicle-profile-form-
 import TableToolbar from "./inputs/table-toolbar.tsx"
 import RoleChip from "./data-display/role-chip.tsx"
 import VehicleCard from "./surfaces/vehicle-card.tsx"
-
+import Select from "./inputs/Select.tsx";
 export {
    PageLoading,
    SectionTitle,
@@ -17,5 +17,6 @@ export {
    CreateVehicleProfileFormModal,
    TableToolbar,
    RoleChip,
-   VehicleCard
+   VehicleCard,
+   Select
 }
