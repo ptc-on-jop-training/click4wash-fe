@@ -14,6 +14,8 @@ import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
+import LocationResponse from "./dtos/location-response.ts"
+import GetLocationList from "./usecases/get-location-list.ts"
 
 export {
    type BaseEntity,
@@ -28,6 +30,9 @@ export {
 
    type VehicleResponse,
    GetVehicleList,
+
+   type LocationResponse,
+   GetLocationList,
 
    type CreateVehicleRequest,
    CreateVehicle,
