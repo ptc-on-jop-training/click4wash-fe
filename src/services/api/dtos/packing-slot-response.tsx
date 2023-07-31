@@ -3,7 +3,6 @@ interface PackingSlotResponse {
    locationName: string
    address: string
    name: string
-   teamMember?: string
 }
 
 export default PackingSlotResponse
