@@ -48,12 +48,12 @@ const TabNav = (props: TabRouteType) => {
          value: "/admin/booking",
       },
       {
-         label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
-         value: "/admin/address",
+         label: <TabLabel label={"Locations"} icon={<LocationOn fontSize="medium"/>}/>,
+         value: "/admin/location",
       },
       {
-         label: <TabLabel label={"Parking Slots"} icon={<Garage fontSize="medium"/>}/>,
-         value: "/admin/packing-slot",
+         label: <TabLabel label={"Parking lots"} icon={<Garage fontSize="medium"/>}/>,
+         value: "/admin/packing-lot",
       },
       {
          label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,

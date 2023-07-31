@@ -28,7 +28,7 @@ function AdminLayout(props: DashboardLayoutProps)
             </Box>
             <Box>
                <TabNav {...cfn.rightIcon}/>
-               <Box sx={{height: "100%"}}>
+               <Box sx={{ height: "100%", maxHeight: "calc(100vh - 129px)"}}>
                   <Outlet/>
                </Box>
             </Box>
