@@ -5,8 +5,8 @@ import TeamMemberPage from "./(protected)/team-member/_page.tsx"
 import DriverAppLayout from "./(protected)/(driver)/(driver-app)/_layout.tsx"
 import DriverHomePage from "./(protected)/(driver)/(driver-app)/(home)/_page.tsx"
 import VehiclePage from "./(protected)/(driver)/(driver-app)/vehicle/_page.tsx"
-import AddressPage from "./(protected)/admin/general-condition/_page.tsx"
-import GeneralConditionPage from "./(protected)/admin/address/_page.tsx"
+import LocationPage from "./(protected)/admin/location/_page.tsx"
+import GeneralConditionPage from "./(protected)/admin/general-condition/_page.tsx"
 import AccountPage from "./(protected)/admin/list-account/_page.tsx"
 import BookingPage from "./(protected)/admin/list-booking/_page.tsx"
 import NotificationPage from "./(protected)/admin/notification/_page.tsx"
@@ -23,7 +23,7 @@ export {
    DriverAppLayout,
    DriverHomePage,
    VehiclePage,
-   AddressPage,
+   LocationPage,
    GeneralConditionPage,
    AccountPage,
    BookingPage,
