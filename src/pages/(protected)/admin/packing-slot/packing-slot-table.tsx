@@ -1,8 +1,8 @@
 import {DataGrid, GridColDef} from '@mui/x-data-grid'
 import {SxProps} from "@mui/material"
-import {TableToolbar} from "../../../../components"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
+import {TableToolbar} from "../../../../components"
 
 interface PackingSlotTableProps {
    sx?: SxProps
@@ -24,11 +24,9 @@ function PackingSlotTable(props: PackingSlotTableProps) {
 }
 
 const columns: GridColDef[] = [
-   {field: 'id', headerName: 'ID', flex: 0.1, headerAlign: 'center', align: 'center'},
-   {field: 'locationName', headerName: 'Location', flex: 0.2, headerAlign: 'center', align: 'center'},
-   {field: 'address', headerName: 'Address', flex: 0.2, headerAlign: 'center', align: 'center'},
-   {field: 'name', headerName: 'Packing Slot Name', flex: 0.2, headerAlign: 'center', align: 'center'},
-
+   { field: 'id', headerName: 'Id', flex: 0.1, align: "center", headerAlign: "center" },
+   { field: 'locationName', headerName: 'Location', flex: 0.3,align: "center", headerAlign: "center" },
+   { field: 'name', headerName: 'Packing Slot', flex: 0.1 ,align: "center", headerAlign: "center"},
+   { field: 'address', headerName: 'Address', flex: 0.5,align: "center", headerAlign: "center" },
 ]
-
 export default PackingSlotTable
