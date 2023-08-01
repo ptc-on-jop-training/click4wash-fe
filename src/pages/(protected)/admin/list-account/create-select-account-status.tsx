@@ -1,27 +1,45 @@
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material"
+import {Chip, MenuItem, Select, SelectChangeEvent} from "@mui/material"
 import { useState } from "react"
 import { AccountStatusEnum } from "../../../../services/auth0"
 import AccountStatus from "./account-status.tsx"
 import CreateFormConfirmChangeStatus from "./create-form-confirm-change-status.tsx"
+import CreateFormConfirmDeleteAccount from "./create-form-confirm-delete-account.tsx"
+import {deleteAccountById,useRootDispatch} from "../../../../stores"
 
 interface CreateSelectAccountStatusProps {
    status: AccountStatusEnum
+   id: string
 }
 
 function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
    const [status, setStatus] = useState<any>(props.status)
    const [newStatus, setNewStatus] = useState<string>(props.status)
-   const [open, setOpen] = useState<boolean>(false)
 
+   const [idAccount,setIdAccount] = useState<string>("")
+
+   const [openFormChangeStatus, setOpenFormChangeStatus] = useState<boolean>(false)
+   const [openFormDelete, setOpenFormDelete] = useState<boolean>(false)
+
+   const dispatch = useRootDispatch()
    const handleStatusChange = (event: SelectChangeEvent<{ value: unknown }>) => {
       const newStatus = event.target.value as AccountStatusEnum
-      setNewStatus(newStatus)
-      setOpen(true)
+      if( newStatus === "active" || newStatus=== "suspend") {
+         setNewStatus(newStatus)
+         setOpenFormChangeStatus(true)
+      }
+      else {
+         setIdAccount(newStatus)
+         setOpenFormDelete(true)
+      }
    }
 
    const handleConfirmation = () => {
       setStatus(newStatus)
-      setOpen(false)
+      setOpenFormChangeStatus(false)
+   }
+   
+   const handleDeleteAccount = () => {
+      dispatch(deleteAccountById(idAccount))
    }
 
    return (
@@ -39,9 +57,13 @@ function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
                   <AccountStatus status={option.status} />
                </MenuItem>
             ))}
+            <MenuItem value={props.id}>
+               <Chip color={"error"} size={"medium"} variant={"filled"} label={"Delete"} />
+            </MenuItem>
          </Select>
 
-         <CreateFormConfirmChangeStatus open={open} onClose={() => setOpen(false)} onClick={handleConfirmation} />
+         <CreateFormConfirmChangeStatus open={openFormChangeStatus} onClose={() => setOpenFormChangeStatus(false)} onClick={handleConfirmation} />
+         <CreateFormConfirmDeleteAccount open={openFormDelete} onClose={() => setOpenFormDelete(false)} onClick={handleDeleteAccount} />
       </>
    )
 }
