@@ -3,10 +3,8 @@ import ParkingSlot from "./parking-slot.ts"
 import User from "./user.ts"
 import Address from "./address.ts"
 
-interface Location extends BaseEntity
-{
+interface Location extends BaseEntity {
    name: string
-   teamMemberId: string
    addressId: string
 
    address?: Address
