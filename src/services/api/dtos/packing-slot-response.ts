@@ -1,7 +1,9 @@
+import AddressResponse from "./address-response.ts"
+
 interface PackingSlotResponse {
    id: string
    locationName: string
-   address: string
+   address: AddressResponse
    name: string
 }
 
