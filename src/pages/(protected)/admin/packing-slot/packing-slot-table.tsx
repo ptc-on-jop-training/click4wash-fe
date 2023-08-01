@@ -27,13 +27,11 @@ const columns: GridColDef[] = [
    {field: 'id', headerName: 'Id', flex: 0.1, align: "center", headerAlign: "center"},
    {field: 'locationName', headerName: 'Location', flex: 0.3, align: "center", headerAlign: "center"},
    {field: 'name', headerName: 'Packing Slot', flex: 0.1, align: "center", headerAlign: "center"},
-   {
-      field: 'address', headerName: 'Address', flex: 0.5, align: "center", headerAlign: "center",
+   {field: 'address', headerName: 'Address', flex: 0.5, align: "center", headerAlign: "center",
       renderCell: (params: GridRenderCellParams) => {
          const addressValue = params.row.address || {}
-         const mergedAddress = Object.values(addressValue).join(', ')
-         return mergedAddress
-      },
-   },
+         return Object.values(addressValue).join(', ')}
+   }
 ]
+
 export default PackingSlotTable
