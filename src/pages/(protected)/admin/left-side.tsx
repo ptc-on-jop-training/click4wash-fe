@@ -1,4 +1,4 @@
-import {Box, Chip} from "@mui/material"
+import {Box} from "@mui/material"
 import {Email} from "@mui/icons-material"
 import {UserOptionMenu} from "../../../components"
 
@@ -8,7 +8,6 @@ function LeftSide() {
          <Box>
             <Box {...cfn.topSection}>
                <p style={cfn.userName}>Ho Thi Nguyet</p>
-               <Chip label="admin" color="primary"/>
             </Box>
             <p style={cfn.userEmail}>nguyet123@gmail.com <Email fontSize={"small"}/></p>
          </Box>
@@ -34,7 +33,6 @@ const cfn = {
       sx: {
          display: "flex",
          alignItems: "center",
-         gap: "0.5rem",
       }
    },
    userName: {
