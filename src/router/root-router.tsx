@@ -12,7 +12,7 @@ import {
    GeneralConditionPage,
    AccountPage,
    BookingPage,
-   PackingSlotPage,
+   ParkingSlotPage,
    PrivacyPolicyPage,
    AdminLayout,
    InitVehicleProfilePage
@@ -40,7 +40,7 @@ function RootRouter() {
                      <Route path={""} element={<AccountPage/>}/>
                      <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
-                     <Route path={"packing-lot"} element={<PackingSlotPage/>}/>
+                     <Route path={"parking-slot"} element={<ParkingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
                      <Route path={"privacy-policy"} element={<PrivacyPolicyPage/>}/>
                   </Route>

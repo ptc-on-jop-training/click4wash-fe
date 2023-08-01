@@ -1,6 +1,6 @@
 import {Box} from "@mui/material"
 
-function PackingSlotPage() {
+function ParkingSlotPage() {
    return (
       <Box>
          <p>This is packing slot page</p>
@@ -8,4 +8,4 @@ function PackingSlotPage() {
    )
 }
 
-export default PackingSlotPage
+export default ParkingSlotPage
