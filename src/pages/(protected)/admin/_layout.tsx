@@ -11,8 +11,7 @@ interface DashboardLayoutProps {
    main?: ReactNode
 }
 
-function AdminLayout(props: DashboardLayoutProps)
-{
+function AdminLayout(props: DashboardLayoutProps) {
    const dispatch = useRootDispatch()
 
    useEffect(() => {
