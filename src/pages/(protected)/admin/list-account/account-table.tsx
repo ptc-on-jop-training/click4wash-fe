@@ -46,7 +46,7 @@ const columns: GridColDef[] = [
       field: 'status',
       headerName: 'Status',
       flex: 0.5,
-      renderCell: (params: GridRenderCellParams) => (<CreateSelectAccountStatus status={params.value}/>),
+      renderCell: (params: GridRenderCellParams) => (<CreateSelectAccountStatus status={params.value} id={params.row.id}/>),
    },
 ]
 
