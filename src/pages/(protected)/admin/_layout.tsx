@@ -4,19 +4,19 @@ import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import {Outlet} from "react-router-dom"
 import TabNav from "./tab-nav.tsx"
-import {useRootDispatch, FetchAccountList} from "../../../stores"
+import {useRootDispatch, FetchAccountList, FetchPackingSlotList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
    main?: ReactNode
 }
 
-function AdminLayout(props: DashboardLayoutProps)
-{
+function AdminLayout(props: DashboardLayoutProps) {
    const dispatch = useRootDispatch()
 
    useEffect(() => {
       dispatch(FetchAccountList())
+      dispatch(FetchPackingSlotList())
    }, [])
 
    return (
@@ -28,7 +28,7 @@ function AdminLayout(props: DashboardLayoutProps)
             </Box>
             <Box>
                <TabNav {...cfn.rightIcon}/>
-               <Box sx={{height: "100%"}}>
+               <Box sx={{height: "90%"}}>
                   <Outlet/>
                </Box>
             </Box>

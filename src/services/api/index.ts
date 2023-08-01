@@ -13,8 +13,9 @@ import VehicleType from "./consts/vehicle-type.ts"
 import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
+import PackingSlotResponse from "./dtos/packing-slot-response.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
-
+import GetPackingSlotList from "./usecases/get-packing-slot-list.ts";
 export {
    type BaseEntity,
    type Booking,
@@ -28,6 +29,10 @@ export {
 
    type VehicleResponse,
    GetVehicleList,
+
+   type PackingSlotResponse,
+   GetPackingSlotList,
+
 
    type CreateVehicleRequest,
    CreateVehicle,

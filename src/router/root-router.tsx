@@ -1,14 +1,14 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {
    VehiclePage,
-   DriverAppLayout, 
+   DriverAppLayout,
    DriverHomePage,
    DriverNoticePage,
    ProtectedLayout,
    RootLayout,
    TeamMemberPage,
    WelcomePage,
-   AddressPage,
+   LocationPage,
    GeneralConditionPage,
    AccountPage,
    BookingPage,
@@ -40,7 +40,7 @@ function RootRouter() {
                   <Route path={"admin"} element={<AdminLayout/>}>
                      <Route path={"user"} element={<AccountPage/>}/>
                      <Route path={"notification"} element={<NotificationPage/>}/>
-                     <Route path={"address"} element={<AddressPage/>}/>
+                     <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
                      <Route path={"packing-slot"} element={<PackingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
