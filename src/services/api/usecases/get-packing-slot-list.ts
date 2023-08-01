@@ -1,4 +1,4 @@
-import PackingSlotResponse from "../dtos/packing-slot-response.tsx"
+import PackingSlotResponse from "../dtos/packing-slot-response.ts"
 import { Response, StatusCode } from "../../common"
 import axios from "axios"
 
