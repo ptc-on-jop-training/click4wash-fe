@@ -2,7 +2,7 @@ import {DataGrid, GridColDef, GridRenderCellParams} from '@mui/x-data-grid'
 import {SxProps} from "@mui/material"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
-import {TableToolbar} from "../../../../components"
+import PackingSlotToolBar from "./packing-slot-toolbar.tsx"
 
 interface PackingSlotTableProps {
    sx?: SxProps
@@ -17,7 +17,7 @@ function PackingSlotTable(props: PackingSlotTableProps) {
          columns={columns}
          rows={packingSlotList ?? []}
          slots={{
-            toolbar: TableToolbar
+            toolbar: PackingSlotToolBar
          }}
       />
    )
