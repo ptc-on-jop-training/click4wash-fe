@@ -17,7 +17,6 @@ function BookingStatus(props: BookingStatusProps) {
       }
    }, [props.status])
 
-
    return <Chip color={state?.color} size={props.size ?? "medium"} variant={"filled"} label={state?.label}/>
 }
 
