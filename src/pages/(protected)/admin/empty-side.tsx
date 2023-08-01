@@ -18,15 +18,15 @@ const cfn = {
       height: '100%',
    },
    emptyHeading: {
+      margin:0,
       fontSize: '30px',
       fontWeight: 'bold',
-      marginBottom: '1rem',
       color: '#888888',
    },
    emptyText: {
+      margin:0,
       fontSize: '20px',
       fontWeight: 'bold',
-      marginBottom: '1rem',
       color: '#888888',
    },
 }

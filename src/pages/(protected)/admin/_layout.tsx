@@ -11,8 +11,7 @@ interface DashboardLayoutProps {
    main?: ReactNode
 }
 
-function AdminLayout(props: DashboardLayoutProps)
-{
+function AdminLayout(props: DashboardLayoutProps) {
    const dispatch = useRootDispatch()
 
    useEffect(() => {
@@ -27,8 +26,8 @@ function AdminLayout(props: DashboardLayoutProps)
                <LeftSide/>
             </Box>
             <Box>
-               <TabNav {...cfn.rightIcon}/>
-               <Box sx={{ height: "100%", maxHeight: "calc(100vh - 129px)"}}>
+               <TabNav/>
+               <Box sx={{height: "90%"}}>
                   <Outlet/>
                </Box>
             </Box>
@@ -72,10 +71,5 @@ const cfn = {
          },
       },
    },
-   rightIcon: {
-      sx: {
-         marginRight: 2
-      }
-   }
 }
 export default AdminLayout

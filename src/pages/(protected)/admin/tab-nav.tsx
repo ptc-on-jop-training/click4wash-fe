@@ -1,24 +1,19 @@
 import { SyntheticEvent, useEffect, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
-import {Box, SxProps, Tab, Tabs} from "@mui/material"
+import {Box, Tab, Tabs} from "@mui/material"
 import {
-   NotificationsSharp,
    People,
    PlaylistAddCheckCircle,
    Garage,
    Article,
    PrivacyTip,
    LocationOn,
-   Language
 } from '@mui/icons-material'
 
 import {TabLabel} from "../../../components"
 
-interface TabRouteType {
-   sx?: SxProps
-}
 
-const TabNav = (props: TabRouteType) => {
+const TabNav = () => {
 
    const location = useLocation()
    const nav = useNavigate()
@@ -36,12 +31,8 @@ const TabNav = (props: TabRouteType) => {
 
    const navData = [
       {
-         label: <TabLabel label={"notifications"} icon={<NotificationsSharp fontSize="medium"/>}/>,
-         value: "/admin/notification",
-      },
-      {
          label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "/admin/user",
+         value: "",
       },
       {
          label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
@@ -52,7 +43,7 @@ const TabNav = (props: TabRouteType) => {
          value: "/admin/location",
       },
       {
-         label: <TabLabel label={"Parking lots"} icon={<Garage fontSize="medium"/>}/>,
+         label: <TabLabel label={"Parking Slot Numbers"} icon={<Garage fontSize="medium"/>}/>,
          value: "/admin/packing-lot",
       },
       {
@@ -72,7 +63,6 @@ const TabNav = (props: TabRouteType) => {
                <Tab key={index} label={route.label}/>
             ))}
          </Tabs>
-         <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )
 }
