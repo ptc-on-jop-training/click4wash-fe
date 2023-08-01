@@ -1,11 +1,19 @@
-import {Box} from "@mui/material"
+import BookingTable from "./booking-table.tsx"
 
-function BookingPage() {
+function BookingPage()
+{
    return (
-      <Box>
-         <p>This is list booking page</p>
-      </Box>
+      <BookingTable  {...cfn.BookingTable}/>
    )
+}
+
+const cfn = {
+   BookingTable:{
+      sx:{
+         height: "100%",
+         maxHeight: "calc(100vh - 129px)",
+      }
+   }
 }
 
 export default BookingPage
