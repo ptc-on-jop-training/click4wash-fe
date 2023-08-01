@@ -2,13 +2,15 @@ import {configureStore} from "@reduxjs/toolkit"
 import {useDispatch} from "react-redux"
 import VehicleStores from "./vehicle-stores.ts"
 import AccountStores from "./account-stores.ts"
-import ParkingSlotStore from "./parking-slot-store.ts"
+import ParkingSlotStores from "./parking-slot-stores.ts"
+import LocationStores from "./location-stores.ts"
 
 const RootStore = configureStore({
    reducer: {
       vehicle: VehicleStores,
       account: AccountStores,
-      parkingSlot: ParkingSlotStore,
+      parkingSlot: ParkingSlotStores,
+      location: LocationStores,
    }
 })
 

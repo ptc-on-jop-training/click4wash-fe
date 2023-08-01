@@ -1,8 +1,8 @@
 import RootStore, {useRootDispatch, RootStateType} from "./root-store.ts"
 import {FetchAccountList,pushToAllAccountList} from "./account-stores.ts"
 import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
-import {FetchParkingSlotList} from "./parking-slot-store.ts"
-
+import {FetchParkingSlotList,pushPackingSlot} from "./parking-slot-stores.ts"
+import {FetchLocationList} from "./location-stores.ts"
 export {
    RootStore,
    useRootDispatch,
@@ -16,6 +16,10 @@ export {
    FetchAccountList,
    pushToAllAccountList,
 
-   FetchParkingSlotList
+   FetchParkingSlotList,
+   pushPackingSlot,
+
+
+   FetchLocationList
 
 }

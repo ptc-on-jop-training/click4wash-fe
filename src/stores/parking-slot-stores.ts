@@ -1,5 +1,5 @@
 import {ParkingSlotResponse} from "../services/api"
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit"
 import {GetParkingSlotList} from "../services/api"
 
 interface ParkingSlotStoreType {
@@ -17,7 +17,12 @@ const FetchParkingSlotList = createAsyncThunk("parkingSlot/FetchParkingSlotList"
 const ParkingSlotSlice = createSlice({
    name: "parkingSlot",
    initialState,
-   reducers: {},
+   reducers: {
+      pushPackingSlot: (state, action: PayloadAction<ParkingSlotResponse>) => {
+         state.parkingSlotList = [action.payload, ...(state.parkingSlotList ?? [])]
+      },
+
+   },
    extraReducers: (builder) => {
       builder
          .addCase(FetchParkingSlotList.fulfilled, (state, action) => {
@@ -26,5 +31,6 @@ const ParkingSlotSlice = createSlice({
    }
 })
 export {FetchParkingSlotList}
+export const {pushPackingSlot} = ParkingSlotSlice.actions
 export default ParkingSlotSlice.reducer
 
