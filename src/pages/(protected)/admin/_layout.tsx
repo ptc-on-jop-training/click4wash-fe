@@ -4,7 +4,7 @@ import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import {Outlet} from "react-router-dom"
 import TabNav from "./tab-nav.tsx"
-import {useRootDispatch, FetchAccountList, FetchParkingSlotList,FetchLocationList} from "../../../stores"
+import {useRootDispatch, FetchAccountList, FetchParkingSlotList, FetchLocationList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -28,7 +28,7 @@ function AdminLayout(props: DashboardLayoutProps) {
                <LeftSide/>
             </Box>
             <Box>
-               <TabNav {...cfn.rightIcon}/>
+               <TabNav/>
                <Box sx={{height: "90%"}}>
                   <Outlet/>
                </Box>
@@ -73,10 +73,5 @@ const cfn = {
          },
       },
    },
-   rightIcon: {
-      sx: {
-         marginRight: 2
-      }
-   }
 }
 export default AdminLayout
