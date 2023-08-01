@@ -53,7 +53,7 @@ const TabNav = (props: TabRouteType) => {
       },
       {
          label: <TabLabel label={"Parking Slots"} icon={<Garage fontSize="medium"/>}/>,
-         value: "/admin/packing-slot",
+         value: "/admin/parking-slot",
       },
       {
          label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,

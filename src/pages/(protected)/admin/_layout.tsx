@@ -4,7 +4,7 @@ import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import {Outlet} from "react-router-dom"
 import TabNav from "./tab-nav.tsx"
-import {useRootDispatch, FetchAccountList, FetchPackingSlotList} from "../../../stores"
+import {useRootDispatch, FetchAccountList, FetchParkingSlotList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -16,7 +16,7 @@ function AdminLayout(props: DashboardLayoutProps) {
 
    useEffect(() => {
       dispatch(FetchAccountList())
-      dispatch(FetchPackingSlotList())
+      dispatch(FetchParkingSlotList())
    }, [])
 
    return (

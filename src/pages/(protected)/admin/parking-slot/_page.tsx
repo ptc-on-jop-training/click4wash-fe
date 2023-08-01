@@ -1,9 +1,9 @@
 import {Box} from "@mui/material"
-import PackingSlotTable from "./packing-slot-table.tsx"
-function PackingSlotPage() {
+import ParkingSlotTable from "./parking-slot-table.tsx"
+function ParkingSlotPage() {
    return (
       <Box>
-         <PackingSlotTable {...cfn.accountTable}/>
+         <ParkingSlotTable {...cfn.accountTable}/>
       </Box>
    )
 }
@@ -16,4 +16,4 @@ const cfn = {
       }
    }
 }
-export default PackingSlotPage
+export default ParkingSlotPage

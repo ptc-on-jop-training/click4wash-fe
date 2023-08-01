@@ -2,7 +2,7 @@ import {TableToolbar} from "../../../../components"
 import {Button} from "@mui/material"
 import {AddBox} from "@mui/icons-material"
 
-function PackingSlotToolBar() {
+function ParkingSlotToolbar() {
 
    return (
       <TableToolbar leftTool={
@@ -20,4 +20,4 @@ function PackingSlotToolBar() {
 }
 
 
-export default PackingSlotToolBar
+export default ParkingSlotToolbar

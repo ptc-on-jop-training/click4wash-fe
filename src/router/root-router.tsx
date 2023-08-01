@@ -13,7 +13,7 @@ import {
    AccountPage,
    BookingPage,
    NotificationPage,
-   PackingSlotPage,
+   ParkingSlotPage,
    PrivacyPolicyPage,
    AdminLayout,
    InitVehicleProfilePage
@@ -42,7 +42,7 @@ function RootRouter() {
                      <Route path={"notification"} element={<NotificationPage/>}/>
                      <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
-                     <Route path={"packing-slot"} element={<PackingSlotPage/>}/>
+                     <Route path={"parking-slot"} element={<ParkingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
                      <Route path={"privacy-policy"} element={<PrivacyPolicyPage/>}/>
                   </Route>

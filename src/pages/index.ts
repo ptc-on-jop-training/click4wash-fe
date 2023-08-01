@@ -10,7 +10,7 @@ import GeneralConditionPage from "./(protected)/admin/general-condition/_page.ts
 import AccountPage from "./(protected)/admin/list-account/_page.tsx"
 import BookingPage from "./(protected)/admin/list-booking/_page.tsx"
 import NotificationPage from "./(protected)/admin/notification/_page.tsx"
-import PackingSlotPage from "./(protected)/admin/packing-slot/_page.tsx"
+import ParkingSlotPage from "./(protected)/admin/parking-slot/_page.tsx"
 import PrivacyPolicyPage from "./(protected)/admin/privacy-policy/_page.tsx"
 import AdminLayout from "./(protected)/admin/_layout.tsx"
 import DriverNoticePage from "./(protected)/(driver)/(driver-app)/notice/_page.tsx"
@@ -28,7 +28,7 @@ export {
    AccountPage,
    BookingPage,
    NotificationPage,
-   PackingSlotPage,
+   ParkingSlotPage,
    PrivacyPolicyPage,
    AdminLayout,
    DriverNoticePage,
