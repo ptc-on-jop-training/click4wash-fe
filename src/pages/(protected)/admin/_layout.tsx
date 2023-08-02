@@ -29,7 +29,7 @@ function AdminLayout(props: DashboardLayoutProps)
             </Box>
             <Box>
                <TabNav/>
-               <Box>
+               <Box sx={{height:"90%"}}>
                   <Outlet/>
                </Box>
             </Box>
