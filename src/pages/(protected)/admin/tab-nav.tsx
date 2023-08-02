@@ -43,7 +43,7 @@ const TabNav = () => {
          value: "/admin/location",
       },
       {
-         label: <TabLabel label={"Parking Slot Numbers"} icon={<Garage fontSize="medium"/>}/>,
+         label: <TabLabel label={"Parking Slot"} icon={<Garage fontSize="medium"/>}/>,
          value: "/admin/parking-slot",
       },
       {
