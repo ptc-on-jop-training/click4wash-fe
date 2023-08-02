@@ -28,8 +28,8 @@ function AdminLayout(props: DashboardLayoutProps)
                <LeftSide/>
             </Box>
             <Box>
-               <TabNav {...cfn.rightIcon}/>
-               <Box sx={{height: "100%"}}>
+               <TabNav/>
+               <Box>
                   <Outlet/>
                </Box>
             </Box>
@@ -73,10 +73,5 @@ const cfn = {
          },
       },
    },
-   rightIcon: {
-      sx: {
-         marginRight: 2
-      }
-   }
 }
 export default AdminLayout

@@ -1,6 +1,6 @@
 import {SyntheticEvent, useEffect, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
-import {Box, SxProps, Tab, Tabs} from "@mui/material"
+import {Box, Tab, Tabs} from "@mui/material"
 import {
    People,
    PlaylistAddCheckCircle,
@@ -8,16 +8,11 @@ import {
    Article,
    PrivacyTip,
    LocationOn,
-   Language
 } from '@mui/icons-material'
 
 import {TabLabel} from "../../../components"
 
-interface TabRouteType {
-   sx?: SxProps
-}
-
-const TabNav = (props: TabRouteType) => {
+const TabNav = () => {
 
    const location = useLocation()
    const nav = useNavigate()
@@ -67,7 +62,6 @@ const TabNav = (props: TabRouteType) => {
                <Tab key={index} label={route.label}/>
             ))}
          </Tabs>
-         <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )
 }
