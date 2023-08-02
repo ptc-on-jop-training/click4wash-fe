@@ -11,7 +11,7 @@ interface ExtendedCreateParkingSlotRequest extends CreateParkingSlotRequest {
 
 function CreateParkingSlot(request: createParkingSlotRequest, address: CreateAddressRequest): Promise<Response<ParkingSlotResponse>> {
 
-   const endpoint = "https://64c0c5670d8e251fd112890b.mockapi.io/packing-slots"
+   const endpoint = "https://64c8cf91a1fe0128fbd6428d.mockapi.io/packing-slots"
 
    const modifiedRequest: ExtendedCreateParkingSlotRequest = {
       ...request,

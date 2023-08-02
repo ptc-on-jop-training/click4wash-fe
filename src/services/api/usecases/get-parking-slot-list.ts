@@ -3,7 +3,7 @@ import { Response, StatusCode } from "../../common"
 import axios from "axios"
 
 function GetParkingSlotList(): Promise<Response<ParkingSlotResponse[]>> {
-   const endpoint = "https://64c0c5670d8e251fd112890b.mockapi.io/packing-slots"
+   const endpoint = "https://64c8cf91a1fe0128fbd6428d.mockapi.io/packing-slots"
    const url = new URL(endpoint)
    url.searchParams.append("sortBy", "locationName")
 
