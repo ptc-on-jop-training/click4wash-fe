@@ -27,7 +27,7 @@ const columns: GridColDef[] = [
    {field: 'id', headerName: 'ID', flex: 0.1, headerAlign: 'center', align: 'center'},
    {field: 'name', headerName: 'Location', flex: 0.4, headerAlign: 'center', align: 'center'},
    {
-      field: 'address', headerName: 'Address', flex: 0.5, renderCell: (params: GridRenderCellParams) => {
+      field: 'address', headerName: 'Address', flex: 0.4, renderCell: (params: GridRenderCellParams) => {
          const addressValue = params.row.address || {}
          return Object.values(addressValue).join(', ')
       }
