@@ -2,11 +2,13 @@ import {GetLocationList, LocationResponse} from "../services/api"
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 interface LocationStoresType {
-   locationList: LocationResponse[] | null
+    locationList: LocationResponse[] | null
+    locationSelected: LocationResponse | null
 }
 
 const initialState: LocationStoresType = {
-   locationList: null
+   locationList: null,
+   locationSelected: null
 }
 
 const FetchLocationList = createAsyncThunk("location/FetchLocationList", async (): Promise<LocationResponse[] | null> => {
@@ -22,6 +24,9 @@ const LocationSlice = createSlice({
       addLocation: (state, action: PayloadAction<LocationResponse>) => {
          state.locationList = [action.payload, ...(state.locationList ?? [])]
       },
+      setSelectedLocationById: (state, action: PayloadAction<{ id: string }>) => {
+         state.locationSelected = state.locationList?.find(location => location.id === action.payload.id) ?? null
+      },
    },
 
    extraReducers: (builder) => {
@@ -34,6 +39,6 @@ const LocationSlice = createSlice({
 
 export {FetchLocationList}
 
-export const {addLocation}= LocationSlice.actions
+export const {addLocation,setSelectedLocationById} = LocationSlice.actions
 
 export default LocationSlice.reducer

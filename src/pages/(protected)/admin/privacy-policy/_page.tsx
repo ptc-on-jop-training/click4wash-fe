@@ -1,10 +1,14 @@
 import {Box} from "@mui/material"
+import AdminLayout from "../_layout.tsx"
 
 function PrivacyPolicyPage() {
    return (
-      <Box>
-         <p>This is Privacy policy page</p>
-      </Box>
+      
+      <AdminLayout
+         main={<Box>
+            <p>This is Privacy policy page</p>
+         </Box>}
+      />
    )
 }
 

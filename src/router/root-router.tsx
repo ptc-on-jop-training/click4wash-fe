@@ -14,7 +14,6 @@ import {
    BookingPage,
    PackingSlotPage,
    PrivacyPolicyPage,
-   AdminLayout,
    InitVehicleProfilePage
 } from "../pages"
 
@@ -36,7 +35,7 @@ function RootRouter() {
 
                   <Route path={"init-vehicle-profile"} element={<InitVehicleProfilePage/>}/>
 
-                  <Route path={"admin"} element={<AdminLayout/>}>
+                  <Route path={"admin"}>
                      <Route path={""} element={<AccountPage/>}/>
                      <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>

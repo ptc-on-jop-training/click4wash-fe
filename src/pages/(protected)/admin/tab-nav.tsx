@@ -31,7 +31,7 @@ const TabNav = () => {
    const navData = [
       {
          label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "",
+         value: "/admin",
       },
       {
          label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
