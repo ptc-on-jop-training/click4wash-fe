@@ -1,15 +1,13 @@
-import Vehicle from "../entities/vehicle.ts"
-import TimeSlot from "../entities/time-slot.ts"
-import ParkingSlot from "../entities/parking-slot.ts"
 import BookingStatus from "../consts/booking-status.ts"
+import TypeVehicle from "../../../pages/(protected)/admin/list-booking/type-vehicle.tsx"
 
 interface BookingResponse
 {
-   typeVehicle: Vehicle["type"]
-   numberPlateVehicle: Vehicle["numberPlate"]
-   timeSlotStart: TimeSlot["start"]
-   timeSlotEnd: TimeSlot["end"]
-   nameParkingSlot: ParkingSlot["name"]
+   typeVehicle: typeof TypeVehicle
+   numberPlateVehicle: string
+   timeSlotStart: Date
+   timeSlotEnd: Date
+   nameParkingSlot: string
    status: BookingStatus
 }
 export default BookingResponse
