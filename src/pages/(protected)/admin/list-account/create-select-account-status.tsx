@@ -22,13 +22,13 @@ function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
 
    const dispatch = useRootDispatch()
    const handleStatusChange = (event: SelectChangeEvent<{ value: unknown }>) => {
-      const newStatus = event.target.value as AccountStatusEnum
-      if( newStatus === "active" || newStatus=== "suspend") {
-         setNewStatus(newStatus)
+      const value = event.target.value as AccountStatusEnum
+      if( value === "active" || value === "suspend") {
+         setNewStatus(value)
          setOpenFormChangeStatus(true)
       }
       else {
-         setIdAccount(newStatus)
+         setIdAccount(value)
          setOpenFormDelete(true)
       }
    }
