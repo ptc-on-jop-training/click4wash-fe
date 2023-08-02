@@ -15,6 +15,7 @@ function CreateParkingSlot(request: createParkingSlotRequest, address: CreateAdd
 
    const modifiedRequest: ExtendedCreateParkingSlotRequest = {
       ...request,
+      locationName:request.locationName.split("-", 1)[0],
       address: address,
    }
 

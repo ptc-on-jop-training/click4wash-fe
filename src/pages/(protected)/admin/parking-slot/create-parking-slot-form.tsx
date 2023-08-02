@@ -17,8 +17,8 @@ import {pushPackingSlot, RootStateType} from "../../../../stores"
 import CreateParkingSlot from "../../../../services/api/usecases/create-parking-slot.ts"
 
 interface CreateNewFormProps {
-   isOpen: boolean
-   handleClose: () => void
+    isOpen: boolean
+    handleClose: () => void
 }
 
 function CreateParkingSlotFrom(props: CreateNewFormProps) {
@@ -26,7 +26,12 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
    const dispatch = useDispatch()
    const Location = useSelector((state: RootStateType) => state.location.locationList)
 
-   const LocationList = Location?.map(location => location.name) ?? []
+   const LocationList = Location?.map(location => {
+      const address = location.address
+      const addressString = Object.values(address).join(', ')
+      return `${location.name}-${addressString}`
+   }) ?? []
+
 
    const form = useFormik({
       initialValues: {
@@ -39,7 +44,8 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: (values) => {
-         const foundLocation = Location?.find((location) => location.name === values.locationName)
+         const LocationName = values.locationName.split("-", 1)[0]
+         const foundLocation = Location?.find((location) => location.name === LocationName)
          const address = foundLocation ? foundLocation.address : {}
          CreateParkingSlot(values, address).then((res) => {
             dispatch(pushPackingSlot(res.payload!))
@@ -62,7 +68,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 
    const renderLocationSelect = () => {
       return LocationList.map((option: string) => (
-         <MenuItem key={option} value={option}>
+         <MenuItem key={option} value={option} sx={{fontSize:"13px"}}>
             {option}
          </MenuItem>
       ))
@@ -72,8 +78,8 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle {...cfn.formTitle}>
-            Create New Packing SLot
+         <DialogTitle>
+                Create New Packing SLot
          </DialogTitle>
 
          <DialogContent>
@@ -96,10 +102,10 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-               Cancel
+                    Cancel
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-               Save
+                    Save
             </Button>
          </DialogActions>
 
@@ -112,15 +118,6 @@ const formValidation = Yup.object().shape({
    name: Yup.string().required('This field is required'),
 })
 
-const cfn = {
-   formTitle: {
-      color: "primary" as const,
-      sx: {
-         textAlign: "center",
-         fontWeight: "bold", fontSize: '30px'
-      }
-   }
-}
 
 export default CreateParkingSlotFrom
 
