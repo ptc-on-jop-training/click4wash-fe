@@ -10,6 +10,8 @@ import {
    TextField,
    SelectChangeEvent, Autocomplete,
 } from "@mui/material"
+import {addLocation} from "../../../../stores/location-store.ts"
+import {useDispatch} from "react-redux"
 
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
@@ -20,6 +22,8 @@ interface CreateNewFormProps {
 }
 
 function CreateNewLocationFrom(props: CreateNewFormProps) {
+    
+   const dispatch = useDispatch()
 
    const Users = useSelector((state: RootStateType) => state.account.accountList)
 
@@ -28,10 +32,12 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
    const form = useFormik({
       initialValues: {
          name: "",
-         line1: "",
-         line2: "",
-         line3: "",
-         line4: "",
+         address: {
+            line1: "",
+            line2: "",
+            line3: "",
+            line4: "",
+         },
          teamMember: [],
       },
 
@@ -40,7 +46,14 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: (values) => {
+         const id = Math.random().toString(36)
+         const newValues = {
+            ...values,
+            id: id,
+         }
+
          console.log(values)
+         dispatch(addLocation(newValues))
          form.resetForm()
          props.handleClose()
       },
@@ -70,28 +83,28 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
                fullWidth required name={"name"} margin={"normal"} label={"Name"} type={"text"}
             />
             <TextField
-               error={!!(touched.line1 && errors.line1)}
-               helperText={touched.line1 && errors.line1} value={values.line1}
+               error={!!(touched.address?.line1 && errors.address?.line1)}
+               helperText={touched.address?.line1 && errors.address?.line1} value={values.address?.line1}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"line1"} margin={"normal"} label={"province/city"} type={"text"}
+               fullWidth required name={"address.line1"} margin={"normal"} label={"province/city"} type={"text"}
             />
             <TextField
-               error={!!(touched.line2 && errors.line2)}
-               helperText={touched.line2 && errors.line2} value={values.line2}
+               error={!!(touched.address?.line2 && errors.address?.line2)}
+               helperText={touched.address?.line2 && errors.address?.line2} value={values.address?.line2}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"line2"} margin={"normal"} label={"District"} type={"text"}
+               fullWidth required name={"address.line2"} margin={"normal"} label={"District"} type={"text"}
             />
             <TextField
-               error={!!(touched.line3 && errors.line3)}
-               helperText={touched.line3 && errors.line3} value={values.line3}
+               error={!!(touched.address?.line3 && errors.address?.line3)}
+               helperText={touched.address?.line3 && errors.address?.line3} value={values.address?.line3}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"line3"} margin={"normal"} label={"wards"} type={"text"}
+               fullWidth required name={"address.line3"} margin={"normal"} label={"wards"} type={"text"}
             />
             <TextField
-               error={!!(touched.line4 && errors.line4)}
-               helperText={touched.line4 && errors.line4} value={values.line4}
+               error={!!(touched.address?.line4 && errors.address?.line4)}
+               helperText={touched.address?.line4 && errors.address?.line4} value={values.address?.line4}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth name={"line4"} margin={"normal"} label={"specific address"} type={"text"}
+               fullWidth name={"address.line4"} margin={"normal"} label={"specific address"} type={"text"}
             />
             <Autocomplete
                multiple
@@ -125,11 +138,13 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
 }
 
 const formValidation = Yup.object().shape({
-   line1: Yup.string().required('This field is required'),
-   line2: Yup.string().required('This field is required'),
-   line3: Yup.string().required('This field is required'),
-   line4: Yup.string().required('This field is required'),
    name: Yup.string().required('This field is required'),
+   address: Yup.object().shape({
+      line1: Yup.string().required('This field is required'),
+      line2: Yup.string().required('This field is required'),
+      line3: Yup.string().required('This field is required'),
+      line4: Yup.string().required('This field is required'),
+   }),
    teamMember: Yup.array().min(1, 'This field is required'),
 })
 

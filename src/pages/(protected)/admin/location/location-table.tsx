@@ -10,7 +10,7 @@ interface LocationTableProps {
 
 function LocationTable(props: LocationTableProps) {
    const LocationList = useSelector((state: RootStateType) => state.location.locationList)
-
+    console.log(LocationList)
    return (
       <DataGrid
          sx={props.sx}
