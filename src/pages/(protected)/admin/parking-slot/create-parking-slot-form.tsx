@@ -79,7 +79,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
          <DialogTitle>
-                Create New Packing SLot
+                Create New Packing Slot
          </DialogTitle>
 
          <DialogContent>
