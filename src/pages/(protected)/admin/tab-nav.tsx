@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useState} from "react"
+import {SyntheticEvent, useEffect, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
 import {Box, SxProps, Tab, Tabs} from "@mui/material"
 import {
@@ -43,7 +43,7 @@ const TabNav = (props: TabRouteType) => {
          value: "/admin/booking",
       },
       {
-         label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
+         label: <TabLabel label={"Location"} icon={<LocationOn fontSize="medium"/>}/>,
          value: "/admin/location",
       },
       {

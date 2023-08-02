@@ -38,7 +38,7 @@ function RootRouter() {
 
                   <Route path={"admin"} element={<AdminLayout/>}>
                      <Route path={""} element={<AccountPage/>}/>
-                     <Route path={"address"} element={<LocationPage/>}/>
+                     <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
                      <Route path={"parking-slot"} element={<PackingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
