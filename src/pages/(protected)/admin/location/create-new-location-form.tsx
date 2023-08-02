@@ -60,7 +60,7 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle>Create New Packing SLot</DialogTitle>
+         <DialogTitle>Create New Location</DialogTitle>
 
          <DialogContent>
             <TextField
