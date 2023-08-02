@@ -118,7 +118,7 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
                   form.setFieldValue('teamMember', newValue)
                }}
                renderInput={(params) => (
-                  <TextField {...params} label="Size small" placeholder="Choose Team member"/>
+                  <TextField {...params} label="Choose Team member" placeholder="Choose Team member"/>
                )}
             />
 

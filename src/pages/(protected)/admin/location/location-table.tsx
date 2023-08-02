@@ -1,5 +1,5 @@
 import {DataGrid, GridColDef, GridRenderCellParams} from '@mui/x-data-grid'
-import {SxProps} from "@mui/material"
+import {Box, SxProps} from "@mui/material"
 import LocationToolBar from "./location-toolbar.tsx"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
@@ -10,16 +10,15 @@ interface LocationTableProps {
 
 function LocationTable(props: LocationTableProps) {
    const LocationList = useSelector((state: RootStateType) => state.location.locationList)
-    console.log(LocationList)
    return (
-      <DataGrid
-         sx={props.sx}
-         columns={columns}
-         rows={LocationList ?? []}
-         slots={{
-            toolbar: LocationToolBar
-         }}
-      />
+      <Box sx={props.sx}>
+         <DataGrid
+            {...cfg.table}
+            columns={columns}
+            rows={LocationList ?? []}
+            slots={{toolbar: LocationToolBar}}
+         />
+      </Box>
    )
 }
 
@@ -33,5 +32,14 @@ const columns: GridColDef[] = [
       }
    }
 ]
+
+const cfg = {
+   table: {
+      sx: {
+         border: "none",
+         height: "100%"
+      }
+   }
+}
 
 export default LocationTable
