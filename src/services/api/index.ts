@@ -15,6 +15,9 @@ import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
 
+import LocationResponse from "./dtos/location-response.ts"
+import GetLocationList from "./usecases/get-location-list.ts"
+
 export {
    type BaseEntity,
    type Booking,
@@ -31,6 +34,9 @@ export {
 
    type CreateVehicleRequest,
    CreateVehicle,
+
+   type LocationResponse,
+   GetLocationList,
 
    BookingStatus,
    TimeSlots,

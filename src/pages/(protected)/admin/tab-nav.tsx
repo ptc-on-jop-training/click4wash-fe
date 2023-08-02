@@ -2,7 +2,6 @@ import { SyntheticEvent, useEffect, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
 import {Box, SxProps, Tab, Tabs} from "@mui/material"
 import {
-   NotificationsSharp,
    People,
    PlaylistAddCheckCircle,
    Garage,
@@ -36,12 +35,8 @@ const TabNav = (props: TabRouteType) => {
 
    const navData = [
       {
-         label: <TabLabel label={"notifications"} icon={<NotificationsSharp fontSize="medium"/>}/>,
-         value: "/admin/notification",
-      },
-      {
          label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "/admin/user",
+         value: "",
       },
       {
          label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
@@ -49,11 +44,11 @@ const TabNav = (props: TabRouteType) => {
       },
       {
          label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
-         value: "/admin/address",
+         value: "/admin/location",
       },
       {
          label: <TabLabel label={"Parking Slots"} icon={<Garage fontSize="medium"/>}/>,
-         value: "/admin/packing-slot",
+         value: "/admin/parking-slot",
       },
       {
          label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,
