@@ -18,7 +18,7 @@ function GeneralConditionsToolbar(){
                size={"small"}
                variant="contained"
                startIcon={<AddBox sx={{color: "white"}}/>}
-            >new user</Button>
+            >new new general condition</Button>
             <FormCreateGeneralCondition handleClose={handleClose} isOpen={isCreateFormOpen}/>
          </>
       }/>

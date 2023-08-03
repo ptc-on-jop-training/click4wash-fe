@@ -4,14 +4,14 @@ import GeneralConditionsTable from "./general-conditions-table.tsx"
 function GeneralConditionPage() {
    return (
       <AdminLayout
-         main={<GeneralConditionsTable {...cfn.locationTable} />}
+         main={
+            <GeneralConditionsTable {...cfn.table}/>}
       />
    )
 }
-
 const cfn = {
-   locationTable: {
-      sx: {
+   table:{
+      sx:{
          height: "100%",
          maxHeight: "calc(100vh - 129px)",
       }

@@ -14,7 +14,7 @@ function CreateNewForm(props: CreateNewFormProps) {
    const dispatch = useDispatch()
 
    const formValidation = Yup.object().shape({
-      content: Yup.string().required('This field is required'),
+      generalCondition: Yup.string().required('This field is required'),
    })
 
    const form = useFormik({
@@ -27,6 +27,7 @@ function CreateNewForm(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: values => {
+          console.log('ịi')
          const id = Math.random().toString(36)
          const newValues = {
             ...values,

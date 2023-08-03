@@ -1,8 +1,9 @@
-import {ReactNode} from "react"
+import {ReactNode, useEffect} from "react"
 import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import TabNav from "./tab-nav.tsx"
+import {useRootDispatch, FetchAccountList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -10,6 +11,11 @@ interface DashboardLayoutProps {
 }
 
 function AdminLayout(props: DashboardLayoutProps) {
+   const dispatch = useRootDispatch()
+
+   useEffect(() => {
+      dispatch(FetchAccountList())
+   }, [])
 
    return (
       <Box {...cfn.wrapper}>

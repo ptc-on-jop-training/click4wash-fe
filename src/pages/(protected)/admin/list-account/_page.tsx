@@ -1,9 +1,12 @@
 import AccountTable from "./account-table.tsx"
+import AdminLayout from "../_layout.tsx"
 
 function AccountPage()
 {
    return (
-      <AccountTable  {...cfn.accountTable}/>
+      <AdminLayout
+         main={<AccountTable  {...cfn.accountTable}/>}
+      />
    )
 }
 
