@@ -27,7 +27,6 @@ function CreateNewForm(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: values => {
-          console.log('ịi')
          const id = Math.random().toString(36)
          const newValues = {
             ...values,
