@@ -8,13 +8,14 @@ import TimeSlot from "./entities/time-slot.ts"
 import User from "./entities/user.ts"
 import Vehicle from "./entities/vehicle.ts"
 import BookingStatus from "./consts/booking-status.ts"
+import GeneralCondition from "./entities/general-condition.ts"
 import TimeSlots from "./consts/time-slots.ts"
 import VehicleType from "./consts/vehicle-type.ts"
 import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
-
+import GeneralConditionResponse from "./dtos/general-condition-response.ts"
 export {
    type BaseEntity,
    type Booking,
@@ -25,12 +26,15 @@ export {
    type TimeSlot,
    type User,
    type Vehicle,
+   type GeneralCondition,
 
    type VehicleResponse,
    GetVehicleList,
 
    type CreateVehicleRequest,
    CreateVehicle,
+    
+   type GeneralConditionResponse,
 
    BookingStatus,
    TimeSlots,

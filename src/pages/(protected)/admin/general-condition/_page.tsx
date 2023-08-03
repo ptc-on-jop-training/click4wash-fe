@@ -1,11 +1,21 @@
-import {Box} from "@mui/material"
+import AdminLayout from "../_layout.tsx"
+import GeneralConditionsTable from "./general-conditions-table.tsx"
 
-function AddressPage() {
+function GeneralConditionPage() {
    return (
-      <Box>
-         <p>This is Address page</p>
-      </Box>
+      <AdminLayout
+         main={<GeneralConditionsTable {...cfn.locationTable} />}
+      />
    )
 }
 
-export default AddressPage
+const cfn = {
+   locationTable: {
+      sx: {
+         height: "100%",
+         maxHeight: "calc(100vh - 129px)",
+      }
+   }
+}
+
+export default GeneralConditionPage

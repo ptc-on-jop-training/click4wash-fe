@@ -1,11 +1,11 @@
 import {Box} from "@mui/material"
 
-function GeneralConditionPage() {
+function LocationPage() {
    return (
       <Box>
-         <p>This is general condition page</p>
+         <p>This is Location page</p>
       </Box>
    )
 }
 
-export default GeneralConditionPage
+export default LocationPage
