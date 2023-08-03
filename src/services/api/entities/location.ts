@@ -6,7 +6,6 @@ import Address from "./address.ts"
 interface Location extends BaseEntity
 {
    name: string
-   teamMemberId: string
    addressId: string
 
    address?: Address

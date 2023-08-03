@@ -3,6 +3,7 @@ import AdminLayout from "../_layout.tsx"
 
 function PrivacyPolicyPage() {
    return (
+     
       <AdminLayout
          main={
             <Box>

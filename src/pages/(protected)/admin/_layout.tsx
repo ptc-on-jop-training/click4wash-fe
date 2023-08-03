@@ -2,8 +2,9 @@ import {ReactNode, useEffect} from "react"
 import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
+
 import TabNav from "./tab-nav.tsx"
-import {useRootDispatch, FetchAccountList} from "../../../stores"
+import {useRootDispatch, FetchAccountList,FetchLocationList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -15,6 +16,7 @@ function AdminLayout(props: DashboardLayoutProps) {
 
    useEffect(() => {
       dispatch(FetchAccountList())
+      dispatch(FetchLocationList())
    }, [])
 
    return (
@@ -60,6 +62,7 @@ const cfn = {
             height: "100%",
             display: "flex",
             flexDirection: "column",
+            justifyContent: 'space-between'
          },
       },
       mainSide: {
