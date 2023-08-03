@@ -3,7 +3,6 @@ import AdminLayout from "../_layout.tsx"
 
 function GeneralConditionPage() {
    return (
-
       <AdminLayout
          main={
             <Box>

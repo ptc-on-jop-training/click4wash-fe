@@ -3,11 +3,12 @@ import AdminLayout from "../_layout.tsx"
 
 function PrivacyPolicyPage() {
    return (
-      
+     
       <AdminLayout
-         main={<Box>
-            <p>This is Privacy policy page</p>
-         </Box>}
+         main={
+            <Box>
+               <p>This is Privacy policy page</p>
+            </Box>}
       />
    )
 }

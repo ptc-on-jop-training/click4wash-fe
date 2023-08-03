@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {
    VehiclePage,
-   DriverAppLayout, 
+   DriverAppLayout,
    DriverHomePage,
    DriverNoticePage,
    ProtectedLayout,
@@ -12,9 +12,9 @@ import {
    GeneralConditionPage,
    AccountPage,
    BookingPage,
-   PackingSlotPage,
+   ParkingSlotPage,
    PrivacyPolicyPage,
-   InitVehicleProfilePage
+   InitVehicleProfilePage,
 } from "../pages"
 
 function RootRouter() {
@@ -39,7 +39,7 @@ function RootRouter() {
                      <Route path={""} element={<AccountPage/>}/>
                      <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
-                     <Route path={"parking-slot"} element={<PackingSlotPage/>}/>
+                     <Route path={"parking-slot"} element={<ParkingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
                      <Route path={"privacy-policy"} element={<PrivacyPolicyPage/>}/>
                   </Route>
