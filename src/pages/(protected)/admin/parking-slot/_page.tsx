@@ -1,10 +1,13 @@
 import {Box} from "@mui/material"
-import ParkingSlotTable from "./parking-slot-table.tsx"
+import AdminLayout from "../_layout.tsx"
+
 function ParkingSlotPage() {
    return (
-      <Box>
-         <ParkingSlotTable {...cfn.accountTable}/>
-      </Box>
+      <AdminLayout
+         main={
+            <ParkingSlotTable {...cfn.accountTable}/>
+         }
+      />
    )
 }
 
@@ -16,4 +19,5 @@ const cfn = {
       }
    }
 }
+
 export default ParkingSlotPage

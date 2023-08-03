@@ -2,7 +2,6 @@ import {ReactNode, useEffect} from "react"
 import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
-import {Outlet} from "react-router-dom"
 import TabNav from "./tab-nav.tsx"
 import {useRootDispatch, FetchAccountList, FetchParkingSlotList, FetchLocationList} from "../../../stores"
 
@@ -30,7 +29,7 @@ function AdminLayout(props: DashboardLayoutProps) {
             <Box>
                <TabNav/>
                <Box sx={{height:"90%"}}>
-                  <Outlet/>
+                  {props.main}
                </Box>
             </Box>
          </Box>
