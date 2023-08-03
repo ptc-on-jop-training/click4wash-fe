@@ -1,5 +1,5 @@
-import {Box} from "@mui/material"
 import AdminLayout from "../_layout.tsx"
+import ParkingSlotTable from "./parking-slot-table.tsx"
 
 function ParkingSlotPage() {
    return (
