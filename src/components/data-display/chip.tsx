@@ -4,7 +4,8 @@ interface ChipProps {
     color?: "default" | "primary" | "secondary" | "error" | "info" | "success" | "warning",
     label?: string,
     size?: "small" | "medium",
-    onDelete?: (index: number) => void;
+    onDelete?: () => void,
+    onClick?:() => void,
 }
 
 function Chip(props: ChipProps) {

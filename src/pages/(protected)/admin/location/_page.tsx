@@ -6,6 +6,8 @@ import {RootStateType} from "../../../../stores"
 
 function LocationPage() {
    const LocationSelected = useSelector((state: RootStateType) => state.location.locationSelected)
+
+   console.log(LocationSelected)
    return (
       <AdminLayout
          leftSide={LocationSelected !== null ? <LocationDetail LocationSelected={LocationSelected} /> : null}

@@ -3,7 +3,7 @@ import {Box, SxProps} from "@mui/material"
 import LocationToolBar from "./location-toolbar.tsx"
 import {useDispatch, useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
-import {setSelectedLocationById} from "../../../../stores/location-store.ts";
+import {setSelectedLocationById} from "../../../../stores/location-store.ts"
 
 interface LocationTableProps {
     sx?: SxProps
@@ -13,7 +13,6 @@ function LocationTable(props: LocationTableProps) {
    const dispatch = useDispatch()
    const LocationList = useSelector((state: RootStateType) => state.location.locationList)
    const LocationSelected = useSelector((state: RootStateType) => state.location.locationSelected)
-
    const handleRowSelection = (rowSelectionModel: GridRowSelectionModel) => {
       dispatch(setSelectedLocationById({id: rowSelectionModel[0] as string}))
    }

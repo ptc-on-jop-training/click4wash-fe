@@ -1,40 +1,48 @@
 import {Box, Button, Typography} from "@mui/material"
 import {Chip} from "../../../../components"
 import {LocationResponse} from "../../../../services/api"
-
+import {useDispatch} from "react-redux"
+import {removeTeamMemberByIndex, setSelectedLocationById} from "../../../../stores/location-store.ts"
+import AssignNewMemberForm from "./assign-new-member-form.tsx"
+import {useState} from "react"
 interface LocationDetailProps {
     LocationSelected?: LocationResponse,
 }
 
 function LocationDetail(props: LocationDetailProps) {
-   const handelDelete = (index: number) => {
-      const updatedTeamMember = props.LocationSelected?.teamMember
-         ? [...props.LocationSelected?.teamMember]
-         : []
+   const dispatch = useDispatch()
+   const [isCreateFormOpen, setIsCreateFormOpen] = useState<boolean>(false)
 
-      if (index >= 0 && index < updatedTeamMember.length) {
-         updatedTeamMember.splice(index, 1)
+   const handleClose = () => {
+      setIsCreateFormOpen(false)
+   }
+   const handelDelete = (index: number) => {
+      const id = props.LocationSelected?.id || ''
+      if (id) {
+         dispatch(removeTeamMemberByIndex({id, index}))
+         dispatch(setSelectedLocationById({ id: id }))
       }
-      console.log(updatedTeamMember)
    }
    return (
       <Box {...cfn.wrapper}>
          <Typography {...cfn.title}> Location detail</Typography>
          <Box>
-            <Typography variant="body1" sx={{ marginTop: 3, marginBottom: 3 }}>
-                 Assigned Team Members for <b>{props.LocationSelected?.name}</b>:
+            <Typography variant="body1" sx={{marginTop: 3, marginBottom: 3}}>
+                    Assigned Team Members for <b>{props.LocationSelected?.name}</b>:
             </Typography>
          </Box>
          <Box {...cfn.mainContent}>
             {props.LocationSelected?.teamMember?.map((memberName, index) => (
-               <Chip key={index} label={memberName} onDelete={() => handelDelete(index)} />
+               <Chip key={index} label={memberName} onDelete={() => handelDelete(index)}/>
             ))}
             <>
                <Button
                   size={"small"} variant={"outlined"}
+                  onClick={() => setIsCreateFormOpen(true)}
                   color={"success"}
                   sx={{marginTop: "10px", textTransform: "none"}}>
                   {"assign new member"}</Button>
+               <AssignNewMemberForm isOpen={isCreateFormOpen} handleClose={handleClose} teamMember={props.LocationSelected?.teamMember} id={props.LocationSelected?.id || ''} />
             </>
 
          </Box>

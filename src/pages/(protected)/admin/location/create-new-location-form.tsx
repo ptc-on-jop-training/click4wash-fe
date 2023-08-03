@@ -22,7 +22,7 @@ interface CreateNewFormProps {
 }
 
 function CreateNewLocationFrom(props: CreateNewFormProps) {
-    
+
    const dispatch = useDispatch()
 
    const Users = useSelector((state: RootStateType) => state.account.accountList)
@@ -51,8 +51,6 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
             ...values,
             id: id,
          }
-
-         console.log(values)
          dispatch(addLocation(newValues))
          form.resetForm()
          props.handleClose()
@@ -108,7 +106,6 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
             />
             <Autocomplete
                multiple
-               id="size-small-outlined-multi"
                size="medium"
                value={values.teamMember}
                sx={{marginTop: 2}}
