@@ -2,9 +2,8 @@ import {Chip, MenuItem, Select, SelectChangeEvent} from "@mui/material"
 import { useState } from "react"
 import { AccountStatusEnum } from "../../../../services/auth0"
 import AccountStatus from "./account-status.tsx"
-import CreateFormConfirmChangeStatus from "./create-form-confirm-change-status.tsx"
-import CreateFormConfirmDeleteAccount from "./create-form-confirm-delete-account.tsx"
 import {deleteAccountById,useRootDispatch} from "../../../../stores"
+import {ConfirmationDialog} from "../../../../components"
 
 interface CreateSelectAccountStatusProps {
    status: AccountStatusEnum
@@ -62,8 +61,8 @@ function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
             </MenuItem>
          </Select>
 
-         <CreateFormConfirmChangeStatus open={openFormChangeStatus} onClose={() => setOpenFormChangeStatus(false)} onClick={handleConfirmation} />
-         <CreateFormConfirmDeleteAccount open={openFormDelete} onClose={() => setOpenFormDelete(false)} onClick={handleDeleteAccount} />
+         <ConfirmationDialog open={openFormChangeStatus} onClose={() => setOpenFormChangeStatus(false)} onConfirm={handleConfirmation} title={"Confirm Status Change"} message={"Are you sure you want to change the status?"}/>
+         <ConfirmationDialog open={openFormDelete} onClose={() => setOpenFormDelete(false)} onConfirm={handleDeleteAccount} title={"Confirm Delete Account"} message={"Are you sure you want to delete the account?"}/>
       </>
    )
 }
