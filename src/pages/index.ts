@@ -31,5 +31,5 @@ export {
    AdminLayout,
    DriverNoticePage,
    TeamMemberPage,
-   InitVehicleProfilePage
+   InitVehicleProfilePage,
 }

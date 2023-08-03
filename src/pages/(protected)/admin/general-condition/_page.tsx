@@ -9,7 +9,6 @@ function GeneralConditionPage() {
                <p>This is General Condition page</p>
             </Box>}
       />
-
    )
 }
 

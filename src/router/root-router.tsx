@@ -14,7 +14,7 @@ import {
    BookingPage,
    ParkingSlotPage,
    PrivacyPolicyPage,
-   InitVehicleProfilePage
+   InitVehicleProfilePage,
 } from "../pages"
 
 function RootRouter() {
