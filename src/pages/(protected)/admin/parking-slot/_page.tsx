@@ -5,11 +5,19 @@ function ParkingSlotPage() {
    return (
       <AdminLayout
          main={
-            <Box>
-               <p>This is packing slot page</p>
-            </Box>}
+            <ParkingSlotTable {...cfn.accountTable}/>
+         }
       />
    )
+}
+
+const cfn = {
+   accountTable:{
+      sx:{
+         height: "100vh",
+         maxHeight: "calc(100vh - 130px)",
+      }
+   }
 }
 
 export default ParkingSlotPage

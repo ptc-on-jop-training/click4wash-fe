@@ -38,6 +38,7 @@ const navData = [
       value: "/admin/privacy-policy",
    },
 ]
+
 const TabNav = () => {
 
    const nav = useNavigate()
