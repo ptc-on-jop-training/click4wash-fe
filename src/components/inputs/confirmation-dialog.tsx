@@ -1,37 +1,51 @@
-import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material"
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from "@mui/material"
 
-type ConfirmDialogProps = {
-    handleClose?: () => void
-    handleSubmit?: () => void
-    isOpen?: boolean
-    title?: string
-    message?: string
+interface ConfirmationDialogProps {
+
+    open: boolean;
+    onClose: () => void;
+    onConfirm: () => void;
+    title: string;
+    message: string;
+
 }
 
-function ConfirmDialog(props: ConfirmDialogProps)
-{
+function ConfirmationDialog(props: ConfirmationDialogProps) {
+
    return (
-      <Dialog
-         fullWidth
-         maxWidth={"xs"}
-         open={props.isOpen ?? false}
-         onClose={props.handleClose}
-      >
-         <DialogTitle id="alert-dialog-title">
-            {props.title}
-         </DialogTitle>
+
+      <Dialog open={props.open} onClose={props.onClose}>
+
+         <DialogTitle>{props.title}</DialogTitle>
+
          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-               {props.message ?? "This action can not undo, are you sure about it"}
+
+            <DialogContentText>
+
+               {props.message}
+
             </DialogContentText>
+
          </DialogContent>
+
          <DialogActions>
-            <Button onClick={props.handleClose} variant={"contained"}>close</Button>
-            <Button onClick={props.handleSubmit}>sure</Button>
+
+            <Button onClick={props.onClose} color="primary">
+                    Cancel
+            </Button>
+
+            <Button onClick={props.onConfirm} color="primary">
+                    Ok
+            </Button>
+
          </DialogActions>
+
       </Dialog>
 
    )
+
 }
 
-export default ConfirmDialog
+
+
+export default ConfirmationDialog

@@ -10,12 +10,17 @@ interface LocationTableProps {
 }
 
 function LocationTable(props: LocationTableProps) {
+   
    const dispatch = useDispatch()
+   
    const LocationList = useSelector((state: RootStateType) => state.location.locationList)
+   
    const LocationSelected = useSelector((state: RootStateType) => state.location.locationSelected)
+   
    const handleRowSelection = (rowSelectionModel: GridRowSelectionModel) => {
       dispatch(setSelectedLocationById({id: rowSelectionModel[0] as string}))
    }
+   
    return (
       <Box sx={props.sx}>
          <DataGrid
@@ -33,11 +38,10 @@ function LocationTable(props: LocationTableProps) {
 const columns: GridColDef[] = [
    {field: 'id', headerName: 'ID', flex: 0.1, headerAlign: 'center', align: 'center'},
    {field: 'name', headerName: 'Location', flex: 0.4, headerAlign: 'center', align: 'center'},
-   {
-      field: 'address', headerName: 'Address', flex: 0.4, renderCell: (params: GridRenderCellParams) => {
-         const addressValue = params.row.address || {}
-         return Object.values(addressValue).join(', ')
-      }
+   {field: 'address', headerName: 'Address', flex: 0.4, renderCell: (params: GridRenderCellParams) => {
+      const addressValue = params.row.address || {}
+      return Object.values(addressValue).join(', ')
+   }
    }
 ]
 

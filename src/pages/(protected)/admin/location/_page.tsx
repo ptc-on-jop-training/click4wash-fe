@@ -5,6 +5,7 @@ import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 
 function LocationPage() {
+
    const LocationSelected = useSelector((state: RootStateType) => state.location.locationSelected)
 
    return (
