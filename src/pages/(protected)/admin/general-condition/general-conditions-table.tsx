@@ -3,6 +3,7 @@ import {Box, SxProps} from "@mui/material"
 import GeneralConditionsToolbar from "./general-condition-toolbar.tsx"
 import {RootStateType} from "../../../../stores"
 import {useSelector} from "react-redux"
+
 interface GeneralConditionsProps {
     sx?: SxProps
 }
@@ -37,6 +38,5 @@ const columns: GridColDef[] = [
    {field: 'generalCondition', headerName: 'General Conditions', flex: 0.5,align: "center", headerAlign: "center"},
 
 ]
-
 
 export default GeneralConditionsTable

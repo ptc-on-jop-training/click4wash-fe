@@ -9,6 +9,7 @@ function GeneralConditionPage() {
       />
    )
 }
+
 const cfn = {
    table:{
       sx:{

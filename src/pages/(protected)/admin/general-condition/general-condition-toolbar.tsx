@@ -3,7 +3,8 @@ import {Button} from "@mui/material"
 import {AddBox} from "@mui/icons-material"
 import {useState} from "react"
 import FormCreateGeneralCondition from "./form-create-general-condition.tsx"
-function GeneralConditionsToolbar(){
+
+function GeneralConditionsToolbar() {
    const [isCreateFormOpen, setIsCreateFormOpen] = useState<boolean>(false)
 
    const handleClose = () => {

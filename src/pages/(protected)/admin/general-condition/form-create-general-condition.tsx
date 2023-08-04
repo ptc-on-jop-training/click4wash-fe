@@ -11,6 +11,7 @@ interface CreateNewFormProps {
 }
 
 function CreateNewForm(props: CreateNewFormProps) {
+
    const dispatch = useDispatch()
 
    const formValidation = Yup.object().shape({
@@ -45,7 +46,6 @@ function CreateNewForm(props: CreateNewFormProps) {
       form.handleChange(e)
    }
 
-
    return (
       <Dialog maxWidth={"md"} fullWidth open={props.isOpen} onClose={props.handleClose}>
          <DialogTitle {...cfn.formTitle}>
@@ -70,6 +70,7 @@ function CreateNewForm(props: CreateNewFormProps) {
       </Dialog>
    )
 }
+
 const cfn ={
    formTitle:{
       color:"primary"as const,
