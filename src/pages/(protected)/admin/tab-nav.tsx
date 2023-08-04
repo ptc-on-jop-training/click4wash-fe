@@ -1,78 +1,63 @@
-import { SyntheticEvent, useEffect, useState} from "react"
+import {SyntheticEvent, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
-import {Box, SxProps, Tab, Tabs} from "@mui/material"
+import {Box, Tab, Tabs} from "@mui/material"
 import {
-   NotificationsSharp,
    People,
    PlaylistAddCheckCircle,
    Garage,
    Article,
    PrivacyTip,
    LocationOn,
-   Language
 } from '@mui/icons-material'
 
 import {TabLabel} from "../../../components"
 
-interface TabRouteType {
-   sx?: SxProps
-}
+const navData = [
+   {
+      label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
+      value: "/admin",
+   },
+   {
+      label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
+      value: "/admin/booking",
+   },
+   {
+      label: <TabLabel label={"Locations"} icon={<LocationOn fontSize="medium"/>}/>,
+      value: "/admin/location",
+   },
+   {
+      label: <TabLabel label={"Parking Slot"} icon={<Garage fontSize="medium"/>}/>,
+      value: "/admin/parking-slot",
+   },
+   {
+      label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,
+      value: "/admin/general-condition",
+   },
+   {
+      label: <TabLabel label={"Privacy Policy"} icon={<PrivacyTip fontSize="medium"/>}/>,
+      value: "/admin/privacy-policy",
+   },
+]
+const TabNav = () => {
 
-const TabNav = (props: TabRouteType) => {
-
-   const location = useLocation()
    const nav = useNavigate()
-   const [currentTabIndex, setCurrentTabIndex] = useState(0)
+   const location = useLocation()
 
-   useEffect(() => {
-      const tabIndex = navData.findIndex((route) => route.value === location.pathname)
-      setCurrentTabIndex(tabIndex !== -1 ? tabIndex : 0)
-   }, [location.pathname])
+   const tabIndex = navData.findIndex((route) => route.value === location.pathname)
+   const [currentTabIndex, setCurrentTabIndex] = useState(tabIndex)
 
-   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) => {
-      setCurrentTabIndex(newValue)
+   const handleTabChange = (_: SyntheticEvent, newValue: any) => {
       nav(navData[newValue].value)
+      setCurrentTabIndex(newValue)
    }
-
-   const navData = [
-      {
-         label: <TabLabel label={"notifications"} icon={<NotificationsSharp fontSize="medium"/>}/>,
-         value: "/admin/notification",
-      },
-      {
-         label: <TabLabel label={"user management"} icon={<People fontSize="medium"/>}/>,
-         value: "/admin/user",
-      },
-      {
-         label: <TabLabel label={"List Booking"} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
-         value: "/admin/booking",
-      },
-      {
-         label: <TabLabel label={"Address"} icon={<LocationOn fontSize="medium"/>}/>,
-         value: "/admin/address",
-      },
-      {
-         label: <TabLabel label={"Parking Slots"} icon={<Garage fontSize="medium"/>}/>,
-         value: "/admin/packing-slot",
-      },
-      {
-         label: <TabLabel label={"general condition"} icon={<Article fontSize="medium"/>}/>,
-         value: "/admin/general-condition",
-      },
-      {
-         label: <TabLabel label={"Privacy Policy"} icon={<PrivacyTip fontSize="medium"/>}/>,
-         value: "/admin/privacy-policy",
-      },
-   ]
 
    return (
       <Box sx={cfn.tabWrapper}>
-         <Tabs scrollButtons="auto" value={currentTabIndex} onChange={handleSwitchRoute}>
+         <Tabs scrollButtons="auto" value={currentTabIndex} onChange={handleTabChange}>
             {navData.map((route, index) => (
-               <Tab key={index} label={route.label}/>
+               <Tab key={index} label={route.label} />
             ))}
          </Tabs>
-         <Language fontSize={"large"} color={"info"} sx={props.sx}/>
       </Box>
    )
 }

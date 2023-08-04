@@ -2,7 +2,6 @@ import {ReactNode, useEffect} from "react"
 import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
-import {Outlet} from "react-router-dom"
 import TabNav from "./tab-nav.tsx"
 import {useRootDispatch, FetchAccountList} from "../../../stores"
 
@@ -11,8 +10,7 @@ interface DashboardLayoutProps {
    main?: ReactNode
 }
 
-function AdminLayout(props: DashboardLayoutProps)
-{
+function AdminLayout(props: DashboardLayoutProps) {
    const dispatch = useRootDispatch()
 
    useEffect(() => {
@@ -27,9 +25,9 @@ function AdminLayout(props: DashboardLayoutProps)
                <LeftSide/>
             </Box>
             <Box>
-               <TabNav {...cfn.rightIcon}/>
-               <Box sx={{height: "100%"}}>
-                  <Outlet/>
+               <TabNav/>
+               <Box sx={{height:"90%"}}>
+                  {props.main}
                </Box>
             </Box>
          </Box>
@@ -72,10 +70,5 @@ const cfn = {
          },
       },
    },
-   rightIcon: {
-      sx: {
-         marginRight: 2
-      }
-   }
 }
 export default AdminLayout

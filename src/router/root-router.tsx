@@ -1,22 +1,20 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {
    VehiclePage,
-   DriverAppLayout, 
+   DriverAppLayout,
    DriverHomePage,
    DriverNoticePage,
    ProtectedLayout,
    RootLayout,
    TeamMemberPage,
    WelcomePage,
-   AddressPage,
+   LocationPage,
    GeneralConditionPage,
    AccountPage,
    BookingPage,
-   NotificationPage,
-   PackingSlotPage,
+   ParkingSlotPage,
    PrivacyPolicyPage,
-   AdminLayout,
-   InitVehicleProfilePage
+   InitVehicleProfilePage,
 } from "../pages"
 
 function RootRouter() {
@@ -37,12 +35,11 @@ function RootRouter() {
 
                   <Route path={"init-vehicle-profile"} element={<InitVehicleProfilePage/>}/>
 
-                  <Route path={"admin"} element={<AdminLayout/>}>
-                     <Route path={"user"} element={<AccountPage/>}/>
-                     <Route path={"notification"} element={<NotificationPage/>}/>
-                     <Route path={"address"} element={<AddressPage/>}/>
+                  <Route path={"admin"}>
+                     <Route path={""} element={<AccountPage/>}/>
+                     <Route path={"location"} element={<LocationPage/>}/>
                      <Route path={"booking"} element={<BookingPage/>}/>
-                     <Route path={"packing-slot"} element={<PackingSlotPage/>}/>
+                     <Route path={"parking-slot"} element={<ParkingSlotPage/>}/>
                      <Route path={"general-condition"} element={<GeneralConditionPage/>}/>
                      <Route path={"privacy-policy"} element={<PrivacyPolicyPage/>}/>
                   </Route>
