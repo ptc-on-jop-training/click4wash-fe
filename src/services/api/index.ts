@@ -16,6 +16,9 @@ import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
 import GeneralConditionResponse from "./dtos/general-condition-response.ts"
+import BookingResponse from "./dtos/booking-response.ts"
+import GetBookingList from "./usecases/get-booking-list.ts"
+
 export {
    type BaseEntity,
    type Booking,
@@ -36,7 +39,10 @@ export {
     
    type GeneralConditionResponse,
 
+   type BookingResponse,
+   GetBookingList,
+
    BookingStatus,
    TimeSlots,
-   VehicleType
+   VehicleType,
 }
