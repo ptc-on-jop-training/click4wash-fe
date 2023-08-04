@@ -55,7 +55,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
       form.resetForm()
       props.handleClose()
    }
-
+   
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
@@ -67,14 +67,17 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
                multiple
                size="medium"
                value={values.teamMember}
-               sx={{marginTop: 2}}
                options={UserList}
                onBlur={handleBlur}
                onChange={(e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
                   form.setFieldValue('teamMember', newValue)
                }}
+               getOptionDisabled={(option: string) => {
+                  const isDisabled = !!props.teamMember && props.teamMember.includes(option)
+                  return isDisabled
+               }}
                renderInput={(params) => (
-                  <TextField {...params} label="Choose Team member" placeholder="Choose Team member"/>
+                  <TextField {...params} label="Choose Team member" placeholder="Choose Team member" />
                )}
             />
 
