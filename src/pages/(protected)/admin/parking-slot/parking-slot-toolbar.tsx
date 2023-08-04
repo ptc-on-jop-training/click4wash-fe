@@ -28,5 +28,4 @@ function ParkingSlotToolBar() {
    )
 }
 
-
 export default ParkingSlotToolBar

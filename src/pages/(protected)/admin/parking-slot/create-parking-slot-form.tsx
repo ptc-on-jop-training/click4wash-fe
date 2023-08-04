@@ -11,7 +11,6 @@ import {
    SelectChangeEvent, MenuItem,
 } from "@mui/material"
 import {Select} from "../../../../components"
-
 import {useDispatch, useSelector} from "react-redux"
 import {pushPackingSlot, RootStateType} from "../../../../stores"
 
@@ -31,7 +30,6 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       return `${location.name}-${addressString}`
    }) ?? []
 
-
    const form = useFormik({
       initialValues: {
          locationName: "",
@@ -45,12 +43,13 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       onSubmit: (values) => {
          const LocationName = values.locationName.split("-", 1)[0]
          const foundLocation = Location?.find((location) => location.name === LocationName)
-         const address = foundLocation ? foundLocation.address : {line1:"", line2:"",line3:""}
+         const address = foundLocation ? foundLocation.address : {line1: "", line2: "", line3: ""}
          const id = Math.random().toString(36)
          const newValues = {
             ...values,
             id: id,
-            address : address
+            address: address,
+            locationName: LocationName,
          }
          dispatch(pushPackingSlot(newValues))
          form.resetForm()
@@ -71,13 +70,12 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 
    const renderLocationSelect = () => {
       return LocationList.map((option: string) => (
-         <MenuItem key={option} value={option} sx={{fontSize:"13px"}}>
+         <MenuItem key={option} value={option} sx={{fontSize: "13px"}}>
             {option}
          </MenuItem>
       ))
    }
-
-
+    
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
@@ -120,7 +118,6 @@ const formValidation = Yup.object().shape({
    locationName: Yup.string().required('This field is required'),
    name: Yup.string().required('This field is required'),
 })
-
 
 export default CreateParkingSlotFrom
 

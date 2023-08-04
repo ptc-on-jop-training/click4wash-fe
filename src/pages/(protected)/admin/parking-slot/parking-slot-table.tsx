@@ -9,6 +9,7 @@ interface PackingSlotTableProps {
 }
 
 function ParkingSlotTable(props: PackingSlotTableProps) {
+
    const parkingSlotList = useSelector((state: RootStateType) => state.parkingSlot.parkingSlotList)
 
    return (

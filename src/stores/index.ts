@@ -22,10 +22,10 @@ export {
    pushPackingSlot,
 
 
-   FetchLocationList
+   FetchLocationList,
 
    // booking store
-   FetchBookingList
+   FetchBookingList,
 
    deleteAccountById
 
