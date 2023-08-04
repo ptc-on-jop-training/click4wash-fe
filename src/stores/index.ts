@@ -18,7 +18,7 @@ export {
 
 
    // booking store
-   FetchBookingList
+   FetchBookingList,
 
    deleteAccountById
 
