@@ -11,7 +11,6 @@ import {
    SelectChangeEvent, Autocomplete,
 } from "@mui/material"
 import {useDispatch} from "react-redux"
-
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 import {pushTeamMember, setSelectedLocationById} from "../../../../stores/location-store.ts"
@@ -59,25 +58,24 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle>Create New Location</DialogTitle>
+         <DialogTitle>Assign new member</DialogTitle>
 
          <DialogContent>
 
             <Autocomplete
-               multiple
-               size="medium"
-               value={values.teamMember}
-               options={UserList}
-               onBlur={handleBlur}
-               onChange={(e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
+               multiple size="medium" sx={{marginTop:2}}
+               value={values.teamMember} options={UserList} onBlur={handleBlur}
+               onChange={(_e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
                   form.setFieldValue('teamMember', newValue)
-               }}
-               getOptionDisabled={(option: string) => {
-                  const isDisabled = !!props.teamMember && props.teamMember.includes(option)
-                  return isDisabled
+                  form.setFieldError('teamMember', '')
                }}
                renderInput={(params) => (
-                  <TextField {...params} label="Choose Team member" placeholder="Choose Team member" />
+                  <TextField
+                     {...params}
+                     required name="teamMember" label="Choose Team member" placeholder="Choose Team member"
+                     error={!!(touched.teamMember && errors.teamMember)}
+                     helperText={touched.teamMember && errors.teamMember}
+                  />
                )}
             />
 

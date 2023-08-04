@@ -12,7 +12,6 @@ import {
 } from "@mui/material"
 import {addLocation} from "../../../../stores/location-store.ts"
 import {useDispatch} from "react-redux"
-
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 
@@ -56,12 +55,13 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
          props.handleClose()
       },
    })
+
    const {values, touched, errors, handleSubmit, handleBlur} = form
+
    const handleInputChange = (e: ChangeEvent<any> | SelectChangeEvent) => {
       form.setFieldError(e.target.name, "")
       form.handleChange(e)
    }
-
 
    const handleCancel = () => {
       form.resetForm()
@@ -105,20 +105,21 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
                fullWidth name={"address.line4"} margin={"normal"} label={"specific address"} type={"text"}
             />
             <Autocomplete
-               multiple
-               size="medium"
-               value={values.teamMember}
-               sx={{marginTop: 2}}
-               options={UserList}
-               onBlur={handleBlur}
-               onChange={(e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
+               multiple size="medium" sx={{marginTop: 2}}
+               value={values.teamMember} options={UserList} onBlur={handleBlur}
+               onChange={(_e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
                   form.setFieldValue('teamMember', newValue)
+                  form.setFieldError('teamMember', '')
                }}
                renderInput={(params) => (
-                  <TextField {...params} label="Choose Team member" placeholder="Choose Team member"/>
+                  <TextField
+                     {...params}
+                     required name="teamMember" label="Choose Team member" placeholder="Choose Team member"
+                     error={!!(touched.teamMember && errors.teamMember)}
+                     helperText={touched.teamMember && errors.teamMember}
+                  />
                )}
             />
-
          </DialogContent>
 
          <DialogActions>
@@ -129,7 +130,6 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
                     Save
             </Button>
          </DialogActions>
-
       </Dialog>
    )
 }
@@ -144,6 +144,5 @@ const formValidation = Yup.object().shape({
    }),
    teamMember: Yup.array().min(1, 'This field is required'),
 })
-
 
 export default CreateNewLocationFrom
