@@ -1,5 +1,5 @@
 import RootStore, {useRootDispatch, RootStateType} from "./root-store.ts"
-import {FetchAccountList,pushToAllAccountList} from "./account-stores.ts"
+import {FetchAccountList,pushToAllAccountList,deleteAccountById} from "./account-stores.ts"
 import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
 
 export {
@@ -14,4 +14,6 @@ export {
    // account store
    FetchAccountList,
    pushToAllAccountList,
+   deleteAccountById
+
 }

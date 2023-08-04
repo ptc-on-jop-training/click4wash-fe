@@ -24,6 +24,9 @@ const AccountSlice = createSlice({
       pushToAllAccountList: (state, action: PayloadAction<AccountResponse>) => {
          state.accountList = [action.payload, ...(state.accountList ?? [])]
       },
+      deleteAccountById: (state, action: PayloadAction<string>) => {
+         state.accountList = state.accountList?.filter((account) => account.id !== action.payload) ?? null
+      },
 
    },
 
@@ -35,5 +38,5 @@ const AccountSlice = createSlice({
    }
 })
 export {FetchAccountList}
-export const {pushToAllAccountList} = AccountSlice.actions
+export const {pushToAllAccountList,deleteAccountById} = AccountSlice.actions
 export default AccountSlice.reducer
