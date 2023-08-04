@@ -1,13 +1,11 @@
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from "@mui/material"
 
 interface ConfirmationDialogProps {
-
-    open: boolean;
-    onClose: () => void;
-    onConfirm: () => void;
-    title: string;
-    message: string;
-
+   open: boolean;
+   onClose: () => void;
+   onConfirm: () => void;
+   title: string;
+   message: string;
 }
 
 function ConfirmationDialog(props: ConfirmationDialogProps) {
@@ -31,11 +29,11 @@ function ConfirmationDialog(props: ConfirmationDialogProps) {
          <DialogActions>
 
             <Button onClick={props.onClose} color="primary">
-                    Cancel
+               Cancel
             </Button>
 
             <Button onClick={props.onConfirm} color="primary">
-                    Ok
+               Ok
             </Button>
 
          </DialogActions>
@@ -46,6 +44,5 @@ function ConfirmationDialog(props: ConfirmationDialogProps) {
 
 }
 
-
-
 export default ConfirmationDialog
+

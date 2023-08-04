@@ -3,7 +3,7 @@ import { Response, StatusCode } from "../../common"
 import axios from "axios"
 
 function GetAccountList(): Promise<Response<AccountResponse[]>> {
-   const endpoint = "https://61bc10bcd8542f001782451a.mockapi.io/accounts"
+   const endpoint = "https://61bc10bcd8542f001782451a.mockapi.io/accounts/?orderby=id&order=desc"
 
    return new Promise((resolve) => {
       axios.get<AccountResponse[]>(endpoint)

@@ -14,7 +14,8 @@ import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
-
+import BookingResponse from "./dtos/booking-response.ts"
+import GetBookingList from "./usecases/get-booking-list.ts"
 import LocationResponse from "./dtos/location-response.ts"
 import GetLocationList from "./usecases/get-location-list.ts"
 
@@ -38,7 +39,10 @@ export {
    type LocationResponse,
    GetLocationList,
 
+   type BookingResponse,
+   GetBookingList,
+
    BookingStatus,
    TimeSlots,
-   VehicleType
+   VehicleType,
 }

@@ -1,4 +1,5 @@
-interface AddressResponse {
+interface AddressResponse
+{
    locationId?: string
    id?: string,
    line1: string
