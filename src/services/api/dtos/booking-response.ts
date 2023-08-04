@@ -1,16 +1,12 @@
-import {WashStatus} from "../index.ts"
-import {VehicleType} from "../index.ts"
-
+import {VehicleType, TimeSlot, BookingStatus} from "../index.ts"
 
 interface BookingResponse
 {
-   typeVehicle: VehicleType
-   numberPlateVehicle: string
-   timeSlotStart: Date
-   timeSlotEnd: Date
-   nameParkingSlot: string
-   status: WashStatus
-   rating: string
-   comment:string
+   vehicleType: VehicleType
+   vehicleNumberPlate: string
+   timeSlot: TimeSlot
+   parkingSlotName: string
+   status: BookingStatus
+
 }
 export default BookingResponse
