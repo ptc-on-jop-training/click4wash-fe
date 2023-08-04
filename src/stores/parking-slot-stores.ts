@@ -18,7 +18,7 @@ const ParkingSlotSlice = createSlice({
    name: "parkingSlot",
    initialState,
    reducers: {
-      pushPackingSlot: (state, action: PayloadAction<ParkingSlotResponse>) => {
+      pushPackingSlot: (state, action: PayloadAction<ParkingSlotResponse>, ) => {
          state.parkingSlotList = [action.payload, ...(state.parkingSlotList ?? [])]
       },
 

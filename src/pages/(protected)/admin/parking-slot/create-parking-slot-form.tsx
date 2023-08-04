@@ -14,7 +14,6 @@ import {Select} from "../../../../components"
 
 import {useDispatch, useSelector} from "react-redux"
 import {pushPackingSlot, RootStateType} from "../../../../stores"
-import CreateParkingSlot from "../../../../services/api/usecases/create-parking-slot.ts"
 
 interface CreateNewFormProps {
     isOpen: boolean
@@ -46,10 +45,14 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       onSubmit: (values) => {
          const LocationName = values.locationName.split("-", 1)[0]
          const foundLocation = Location?.find((location) => location.name === LocationName)
-         const address = foundLocation ? foundLocation.address : {}
-         CreateParkingSlot(values, address).then((res) => {
-            dispatch(pushPackingSlot(res.payload!))
-         })
+         const address = foundLocation ? foundLocation.address : {line1:"", line2:"",line3:""}
+         const id = Math.random().toString(36)
+         const newValues = {
+            ...values,
+            id: id,
+            address : address
+         }
+         dispatch(pushPackingSlot(newValues))
          form.resetForm()
          props.handleClose()
       },
