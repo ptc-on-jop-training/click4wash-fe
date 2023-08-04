@@ -17,7 +17,7 @@ export {
    FetchAccountList,
    pushToAllAccountList,
 
-   FetchLocationList
+   FetchLocationList,
 
    // booking store
    FetchBookingList,
