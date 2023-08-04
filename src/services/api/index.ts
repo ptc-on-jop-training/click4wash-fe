@@ -14,7 +14,6 @@ import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
 import CreateVehicleRequest from "./dtos/create-vehicle-request.ts"
 import CreateVehicle from "./usecases/create-vehicle.ts"
-import WashStatus from "./consts/wash-status.ts"
 import BookingResponse from "./dtos/booking-response.ts"
 
 export {
@@ -39,5 +38,4 @@ export {
    BookingStatus,
    TimeSlots,
    VehicleType,
-   WashStatus
 }
