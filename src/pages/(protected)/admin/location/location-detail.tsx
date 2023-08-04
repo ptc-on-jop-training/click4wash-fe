@@ -1,10 +1,11 @@
 import {Box, Button, Typography} from "@mui/material"
-import {Chip} from "../../../../components"
+import {Chip, ConfirmationDialog} from "../../../../components"
 import {LocationResponse} from "../../../../services/api"
 import {useDispatch} from "react-redux"
 import {removeTeamMemberByIndex, setSelectedLocationById} from "../../../../stores/location-store.ts"
 import AssignNewMemberForm from "./assign-new-member-form.tsx"
 import {useState} from "react"
+
 interface LocationDetailProps {
     LocationSelected?: LocationResponse,
 }
@@ -12,15 +13,22 @@ interface LocationDetailProps {
 function LocationDetail(props: LocationDetailProps) {
    const dispatch = useDispatch()
    const [isCreateFormOpen, setIsCreateFormOpen] = useState<boolean>(false)
-
+   const [isOpen, setIsOpen] = useState<boolean>(false)
+   const [isIndex, setIsIndex] = useState<number>(0)
    const handleClose = () => {
       setIsCreateFormOpen(false)
    }
-   const handelDelete = (index: number) => {
+
+   const handleOpen = (newIndex:number) => {
+      setIsIndex(newIndex)
+      setIsOpen(true)
+   }
+   const handelDelete = () => {
       const id = props.LocationSelected?.id || ''
       if (id) {
-         dispatch(removeTeamMemberByIndex({id, index}))
+         dispatch(removeTeamMemberByIndex({ id, isIndex }))
          dispatch(setSelectedLocationById({ id: id }))
+         setIsOpen(false)
       }
    }
    return (
@@ -33,7 +41,7 @@ function LocationDetail(props: LocationDetailProps) {
          </Box>
          <Box {...cfn.mainContent}>
             {props.LocationSelected?.teamMember?.map((memberName, index) => (
-               <Chip key={index} label={memberName} onDelete={() => handelDelete(index)}/>
+               <Chip key={index} label={memberName} onDelete={() => handleOpen(index)}/>
             ))}
             <>
                <Button
@@ -42,7 +50,10 @@ function LocationDetail(props: LocationDetailProps) {
                   color={"success"}
                   sx={{marginTop: "10px", textTransform: "none"}}>
                   {"assign new member"}</Button>
-               <AssignNewMemberForm isOpen={isCreateFormOpen} handleClose={handleClose} teamMember={props.LocationSelected?.teamMember} id={props.LocationSelected?.id || ''} />
+               <AssignNewMemberForm isOpen={isCreateFormOpen} handleClose={handleClose}
+                  teamMember={props.LocationSelected?.teamMember}
+                  id={props.LocationSelected?.id || ''}/>
+               <ConfirmationDialog isOpen={isOpen} handleClose={()=>setIsOpen(false)} handleSubmit={handelDelete}/> 
             </>
 
          </Box>

@@ -24,10 +24,10 @@ const LocationSlice = createSlice({
       addLocation: (state, action: PayloadAction<LocationResponse>) => {
          state.locationList = [action.payload, ...(state.locationList ?? [])]
       },
-      removeTeamMemberByIndex: (state, action: PayloadAction<{ id: string; index: number }>) => {
+      removeTeamMemberByIndex: (state, action: PayloadAction<{ id: string; isIndex: number }>) => {
          const location = state.locationList?.find((location) => location.id === action.payload.id)
          if (location) {
-            location.teamMember?.splice(action.payload.index, 1)
+            location.teamMember?.splice(action.payload.isIndex, 1)
          }
       },
       pushTeamMember: (state, action: PayloadAction<{ id: string; newItem: string[] }>) => {
