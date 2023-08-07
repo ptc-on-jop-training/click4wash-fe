@@ -8,7 +8,7 @@ interface BookingResponse
    timeSlot: TimeSlot
    parkingSlotName: string
    status: BookingStatusEnum
-   createAt: Date
+   createdAt: Date
 
 }
 export default BookingResponse
