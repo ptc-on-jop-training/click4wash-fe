@@ -1,5 +1,5 @@
 import {Box, Button, Typography} from "@mui/material"
-import {Chip, ConfirmationDialog} from "../../../../components"
+import {RemoveAssignMember, ConfirmationDialog} from "../../../../components"
 import {LocationResponse} from "../../../../services/api"
 import {useDispatch} from "react-redux"
 import {removeTeamMemberByIndex, setSelectedLocationById} from "../../../../stores/location-stores.ts"
@@ -51,7 +51,7 @@ function LocationDetail(props: LocationDetailProps) {
 
          <Box {...cfn.mainContent}>
             {props.LocationSelected?.teamMemberEmailList?.map((memberName, index) => (
-               <Chip key={index} label={memberName} onDelete={() => handleOpen(index)}/>
+               <RemoveAssignMember key={index} label={memberName} onDelete={() => handleOpen(index)}/>
             ))}
             <Box>
                <Button
