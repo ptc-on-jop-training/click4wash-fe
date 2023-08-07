@@ -1,15 +1,23 @@
-import {Box} from "@mui/material"
 import AdminLayout from "../_layout.tsx"
+import BookingTable from "./booking-table.tsx"
 
 function BookingPage() {
    return (
       <AdminLayout
          main={
-            <Box>
-               <p>This is list booking page</p>
-            </Box>}
+            <BookingTable {...cfn.BookingTable}/>
+         }
       />
    )
 }
+const cfn = {
+   BookingTable: {
+      sx: {
+         height: "100%",
+         maxHeight: "calc(100vh - 129px)",
+      }
+   }
+}
+
 
 export default BookingPage
