@@ -9,7 +9,7 @@ import User from "./entities/user.ts"
 import Vehicle from "./entities/vehicle.ts"
 import BookingStatusEnum from "./consts/booking-status.ts"
 import GeneralCondition from "./entities/general-condition.ts"
-import TimeSlots from "./consts/time-slots.ts"
+import TimeSlots,{FormatTimeSlot} from "./consts/time-slots.ts"
 import VehicleType from "./consts/vehicle-type.ts"
 import VehicleResponse from "./dtos/vehicle-response.ts"
 import GetVehicleList from "./usecases/get-vehicle-list.ts"
@@ -55,4 +55,6 @@ export {
    BookingStatusEnum,
    TimeSlots,
    VehicleType,
+
+   FormatTimeSlot
 }
