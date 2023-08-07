@@ -13,13 +13,13 @@ import {
 import {useDispatch} from "react-redux"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
-import {pushTeamMember,setSelectedLocationById} from "../../../../stores/location-stores.ts"
+import {pushTeamMember, setSelectedLocationById} from "../../../../stores/location-stores.ts"
 
 interface CreateNewFormProps {
     isOpen: boolean
     handleClose: () => void
-    teamMember?:string[]
-    id:string
+    teamMember?: string[]
+    id: string
 }
 
 function AssignNewMemberForm(props: CreateNewFormProps) {
@@ -45,7 +45,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
             newItem: values.teamMember || [],
          }
          dispatch(pushTeamMember(newValues))
-         dispatch(setSelectedLocationById({ id: props.id }))
+         dispatch(setSelectedLocationById({id: props.id}))
          form.resetForm()
          props.handleClose()
       },
@@ -64,7 +64,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
          <DialogContent>
 
             <Autocomplete
-               multiple size="medium" sx={{marginTop:2}}
+               multiple size="medium" sx={{marginTop: 2}}
                value={values.teamMember} options={UserList} onBlur={handleBlur}
                onChange={(_e: ChangeEvent<any> | SelectChangeEvent, newValue: string[]) => {
                   form.setFieldValue('teamMember', newValue)
@@ -102,7 +102,6 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
 const formValidation = Yup.object().shape({
    teamMember: Yup.array().min(1, 'This field is required'),
 })
-
 
 
 export default AssignNewMemberForm

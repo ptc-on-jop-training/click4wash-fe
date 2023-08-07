@@ -2,7 +2,7 @@ import {Box, Button, Typography} from "@mui/material"
 import {Chip, ConfirmationDialog} from "../../../../components"
 import {LocationResponse} from "../../../../services/api"
 import {useDispatch} from "react-redux"
-import {removeTeamMemberByIndex,setSelectedLocationById} from "../../../../stores/location-stores.ts"
+import {removeTeamMemberByIndex, setSelectedLocationById} from "../../../../stores/location-stores.ts"
 import AssignNewMemberForm from "./assign-new-member-form.tsx"
 import {useState} from "react"
 

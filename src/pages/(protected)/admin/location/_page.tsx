@@ -10,7 +10,7 @@ function LocationPage() {
 
    return (
       <AdminLayout
-         leftSide={LocationSelected !== null ? <LocationDetail LocationSelected={LocationSelected} /> : null}
+         leftSide={LocationSelected !== null ? <LocationDetail LocationSelected={LocationSelected}/> : null}
          main={<LocationTable {...cfn.locationTable} />}
       />
    )

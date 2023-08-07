@@ -49,7 +49,7 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
          const newValues = {
             ...values,
             id: id,
-            teamMemberEmailList:values.teamMember
+            teamMemberEmailList: values.teamMember
          }
          dispatch(addLocation(newValues))
          form.resetForm()
