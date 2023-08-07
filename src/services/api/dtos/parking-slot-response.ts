@@ -6,6 +6,7 @@ interface ParkingSlotResponse
     locationName: string
     address: AddressResponse
     name: string
+    isBusy:boolean
 }
 
 export default ParkingSlotResponse

@@ -3,6 +3,7 @@ import {SxProps} from "@mui/material"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 import ParkingSlotToolBar from "./parking-slot-toolbar.tsx"
+import ParkingSlotStatus from "./parking-slot-status.tsx"
 
 interface PackingSlotTableProps {
    sx?: SxProps
@@ -32,7 +33,12 @@ const columns: GridColDef[] = [
       renderCell: (params: GridRenderCellParams) => {
          const addressValue = params.row.address || {}
          return Object.values(addressValue).join(', ')}
-   }
+   },
+   {field: 'status', headerName: 'Status', flex: 0.2,
+      renderCell: (params: GridRenderCellParams) => (
+         <ParkingSlotStatus isBusy={params.row.isBusy}/>
+      ),
+   },
 ]
 
 export default ParkingSlotTable
