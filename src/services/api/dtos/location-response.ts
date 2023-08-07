@@ -5,7 +5,7 @@ interface LocationResponse
     id: string
     name: string
     address: AddressResponse
-    teamMember?: []
+    teamMemberEmailList?: string[]
 }
 
 export default LocationResponse
