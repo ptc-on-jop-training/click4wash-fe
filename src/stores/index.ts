@@ -1,6 +1,9 @@
 import RootStore, {useRootDispatch, RootStateType} from "./root-store.ts"
-import {FetchAccountList,pushToAllAccountList} from "./account-stores.ts"
+import {FetchAccountList,pushToAllAccountList,deleteAccountById} from "./account-stores.ts"
 import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
+import {FetchParkingSlotList,pushPackingSlot} from "./parking-slot-stores.ts"
+import {FetchLocationList} from "./location-stores.ts"
+import {FetchBookingList} from "./booking-store.ts"
 import {NextStepCreateBooking, BackStepCreateBooking, ResetCreateBookingForm} from "./create-booking-form-store.ts"
 
 export {
@@ -15,6 +18,16 @@ export {
    // account store
    FetchAccountList,
    pushToAllAccountList,
+
+   FetchParkingSlotList,
+   pushPackingSlot,
+
+   FetchLocationList,
+
+   // booking store
+   FetchBookingList,
+
+   deleteAccountById,
 
    // create booking from store
    NextStepCreateBooking,

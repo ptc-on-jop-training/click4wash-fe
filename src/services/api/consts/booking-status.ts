@@ -1,6 +1,9 @@
 enum BookingStatus
 {
-   processing = "processing"
+   processing = "Processing",
+   accepted = "Accepted",
+   refused = "Refused",
+   done = "Done"
 }
 
 export default BookingStatus

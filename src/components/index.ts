@@ -8,6 +8,7 @@ import TableToolbar from "./inputs/table-toolbar.tsx"
 import RoleChip from "./data-display/role-chip.tsx"
 import VehicleCard from "./surfaces/vehicle-card.tsx"
 import Select from "./inputs/Select.tsx"
+import ConfirmationDialog from "./inputs/confirmation-dialog.tsx"
 
 export {
    PageLoading,
@@ -19,5 +20,6 @@ export {
    TableToolbar,
    RoleChip,
    VehicleCard,
-   Select
+   Select,
+   ConfirmationDialog
 }
