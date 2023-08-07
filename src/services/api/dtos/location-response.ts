@@ -1,10 +1,11 @@
 import AddressResponse from "./address-response.ts"
 
-interface LocationResponse {
+interface LocationResponse
+{
     id: string
     name: string
     address: AddressResponse
-    teamMember?: string[];
+    teamMember?: []
 }
 
 export default LocationResponse
