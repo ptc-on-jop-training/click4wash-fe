@@ -1,6 +1,6 @@
 import {Chip} from "@mui/material"
 import {useEffect, useState} from "react"
-import {BookingStatusEnum} from "../../../../services/api"
+import {BookingStatus as BookingStatusEnum} from "../../../../services/api"
 
 interface BookingStatusProps {
    status: BookingStatusEnum
