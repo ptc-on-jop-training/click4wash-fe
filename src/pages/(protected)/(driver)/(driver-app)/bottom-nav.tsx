@@ -71,7 +71,7 @@ const cfn = {
    },
 
    bottomNav: {
-      showLabels: true
+      // showLabels: true
    }
 }
 

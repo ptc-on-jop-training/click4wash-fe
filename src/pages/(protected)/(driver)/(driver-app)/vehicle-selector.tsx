@@ -1,18 +1,27 @@
 import {Box, Stack} from "@mui/material"
+import {useState} from "react"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 import {SectionTitle, VehicleCard} from "../../../../components"
 
-function SelectVehicle()
+function VehicleSelector()
 {
    const vehicleList = useSelector((state: RootStateType) => state.vehicle.vehicleList)
+   const [selectedVehicle, setSelectedVehicle] = useState("")
+
+   const handleOnSelectVehicle = (id: string) => {
+      setSelectedVehicle(id)
+   }
 
    return (
       <Box {...cfn.container}>
          <SectionTitle title={"Select a vehicle"} {...cfn.title}/>
          <Stack {...cfn.box}>
             {vehicleList?.map((vehicle) => (
-               <VehicleCard key={vehicle.id} {...vehicle}/>
+               <VehicleCard
+                  variant={selectedVehicle === vehicle.id ? "highlight" : "primary"}
+                  onClick={handleOnSelectVehicle}
+                  key={vehicle.id} {...vehicle}/>
             ))}
          </Stack>
       </Box>
@@ -40,4 +49,4 @@ const cfn = {
    }
 }
 
-export default SelectVehicle
+export default VehicleSelector
