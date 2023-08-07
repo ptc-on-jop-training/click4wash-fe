@@ -1,4 +1,4 @@
-import {VehicleType, TimeSlot, BookingStatus} from "../index.ts"
+import {VehicleType, TimeSlot, BookingStatusEnum} from "../index.ts"
 
 interface BookingResponse
 {
@@ -7,7 +7,8 @@ interface BookingResponse
    vehicleNumberPlate: string
    timeSlot: TimeSlot
    parkingSlotName: string
-   status: BookingStatus
+   status: BookingStatusEnum
+   createAt: Date
 
 }
 export default BookingResponse
