@@ -7,7 +7,7 @@ import ParkingSlot from "./entities/parking-slot.ts"
 import TimeSlot from "./entities/time-slot.ts"
 import User from "./entities/user.ts"
 import Vehicle from "./entities/vehicle.ts"
-import BookingStatus from "./consts/booking-status.ts"
+import BookingStatusEnum from "./consts/booking-status.ts"
 import GeneralCondition from "./entities/general-condition.ts"
 import TimeSlots from "./consts/time-slots.ts"
 import VehicleType from "./consts/vehicle-type.ts"
@@ -52,7 +52,7 @@ export {
    type BookingResponse,
    GetBookingList,
 
-   BookingStatus,
+   BookingStatusEnum,
    TimeSlots,
    VehicleType,
 }
