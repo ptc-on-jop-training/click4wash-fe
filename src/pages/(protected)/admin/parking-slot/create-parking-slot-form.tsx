@@ -34,6 +34,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       initialValues: {
          locationName: "",
          name: "",
+         isBusy: true,
       },
 
       validationSchema: formValidation,
