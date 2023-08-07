@@ -6,5 +6,16 @@ const TimeSlots = Object.freeze({
       end: new Date()
    }
 })
+function FormatTimeSlot(timeSlot: TimeSlot) {
 
+   const { start, end } = timeSlot
+   const startDate = new Date(start)
+   const endDate = new Date(end)
+   const startTime = `${startDate.getHours()}:${startDate.getMinutes()}`
+   const endTime = `${endDate.getHours()}:${endDate.getMinutes()}`
+
+   return `${startTime} - ${endTime}`
+}
+
+export {FormatTimeSlot}
 export default TimeSlots
