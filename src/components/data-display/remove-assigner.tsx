@@ -1,15 +1,15 @@
 import {Chip} from "@mui/material"
 
-interface RemoveAssignMemberProps {
+interface RemoveAssignerProps {
     label?: string,
     size?: "small" | "medium",
     onDelete?: () => void,
     onClick?:() => void,
 }
 
-function RemoveAssignMember(props: RemoveAssignMemberProps) {
+function RemoveAssigner(props: RemoveAssignerProps) {
    return <Chip size={props.size ?? "medium"} variant={"filled"} color={"default"}
       label={props.label} onDelete={props.onDelete}/>
 }
 
-export default RemoveAssignMember
+export default RemoveAssigner

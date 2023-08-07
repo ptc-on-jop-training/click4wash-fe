@@ -39,7 +39,6 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: (values) => {
-         console.log(values)
          const newValues = {
             id: props.id,
             newItem: values.teamMember || [],
