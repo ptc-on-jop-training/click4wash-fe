@@ -35,11 +35,11 @@ const cfg = {
 }
 
 const columns: GridColDef[] = [
-   {field: 'vehicleNumberPlate', headerName: 'Number plate Vehicle', flex: 0.5},
+   {field: 'vehicleNumberPlate', headerName: 'Number plate', flex: 0.5},
    {field: 'createdAt', headerName: 'Day', flex:0.5},
-   {field: 'timeSlot', headerName: 'TimeSlot', flex:0.5, renderCell:(params) => FormatTimeSlot(params.value)},
-   {field: 'parkingSlotName', headerName: 'Name ParkingSlot', flex: 0.5},
-   {field: 'vehicleType', headerName: 'Type Vehicle', flex: 0.5, renderCell: (params: GridRenderCellParams) => <TypeVehicle type={params.value} />},
+   {field: 'timeSlot', headerName: 'Time slot', flex:0.5, renderCell:(params) => FormatTimeSlot(params.value)},
+   {field: 'parkingSlotName', headerName: 'Parking slot', flex: 0.5},
+   {field: 'vehicleType', headerName: 'Type', flex: 0.5, renderCell: (params: GridRenderCellParams) => <TypeVehicle type={params.value} />},
    {field: 'status', headerName: 'Status', flex: 0.5, renderCell: (params: GridRenderCellParams) => <BookingStatus status={params.value} />}
 ]
 
