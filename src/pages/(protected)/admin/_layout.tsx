@@ -3,7 +3,7 @@ import EmptySide from "./empty-side.tsx"
 import LeftSide from "./left-side.tsx"
 import {Box} from "@mui/material"
 import TabNav from "./tab-nav.tsx"
-import {useRootDispatch, FetchAccountList, FetchParkingSlotList, FetchLocationList} from "../../../stores"
+import {useRootDispatch, FetchAccountList, FetchParkingSlotList, FetchLocationList,FetchBookingList} from "../../../stores"
 
 interface DashboardLayoutProps {
    leftSide?: ReactNode
@@ -17,6 +17,7 @@ function AdminLayout(props: DashboardLayoutProps) {
       dispatch(FetchAccountList())
       dispatch(FetchParkingSlotList())
       dispatch(FetchLocationList())
+      dispatch(FetchBookingList())
    }, [])
 
    return (
