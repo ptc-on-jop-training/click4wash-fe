@@ -22,6 +22,7 @@ import GetLocationList from "./usecases/get-location-list.ts"
 import LocationResponse from "./dtos/location-response.ts"
 import BookingResponse from "./dtos/booking-response.ts"
 import GetBookingList from "./usecases/get-booking-list.ts"
+import CreateBookingRequest from "./dtos/create-booking-request.ts"
 
 export {
    type BaseEntity,
@@ -55,6 +56,8 @@ export {
    BookingStatus,
    TimeSlots,
    VehicleType,
+
+   type CreateBookingRequest,
 
    FormatTimeSlot
 }

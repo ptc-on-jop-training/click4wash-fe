@@ -4,7 +4,7 @@ import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
 import {FetchParkingSlotList,pushPackingSlot} from "./parking-slot-stores.ts"
 import {FetchLocationList} from "./location-stores.ts"
 import {FetchBookingList} from "./booking-store.ts"
-import {NextStepCreateBooking, BackStepCreateBooking, ResetCreateBookingForm} from "./create-booking-form-store.ts"
+import {NextStepCreateBooking, BackStepCreateBooking, ResetCreateBookingForm, SetCreateBookingFromDataBookingInfo, SetCreateBookingFromDataVehicle} from "./create-booking-form-store.ts"
 
 export {
    RootStore,
@@ -32,5 +32,7 @@ export {
    // create booking from store
    NextStepCreateBooking,
    BackStepCreateBooking,
-   ResetCreateBookingForm
+   ResetCreateBookingForm,
+   SetCreateBookingFromDataBookingInfo,
+   SetCreateBookingFromDataVehicle
 }

@@ -1,16 +1,16 @@
 import {Box, Stack} from "@mui/material"
-import {useState} from "react"
-import {useSelector} from "react-redux"
-import {RootStateType} from "../../../../stores"
+import {useDispatch, useSelector} from "react-redux"
+import {RootStateType, SetCreateBookingFromDataVehicle} from "../../../../stores"
 import {SectionTitle, VehicleCard} from "../../../../components"
 
 function VehicleSelector()
 {
+   const dispatch = useDispatch()
    const vehicleList = useSelector((state: RootStateType) => state.vehicle.vehicleList)
-   const [selectedVehicle, setSelectedVehicle] = useState("")
+   const selectedVehicleId = useSelector((state: RootStateType) => state.createBookingForm.vehicle.id)
 
    const handleOnSelectVehicle = (id: string) => {
-      setSelectedVehicle(id)
+      dispatch(SetCreateBookingFromDataVehicle({vehicleId: id}))
    }
 
    return (
@@ -19,7 +19,7 @@ function VehicleSelector()
          <Stack {...cfn.box}>
             {vehicleList?.map((vehicle) => (
                <VehicleCard
-                  variant={selectedVehicle === vehicle.id ? "highlight" : "primary"}
+                  variant={selectedVehicleId === vehicle.id ? "highlight" : "primary"}
                   onClick={handleOnSelectVehicle}
                   key={vehicle.id} {...vehicle}/>
             ))}

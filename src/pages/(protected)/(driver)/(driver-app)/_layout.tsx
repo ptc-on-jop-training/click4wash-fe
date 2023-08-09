@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom"
 import Header from "./header.tsx"
 import BottomNav from "./bottom-nav.tsx"
 import {useEffect} from "react"
-import {FetchVehicleList, useRootDispatch} from "../../../../stores"
+import {FetchLocationList, FetchParkingSlotList, FetchVehicleList, useRootDispatch} from "../../../../stores"
 
 function DriverAppLayout()
 {
@@ -11,6 +11,8 @@ function DriverAppLayout()
 
    useEffect(() => {
       rootDispatch(FetchVehicleList())
+      rootDispatch(FetchParkingSlotList())
+      rootDispatch(FetchLocationList())
    }, [])
 
    return (

@@ -2,6 +2,7 @@ import {Button, Container, Paper, SxProps} from "@mui/material"
 import {merge} from "lodash"
 import {useDispatch, useSelector} from "react-redux"
 import {RootStateType, NextStepCreateBooking, BackStepCreateBooking} from "../../../../stores"
+import {useEffect, useState} from "react"
 
 interface CreateBookingControllerProps
 {
@@ -11,10 +12,26 @@ interface CreateBookingControllerProps
 function CreateBookingController(props: CreateBookingControllerProps)
 {
    const dispatch = useDispatch()
-   const {totalStep, currentStep} = useSelector((state: RootStateType) => state.createBookingForm)
+   const {totalStep, currentStep, vehicle, bookingInfo} = useSelector((state: RootStateType) => state.createBookingForm)
+   const [isSubmitBtnDisable, setIsSubmitBtnDisable] = useState(true)
+
+   useEffect(() => {
+      if (currentStep === 0 && vehicle.id) {
+         setIsSubmitBtnDisable(false)
+      }
+      if (currentStep === 1 && Object.entries(bookingInfo).every(([key, value]) => key === "isCharge" || value)) {
+         setIsSubmitBtnDisable(false)
+      }
+   }, [vehicle, bookingInfo])
 
    const handleOnClickNextStep = () => {
+      setIsSubmitBtnDisable(true)
       dispatch(NextStepCreateBooking())
+   }
+
+   const handleSubmit = () => {
+      console.log(vehicle)
+      console.log(bookingInfo)
    }
 
    const handleOnClickBackStep = () => {
@@ -27,10 +44,10 @@ function CreateBookingController(props: CreateBookingControllerProps)
             <Button {...cfn.backBtn} onClick={handleOnClickBackStep} disabled={currentStep === 0}>Back</Button>
             {
                currentStep === totalStep - 1
-                  ? <Button {...cfn.nextBtn} onClick={handleOnClickNextStep}>
+                  ? <Button {...cfn.nextBtn} disabled={isSubmitBtnDisable} onClick={handleSubmit}>
                      Finish
                   </Button>
-                  : <Button {...cfn.nextBtn} onClick={handleOnClickNextStep}>
+                  : <Button {...cfn.nextBtn} disabled={isSubmitBtnDisable} onClick={handleOnClickNextStep}>
                      Next
                   </Button>
             }
