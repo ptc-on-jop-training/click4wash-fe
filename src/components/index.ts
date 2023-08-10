@@ -9,7 +9,7 @@ import RoleChip from "./data-display/role-chip.tsx"
 import VehicleCard from "./surfaces/vehicle-card.tsx"
 import Select from "./inputs/Select.tsx"
 import ConfirmationDialog from "./inputs/confirmation-dialog.tsx"
-
+import RemoveAssigner from "./data-display/remove-assigner.tsx"
 export {
    PageLoading,
    SectionTitle,
@@ -21,5 +21,6 @@ export {
    RoleChip,
    VehicleCard,
    Select,
-   ConfirmationDialog
+   ConfirmationDialog,
+   RemoveAssigner
 }
