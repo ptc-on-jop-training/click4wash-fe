@@ -11,6 +11,7 @@ interface Booking extends BaseEntity
    parkingSlotId: string
    status: BookingStatus
    timeSlot: TimeSlot
+   isCharge: boolean
 
    vehicle?: Vehicle
    parkingSlot?: ParkingSlot
