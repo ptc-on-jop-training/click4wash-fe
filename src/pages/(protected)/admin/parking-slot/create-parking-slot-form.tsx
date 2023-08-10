@@ -27,14 +27,16 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
    const LocationList = Location?.map(location => {
       const address = location.address
       const addressString = Object.values(address).join(', ')
-      return `${location.name}-${addressString}`
+      return {
+         id: location.id,
+         name: `${location.name}-${addressString}`
+      }
    }) ?? []
 
    const form = useFormik({
       initialValues: {
-         locationName: "",
+         locationId: "",
          name: "",
-         isBusy: true,
       },
 
       validationSchema: formValidation,
@@ -42,15 +44,14 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       validateOnBlur: true,
 
       onSubmit: (values) => {
-         const LocationName = values.locationName.split("-", 1)[0]
-         const foundLocation = Location?.find((location) => location.name === LocationName)
-         const address = foundLocation ? foundLocation.address : {line1: "", line2: "", line3: ""}
+         const foundLocation = Location?.find((location) => location.id === values.locationId)
          const id = Math.random().toString(36)
          const newValues = {
             ...values,
             id: id,
-            address: address,
-            locationName: LocationName,
+            address: foundLocation ? foundLocation.address : {line1: "", line2: "", line3: ""},
+            locationName: foundLocation?.name,
+            isBusy: false,
          }
          dispatch(pushPackingSlot(newValues))
          form.resetForm()
@@ -70,13 +71,13 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
    }
 
    const renderLocationSelect = () => {
-      return LocationList.map((option: string) => (
-         <MenuItem key={option} value={option} sx={{fontSize: "13px"}}>
-            {option}
+      return LocationList.map(option => (
+         <MenuItem key={option.id} value={option.id} sx={{fontSize: "13px"}}>
+            {option.name}
          </MenuItem>
       ))
    }
-    
+
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
@@ -86,11 +87,11 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 
          <DialogContent>
             <Select
-               error={!!(touched.locationName && errors.locationName)}
-               helperText={touched.locationName && errors.locationName}
-               name={"locationName"} value={values.locationName}
+               error={!!(touched.locationId && errors.locationId)}
+               helperText={touched.locationId && errors.locationId}
+               name={"locationId"} value={values.locationId}
                onChange={handleInputChange} onBlur={handleBlur}
-               label={"Choose Location"} required
+               label={"Location"} required
                fullWidth margin={"normal"}
                renderOptions={renderLocationSelect}/>
 
@@ -116,7 +117,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 }
 
 const formValidation = Yup.object().shape({
-   locationName: Yup.string().required('This field is required'),
+   locationId: Yup.string().required('This field is required'),
    name: Yup.string().required('This field is required'),
 })
 

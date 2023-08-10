@@ -3,7 +3,7 @@ import AddressResponse from "./address-response.ts"
 interface ParkingSlotResponse
 {
     id: string
-    locationName: string
+    locationId: string
     address: AddressResponse
     name: string
     isBusy:boolean

@@ -11,10 +11,10 @@ function ParkingSlotStatus(props: ParkingSlotStatusProps) {
    useEffect(() => {
       switch (props.isBusy) {
       case true:
-         setState({color: "success", label: "available"})
+         setState({color: "error", label: "busy"})
          break
       case false:
-         setState({color: "error", label: "busy"})
+         setState({color: "success", label: "available"})
          break
       }
    }, [props.isBusy])
