@@ -22,6 +22,7 @@ import GetLocationList from "./usecases/get-location-list.ts"
 import LocationResponse from "./dtos/location-response.ts"
 import BookingResponse from "./dtos/booking-response.ts"
 import GetBookingList from "./usecases/get-booking-list.ts"
+import BookingHistoryResponse from "./dtos/booking-history-response.ts"
 import CreateBookingRequest from "./dtos/create-booking-request.ts"
 
 export {
@@ -57,7 +58,8 @@ export {
    TimeSlots,
    VehicleType,
 
-   type CreateBookingRequest,
+   FormatTimeSlot,
 
-   FormatTimeSlot
+   type BookingHistoryResponse,
+   type CreateBookingRequest,
 }
