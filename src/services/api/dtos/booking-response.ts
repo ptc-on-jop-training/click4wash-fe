@@ -1,14 +1,20 @@
-import {VehicleType, TimeSlot, BookingStatus} from "../index.ts"
+import {BookingStatus, TimeSlots, VehicleType,} from "../index.ts"
+import BookingHistoryResponse from "./booking-history-response.ts"
+
+
 
 interface BookingResponse
 {
    id: string,
    vehicleType: VehicleType
    vehicleNumberPlate: string
-   timeSlot: TimeSlot
+   timeSlot: keyof typeof TimeSlots
    parkingSlotName: string
    status: BookingStatus
-   createdAt: Date
+   isCharge: boolean
 
+   createdAt: Date
+   historyList: BookingHistoryResponse[]
 }
+
 export default BookingResponse

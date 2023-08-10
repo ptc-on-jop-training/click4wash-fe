@@ -5,7 +5,7 @@ import axios from "axios"
 
 async function GetBookingList(): Promise<Response<BookingResponse[]>>
 {
-   const p = "https://64c8ab3ba1fe0128fbd60811.mockapi.io/Booking"
+   const p = "https://64c8ab3ba1fe0128fbd60811.mockapi.io/bookings"
 
 
    return new Promise(async (resolve) => {
