@@ -16,7 +16,7 @@ const TimeSlots = Object.freeze({
    D: <TimeSlot> {
       start: new Date(),
       end: new Date()
-   }
+   },
 })
 function FormatTimeSlot(timeSlot: TimeSlot) {
 
