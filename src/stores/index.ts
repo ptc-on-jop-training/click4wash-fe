@@ -4,6 +4,7 @@ import {FetchVehicleList, AddToHeadVehicleList} from "./vehicle-stores.ts"
 import {FetchParkingSlotList,pushPackingSlot} from "./parking-slot-stores.ts"
 import {FetchLocationList} from "./location-stores.ts"
 import {FetchBookingList} from "./booking-store.ts"
+import {FetchPolicyList,replacePolicyByNew} from "./policy-store.ts"
 
 export {
    RootStore,
@@ -27,6 +28,13 @@ export {
    // booking store
    FetchBookingList,
 
-   deleteAccountById
+   deleteAccountById,
+
+
+   //policy store
+   FetchPolicyList,
+   replacePolicyByNew
+
+
 
 }
