@@ -1,4 +1,4 @@
- enum AccountStatus {
+enum AccountStatus {
     active = "active",
     suspend = "suspend",
 }

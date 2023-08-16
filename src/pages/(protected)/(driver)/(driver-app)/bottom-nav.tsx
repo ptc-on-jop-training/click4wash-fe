@@ -1,8 +1,11 @@
 import {BottomNavigation, BottomNavigationAction, Paper, SxProps} from "@mui/material"
-import {DirectionsCar, Notifications, AddBox, Home} from '@mui/icons-material'
+import {DirectionsCar, AddBox, Home} from '@mui/icons-material'
 import {merge} from "lodash"
 import {SyntheticEvent, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
+import CreateBookingModal from "./create-booking-modal.tsx"
+import {useDispatch, useSelector} from "react-redux"
+import {RootStateType, SetCreateBookingFromIsOpen} from "../../../../stores"
 
 interface BottomNavProps
 {
@@ -21,11 +24,6 @@ const navData = [
       icon: <AddBox/>
    },
    {
-      label: "notice",
-      value: "notice",
-      icon: <Notifications/>
-   },
-   {
       label: "car",
       value: "car",
       icon: <DirectionsCar/>
@@ -34,29 +32,34 @@ const navData = [
 
 function BottomNav(props: BottomNavProps)
 {
+   const dispatch = useDispatch()
    const location = useLocation()
-   const [value, setValue] = useState(location.pathname.substring(1))
    const nav = useNavigate()
 
-   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) => {
-      setValue(newValue)
+   const [value, setValue] = useState(location.pathname.substring(1))
+   const isCreateBookingModalOpen = useSelector((state: RootStateType) => state.createBookingForm.isOpen)
 
+   const handleSwitchRoute = (_: SyntheticEvent, newValue: any) =>
+   {
       if (newValue === "wash") {
-         console.log("wash")
-         return
+         dispatch(SetCreateBookingFromIsOpen(true))
+      } else {
+         setValue(newValue)
+         nav(newValue)
       }
-
-      nav(newValue)
    }
 
    return (
-      <Paper {...merge(cfn.container, {sx: props.sx})}>
-         <BottomNavigation {...cfn.bottomNav} value={value} onChange={handleSwitchRoute}>
-            {navData.map((item, index) => (
-               <BottomNavigationAction {...item} key={index}/>
-            ))}
-         </BottomNavigation>
-      </Paper>
+      <>
+         <Paper {...merge(cfn.container, {sx: props.sx})}>
+            <BottomNavigation {...cfn.bottomNav} value={value} onChange={handleSwitchRoute}>
+               {navData.map((item, index) => (
+                  <BottomNavigationAction {...item} key={index}/>
+               ))}
+            </BottomNavigation>
+         </Paper>
+         <CreateBookingModal isOpen={isCreateBookingModalOpen} handleClose={() => dispatch(SetCreateBookingFromIsOpen(false))}/>
+      </>
    )
 }
 
@@ -66,7 +69,7 @@ const cfn = {
    },
 
    bottomNav: {
-      showLabels: true
+      // showLabels: true
    }
 }
 
