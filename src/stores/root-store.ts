@@ -6,6 +6,7 @@ import General_conditionStore from "./general-condition-store.ts"
 import ParkingSlotStores from "./parking-slot-stores.ts"
 import LocationStores from "./location-stores.ts"
 import BookingStore from "./booking-store.ts"
+import PolicyStore from "./policy-store.ts"
 import CreateBookingForm from "./create-booking-form-store.ts"
 
 const RootStore = configureStore({
@@ -16,6 +17,7 @@ const RootStore = configureStore({
       parkingSlot: ParkingSlotStores,
       location: LocationStores,
       booking: BookingStore,
+      policy: PolicyStore,
       createBookingForm: CreateBookingForm,
    }
 })
