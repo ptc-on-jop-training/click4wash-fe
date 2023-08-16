@@ -10,6 +10,8 @@ import VehicleCard from "./surfaces/vehicle-card.tsx"
 import Select from "./inputs/Select.tsx"
 import ConfirmationDialog from "./inputs/confirmation-dialog.tsx"
 import RemoveAssigner from "./data-display/remove-assigner.tsx"
+import VehicleIcon from "./data-display/vehicle-icon.tsx"
+
 export {
    PageLoading,
    SectionTitle,
@@ -22,5 +24,6 @@ export {
    VehicleCard,
    Select,
    ConfirmationDialog,
-   RemoveAssigner
+   RemoveAssigner,
+   VehicleIcon
 }

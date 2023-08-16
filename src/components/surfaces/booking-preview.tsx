@@ -49,7 +49,7 @@ const cfn = {
    parkingSlot: {
       sx: {
          fontSize: "30px",
-         margin: "0 30px 0 15px",
+         margin: "0 50px",
          fontWeight: "bold"
       }
    },
@@ -62,7 +62,7 @@ const cfn = {
    infoLine: {
       sx: {
          textDecorationStyle: "dotted",
-         fontSize: "14px",
+         fontSize: "15px",
       }
    },
 
