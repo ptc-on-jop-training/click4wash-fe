@@ -13,11 +13,54 @@
       "Status": {
         "status": "Status",
         "active": "active",
-        "suspend": "suspend"
+        "suspend": "suspend",
+        "delete": "Delete"
       },
       "AccountTableToolBar": {
         "newUser": "new user"
+      },
+      "createNew": {
+        "title": "Create New User",
+        "role": "team-member",
+        "helperText": "The admin just allow create Team Member",
+        "username": "username",
+        "email": "email",
+        "cancel": "Cancel",
+        "submit": "Submit"
       }
+    },
+    "BookingTable": {
+      "numberPlate": "Number Plate",
+      "day": "Day",
+      "timeSlot": "Time Slot",
+      "parkingSlot": "Parking Slot",
+      "Type": {
+        "type": "Type",
+        "motorcycle": "motorcycle",
+        "car": "car"
+      },
+      "Status": {
+        "status": "Status",
+        "processing": "processing",
+        "accepted": "accepted",
+        "refused": "refused",
+        "done": "done"
+
+
+
+      }
+    },
+    "LocationTable": {
+      "id": "ID",
+      "location" : "Location",
+      "address": "Address",
+      "LocationTableToolBar": {
+        "newLocation": "new location"
+      }
+    },
+    "GeneralConditionTable": {
+      "id": "ID",
+      "generalCondition": "General Conditions"
     },
     "TableToolBar": {
       "gridToolbar.filterTooltip": "Filter",

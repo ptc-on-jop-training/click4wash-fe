@@ -10,6 +10,7 @@ interface AccountStatusProps {
 function AccountStatus(props: AccountStatusProps) {
    const [state, setState] = useState<{ color: any, label: string }>()
    const [t] = useTranslation('trans')
+
    useEffect(() => {
       switch (props.status) {
       case AccountStatusEnum.active:

@@ -13,11 +13,53 @@
       "Status": {
         "status": "Statut",
         "active": "actif",
-        "suspend": "suspendre"
+        "suspend": "suspendre",
+        "delete": "Supprimer"
+
       },
       "AccountTableToolBar": {
         "newUser": "nouvel utilisateur"
+      },
+      "createNew": {
+        "title": "Créer un nouvel utilisateur",
+        "role": "membre de l'équipe",
+        "helperText": "l'administrateur autorise simplement la création d'un membre de l'équipe",
+        "username": "Nom d'utilisateur",
+        "email": "É-mail",
+        "cancel": "Annuler",
+        "submit": "Soumettre"
       }
+    },
+    "BookingTable": {
+      "numberPlate": "Plaque d'immatriculation",
+      "day": "Jour",
+      "timeSlot": "Créneau horaire",
+      "parkingSlot": "terrain de stationnement",
+      "Type": {
+        "type": "Taper",
+        "motorcycle": "moto",
+        "car": "voiture"
+      },
+      "Status": {
+        "status": "Statut",
+        "processing": "poignée",
+        "accepted": "accepté",
+        "refused": "refusé",
+        "done": "faite"
+
+      }
+    },
+    "LocationTable": {
+      "id": "ID",
+      "location" : "Emplacement",
+      "address": "Adresse",
+      "LocationTableToolBar": {
+        "newLocation": "nouvel emplacement"
+      }
+    },
+    "GeneralConditionTable": {
+      "id": "ID",
+      "generalCondition": "Conditions générales"
     },
     "TableToolBar": {
       "filterTooltip": "Filtre",
@@ -25,6 +67,7 @@
       "export": "Exporter",
       "filterPlaceholder": "Recherche..."
     },
+
     "Layout": {
       "LeftSideLayout": {
         "emptySide": {
@@ -43,7 +86,6 @@
         "parkingSlot": "terrain de stationnement",
         "generalCondition": "conditions générales",
         "privacyPolicy": "politique de confidentialité"
-
       }
     }
   }

@@ -14,7 +14,7 @@ const cfn = {
    accountTable:{
       sx:{
          height: "100%",
-         maxHeight: "calc(100vh - 129px)",
+         maxHeight: "calc(100vh - 132px)",
       }
    }
 }
