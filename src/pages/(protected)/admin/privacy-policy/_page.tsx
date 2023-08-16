@@ -1,15 +1,22 @@
-import {Box} from "@mui/material"
 import AdminLayout from "../_layout.tsx"
+import PolicyTable from "./policy-table.tsx"
+
 
 function PrivacyPolicyPage() {
    return (
       <AdminLayout
-         main={
-            <Box>
-               <p>This is Privacy policy page</p>
-            </Box>}
+         main={<PolicyTable {...cfn.policyTable}/>}
       />
    )
+}
+
+const cfn = {
+   policyTable:{
+      sx:{
+         height: "100vh",
+         maxHeight: "calc(100vh - 130px)",
+      }
+   }
 }
 
 export default PrivacyPolicyPage

@@ -18,7 +18,7 @@ interface CreateBookingFormStoreType
 }
 
 const initialState: CreateBookingFormStoreType = {
-   isOpen: true,
+   isOpen: false,
    totalStep: 2,
    currentStep: 0,
    vehicle: {
