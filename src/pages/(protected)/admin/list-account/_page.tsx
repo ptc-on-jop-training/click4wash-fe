@@ -13,8 +13,8 @@ function AccountPage()
 const cfn = {
    accountTable:{
       sx:{
-         height: "100%",
-         maxHeight: "calc(100vh - 132px)",
+         height: "100vh",
+         maxHeight: "calc(100vh - 130px)",
       }
    }
 }
