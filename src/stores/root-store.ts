@@ -8,18 +8,21 @@ import LocationStores from "./location-stores.ts"
 import BookingStore from "./booking-store.ts"
 import PolicyStore from "./policy-store.ts"
 import CreateBookingForm from "./create-booking-form-store.ts"
+import HolidayStore from "./holiday-store.ts"
 
 const RootStore = configureStore({
    reducer: {
       vehicle: VehicleStores,
       account: AccountStores,
-      generalCondition :General_conditionStore,
+      generalCondition: General_conditionStore,
       parkingSlot: ParkingSlotStores,
       location: LocationStores,
       booking: BookingStore,
       policy: PolicyStore,
       createBookingForm: CreateBookingForm,
+      holiday: HolidayStore,
    }
+   
 })
 
 export const useRootDispatch: () => typeof RootStore.dispatch = useDispatch

@@ -1,7 +1,12 @@
+import { Box } from "@mui/material"
+import { SectionTitle } from "../../../components"
+
 function TeamMemberPage()
 {
    return (
-      <div>team member</div>
+      <Box>
+         <SectionTitle title={"Team member"} />
+      </Box>
    )
 }
 

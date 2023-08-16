@@ -1,4 +1,4 @@
-interface TimeSlot
+interface  TimeSlot
 {
    start: Date
    end: Date
