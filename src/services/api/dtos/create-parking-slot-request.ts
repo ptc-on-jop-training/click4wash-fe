@@ -1,6 +1,6 @@
 interface CreateParkingSlotRequest
 {
-    locationName: string
+    locationId: string
     name: string
 }
 
