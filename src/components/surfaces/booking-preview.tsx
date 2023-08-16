@@ -11,6 +11,7 @@ interface BookingPreviewProps
    vehicleType: VehicleType
    isCharge: boolean
    timeSlot: keyof typeof TimeSlots
+   parkingSlotName: string
 }
 
 function BookingPreview(props: BookingPreviewProps)
@@ -19,7 +20,7 @@ function BookingPreview(props: BookingPreviewProps)
 
    return (
       <Box {...cfn.container} onClick={props.onClick}>
-         <Typography {...cfn.parkingSlot}>A1</Typography>
+         <Typography {...cfn.parkingSlot}>{props.parkingSlotName}</Typography>
          <Box {...cfn.center}>
             <Typography {...cfn.infoLine}>&#x2022; {FormatTimeSlot(TimeSlots[props.timeSlot])}</Typography>
             <Typography {...cfn.infoLine}>&#x2022; {props.vehicleType}</Typography>
