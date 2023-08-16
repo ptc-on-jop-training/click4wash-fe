@@ -1,7 +1,8 @@
 enum BookingStatus
 {
-   processing = "processing",
+   requested = "requested",
    accepted = "accepted",
+   processing = "processing",
    refused = "refused",
    done = "done"
 }
