@@ -26,6 +26,8 @@ import BookingHistoryResponse from "./dtos/booking-history-response.ts"
 import PolicyResponse from "./dtos/policy-response.ts"
 import GetPolicyList from "./usecases/get-policy-list.ts"
 
+import CreateBookingRequest from "./dtos/create-booking-request.ts"
+
 export {
    type BaseEntity,
    type Booking,
@@ -64,5 +66,6 @@ export {
 
    FormatTimeSlot,
 
-   type BookingHistoryResponse
+   type BookingHistoryResponse,
+   type CreateBookingRequest,
 }

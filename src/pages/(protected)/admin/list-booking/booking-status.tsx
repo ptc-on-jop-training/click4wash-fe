@@ -12,6 +12,9 @@ function BookingStatus(props: BookingStatusProps) {
    const [state, setState] = useState<{ color: any, label: string }>()
    useEffect(() => {
       switch (props.status) {
+      case BookingStatusEnum.requested:
+         setState({color: "primary", label: "requested"})
+         break
       case BookingStatusEnum.processing:
          setState({color: "error", label: "processing"})
          break

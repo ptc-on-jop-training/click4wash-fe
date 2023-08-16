@@ -7,6 +7,7 @@ import ParkingSlotStores from "./parking-slot-stores.ts"
 import LocationStores from "./location-stores.ts"
 import BookingStore from "./booking-store.ts"
 import PolicyStore from "./policy-store.ts"
+import CreateBookingForm from "./create-booking-form-store.ts"
 
 const RootStore = configureStore({
    reducer: {
@@ -16,7 +17,8 @@ const RootStore = configureStore({
       parkingSlot: ParkingSlotStores,
       location: LocationStores,
       booking: BookingStore,
-      policy: PolicyStore
+      policy: PolicyStore,
+      createBookingForm: CreateBookingForm,
    }
 })
 

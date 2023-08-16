@@ -10,8 +10,13 @@ interface BookingResponse
    vehicleNumberPlate: string
    timeSlot: keyof typeof TimeSlots
    parkingSlotName: string
+   address:string
    status: BookingStatus
    isCharge: boolean
+   review?: {
+      rating: number
+      comment?: string
+   }
 
    createdAt: Date
    historyList: BookingHistoryResponse[]
