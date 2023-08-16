@@ -25,9 +25,9 @@ function Select(props: SelectProps)
          <MuiSelect
             fullWidth={props.fullWidth}
             name={props.name}
-            id={props.id}
             value={props.value ?? ""}
             label={props.label}
+            id={props.id}
             onChange={props.onChange}
             onBlur={props.onBlur}
          >
