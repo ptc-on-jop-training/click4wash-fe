@@ -27,7 +27,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
 
    const dispatch = useDispatch()
 
-    const [t] = useTranslation('trans')
+   const [t] = useTranslation('trans')
 
    const Users = useSelector((state: RootStateType) => state.account.accountList)
 
@@ -90,10 +90,10 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-                {t("admin.LocationTable.locationDetail.AssignNewMemberForm.cancel")}
+               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-                {t("admin.LocationTable.locationDetail.AssignNewMemberForm.submit")}
+               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.submit")}
             </Button>
          </DialogActions>
 
