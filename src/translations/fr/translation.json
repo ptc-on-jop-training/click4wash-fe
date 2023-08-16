@@ -53,6 +53,32 @@
       "address": "Adresse",
       "LocationTableToolBar": {
         "newLocation": "nouvel emplacement"
+      },
+      "createNew": {
+        "title": "Créer un nouvel emplacement",
+        "name": "Cnom",
+        "province": "mVille/de province",
+        "district": "District",
+        "wards": "quartiers",
+        "specificAddress": "adresse spécifique",
+        "Choose": "Choisissez un membre de l'équipe",
+        "cancel": "Annuler",
+        "submit": "Soumettre"
+      },
+      "locationDetail":{
+        "heading": "Détail de l'emplacement",
+        "title": "Membres de l'équipe affectés pour",
+        "button": "affecter un nouveau membre",
+        "ConfirmationDialog": {
+          "title": "Confirmer pour supprimer l'attribueur de l'emplacement",
+          "message": "Êtes-vous sûr de vouloir supprimer ce membre de l'équipe de l'emplacement?"
+        },
+        "AssignNewMemberForm": {
+          "title": "Attribuer un nouveau membre",
+          "Choose": "Choisissez un membre de l'équipe",
+          "cancel": "Annuler",
+          "submit": "Soumettre"
+        }
       }
     },
     "GeneralConditionTable": {

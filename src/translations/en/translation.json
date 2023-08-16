@@ -53,6 +53,32 @@
       "address": "Address",
       "LocationTableToolBar": {
         "newLocation": "new location"
+      },
+      "createNew": {
+        "title": "Create New Location",
+        "name": "Name",
+        "province": "province/city",
+        "district": "District",
+        "wards": "wards",
+        "specificAddress": "specific address",
+        "Choose": "Choose Team member",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      },
+      "locationDetail":{
+        "heading": "Location detail",
+        "title": "Assigned Team Members for",
+        "button": "assign new member",
+        "ConfirmationDialog": {
+          "title": "Confirm to remove assigner for location",
+          "message": "Are you sure you want to remove this team member from the location?"
+        }
+      },
+      "AssignNewMemberForm": {
+        "title": "Assign new member",
+        "Choose": "Choose Team member",
+        "cancel": "Cancel",
+        "submit": "Submit"
       }
     },
     "GeneralConditionTable": {
