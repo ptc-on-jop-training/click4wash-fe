@@ -1,9 +1,11 @@
 import {BottomNavigation, BottomNavigationAction, Paper, SxProps} from "@mui/material"
-import {DirectionsCar, Notifications, AddBox, Home} from '@mui/icons-material'
+import {DirectionsCar, AddBox, Home} from '@mui/icons-material'
 import {merge} from "lodash"
 import {SyntheticEvent, useState} from "react"
 import {useLocation, useNavigate} from "react-router-dom"
 import CreateBookingModal from "./create-booking-modal.tsx"
+import {useDispatch, useSelector} from "react-redux"
+import {RootStateType, SetCreateBookingFromIsOpen} from "../../../../stores"
 
 interface BottomNavProps
 {
@@ -22,11 +24,6 @@ const navData = [
       icon: <AddBox/>
    },
    {
-      label: "notice",
-      value: "notice",
-      icon: <Notifications/>
-   },
-   {
       label: "car",
       value: "car",
       icon: <DirectionsCar/>
@@ -35,16 +32,17 @@ const navData = [
 
 function BottomNav(props: BottomNavProps)
 {
+   const dispatch = useDispatch()
    const location = useLocation()
    const nav = useNavigate()
 
    const [value, setValue] = useState(location.pathname.substring(1))
-   const [isCreateBookingModalOpen, setIsCreateBookingModalOpen] = useState<boolean>(false)
+   const isCreateBookingModalOpen = useSelector((state: RootStateType) => state.createBookingForm.isOpen)
 
    const handleSwitchRoute = (_: SyntheticEvent, newValue: any) =>
    {
       if (newValue === "wash") {
-         setIsCreateBookingModalOpen(true)
+         dispatch(SetCreateBookingFromIsOpen(true))
       } else {
          setValue(newValue)
          nav(newValue)
@@ -60,7 +58,7 @@ function BottomNav(props: BottomNavProps)
                ))}
             </BottomNavigation>
          </Paper>
-         <CreateBookingModal isOpen={isCreateBookingModalOpen} handleClose={() => setIsCreateBookingModalOpen(false)}/>
+         <CreateBookingModal isOpen={isCreateBookingModalOpen} handleClose={() => dispatch(SetCreateBookingFromIsOpen(false))}/>
       </>
    )
 }

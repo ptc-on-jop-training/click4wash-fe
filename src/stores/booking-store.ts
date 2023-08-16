@@ -1,5 +1,5 @@
 import {BookingResponse, GetBookingList} from "../services/api"
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 
 interface BookingStoreType
@@ -26,8 +26,9 @@ const BookingSlice = createSlice({
 
 
    reducers: {
-
-
+      PushToBookingList: (state, action: PayloadAction<BookingResponse>) => {
+         state.bookingList = [action.payload, ...(state.bookingList ?? [])]
+      }
    },
 
 
@@ -39,5 +40,5 @@ const BookingSlice = createSlice({
    }
 })
 export {FetchBookingList}
-export const {} = BookingSlice.actions
+export const {PushToBookingList} = BookingSlice.actions
 export default BookingSlice.reducer

@@ -2,6 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 interface CreateBookingFormStoreType
 {
+   isOpen: boolean
    totalStep: number
    currentStep: number
    vehicle: {
@@ -9,13 +10,15 @@ interface CreateBookingFormStoreType
    },
    bookingInfo: {
       locationId: string
-      createdAt: Date | null
+      bookedAt: string
       timeSlot: string | null,
+      parkingSlotId: string,
       isCharge: boolean
    }
 }
 
 const initialState: CreateBookingFormStoreType = {
+   isOpen: true,
    totalStep: 2,
    currentStep: 0,
    vehicle: {
@@ -23,7 +26,8 @@ const initialState: CreateBookingFormStoreType = {
    },
    bookingInfo: {
       locationId: "",
-      createdAt: null,
+      parkingSlotId: "",
+      bookedAt: (new Date()).toISOString().split('T')[0],
       timeSlot: null,
       isCharge: false
    }
@@ -59,9 +63,12 @@ const CreateBookingFormSlice = createSlice({
       SetCreateBookingFromDataBookingInfo(state, action: PayloadAction<CreateBookingFormStoreType["bookingInfo"]>) {
          console.log(action.payload)
          state.bookingInfo = action.payload
+      },
+      SetCreateBookingFromIsOpen(state, action: PayloadAction<boolean>) {
+         state.isOpen = action.payload
       }
    },
 })
 
-export const {SetCreateBookingFromDataBookingInfo, SetCreateBookingFromDataVehicle, NextStepCreateBooking, BackStepCreateBooking, ResetCreateBookingForm} = CreateBookingFormSlice.actions
+export const {SetCreateBookingFromIsOpen, SetCreateBookingFromDataBookingInfo, SetCreateBookingFromDataVehicle, NextStepCreateBooking, BackStepCreateBooking, ResetCreateBookingForm} = CreateBookingFormSlice.actions
 export default CreateBookingFormSlice.reducer

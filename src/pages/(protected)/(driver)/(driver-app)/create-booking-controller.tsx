@@ -1,8 +1,15 @@
 import {Button, Container, Paper, SxProps} from "@mui/material"
 import {merge} from "lodash"
 import {useDispatch, useSelector} from "react-redux"
-import {RootStateType, NextStepCreateBooking, BackStepCreateBooking} from "../../../../stores"
+import {
+   BackStepCreateBooking,
+   NextStepCreateBooking,
+   PushToBookingList,
+   RootStateType,
+   SetCreateBookingFromIsOpen
+} from "../../../../stores"
 import {useEffect, useState} from "react"
+import {BookingStatus, VehicleType} from "../../../../services/api"
 
 interface CreateBookingControllerProps
 {
@@ -19,10 +26,10 @@ function CreateBookingController(props: CreateBookingControllerProps)
       if (currentStep === 0 && vehicle.id) {
          setIsSubmitBtnDisable(false)
       }
-      if (currentStep === 1 && Object.entries(bookingInfo).every(([key, value]) => key === "isCharge" || value)) {
-         setIsSubmitBtnDisable(false)
+      if (currentStep === 1) {
+         setIsSubmitBtnDisable(!Object.entries(bookingInfo).every(([key, value]) => key === "isCharge" || value))
       }
-   }, [vehicle, bookingInfo])
+   }, [vehicle.id, bookingInfo.locationId, bookingInfo.timeSlot, bookingInfo.parkingSlotId, bookingInfo.bookedAt])
 
    const handleOnClickNextStep = () => {
       setIsSubmitBtnDisable(true)
@@ -30,12 +37,25 @@ function CreateBookingController(props: CreateBookingControllerProps)
    }
 
    const handleSubmit = () => {
-      console.log(vehicle)
-      console.log(bookingInfo)
+      dispatch(PushToBookingList({
+         id: "string",
+         vehicleType: VehicleType.motorcycle,
+         vehicleNumberPlate: vehicle.id,
+         timeSlot: bookingInfo.timeSlot as any,
+         parkingSlotName: "etown 3",
+         address: "",
+         status: BookingStatus.requested,
+         isCharge: false,
+
+         createdAt: new Date(),
+         historyList: []
+      }))
+      dispatch(SetCreateBookingFromIsOpen(false))
    }
 
    const handleOnClickBackStep = () => {
       dispatch(BackStepCreateBooking())
+      setIsSubmitBtnDisable(false)
    }
 
    return (

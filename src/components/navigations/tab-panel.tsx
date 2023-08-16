@@ -1,14 +1,14 @@
-import {ReactNode} from "react";
+import {ReactNode} from "react"
 
 interface TabPanelProps {
-   children?: ReactNode;
-   index: number;
-   value: number;
+   children?: ReactNode
+   index: number
+   value: number
 }
 
 function TabPanel(props: TabPanelProps)
 {
-   const { children, value, index, ...other } = props;
+   const { children, value, index, ...other } = props
 
    return (
       <div
@@ -19,7 +19,7 @@ function TabPanel(props: TabPanelProps)
       >
          {value === index && children}
       </div>
-   );
+   )
 }
 
 export default TabPanel
