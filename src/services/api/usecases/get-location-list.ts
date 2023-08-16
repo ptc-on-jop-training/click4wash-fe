@@ -4,7 +4,7 @@ import axios from "axios"
 
 function GetLocationList(): Promise<Response<LocationResponse[]>> {
 
-   const endpoint = "https://64c0c5670d8e251fd112890b.mockapi.io/loactions"
+   const endpoint = "https://64c0c5670d8e251fd112890b.mockapi.io/locations"
 
    return new Promise((resolve) => {
       axios.get<LocationResponse[]>(endpoint)
