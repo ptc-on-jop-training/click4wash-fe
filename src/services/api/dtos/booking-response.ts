@@ -14,6 +14,7 @@ interface BookingResponse
    status: BookingStatus
    isCharge: boolean
    comment:string
+   rating: number
 
    createdAt: Date
    historyList: BookingHistoryResponse[]
