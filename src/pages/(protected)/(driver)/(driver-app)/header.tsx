@@ -1,5 +1,5 @@
 import {AppBar, Box, IconButton, Toolbar, Typography} from "@mui/material"
-import {AccountCircle, Language} from "@mui/icons-material"
+import {AccountCircle} from "@mui/icons-material"
 
 interface HeaderProps
 {
@@ -13,9 +13,6 @@ function Header(props: HeaderProps)
          <Toolbar {...cfn.toolbar}>
             <Typography>OKAY</Typography>
             <Box>
-               <IconButton {...cfn.langMenuBtn}>
-                  <Language/>
-               </IconButton>
                <IconButton {...cfn.userMenuBtn}>
                   <AccountCircle/>
                </IconButton>

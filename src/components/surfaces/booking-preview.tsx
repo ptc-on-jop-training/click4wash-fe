@@ -17,7 +17,6 @@ interface BookingPreviewProps
 function BookingPreview(props: BookingPreviewProps)
 {
    const isAcceptBtnDisplay = props.variant === "team-member" && props.status == BookingStatus.requested
-
    return (
       <Box {...cfn.container} onClick={props.onClick}>
          <Typography {...cfn.parkingSlot}>{props.parkingSlotName}</Typography>
