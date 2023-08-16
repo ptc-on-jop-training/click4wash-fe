@@ -57,7 +57,15 @@
     },
     "GeneralConditionTable": {
       "id": "ID",
-      "generalCondition": "General Conditions"
+      "generalCondition": "General Conditions",
+      "GeneralConditionToolbar": {
+        "newGeneralCondition": "New General Condition"
+      },
+      "createNewGeneraCondition": {
+        "title" : "Create General Condition",
+        "lableInput": "Type General Condition"
+      }
+
     },
     "Layout": {
       "LeftSideLayout": {
@@ -80,6 +88,35 @@
 
       }
 
+    },
+    "ParkingSlot": {
+      "id": "Id",
+      "location": "Location",
+      "parkingSlot": "Parking Slot",
+      "address": "Address",
+      "Status": {
+        "status": "Status",
+        "available": "available",
+        "busy": "busy"
+      },
+      "ParkingSlotTableToolBar": {
+        "newParkingSlot": "New Parking Slot"
+      },
+      "createNewParkingSlot": {
+        "title" : "Create New Parking Slot",
+        "inputLocation": "Location",
+        "inputName": "Name"
+      }
+    },
+    "PrivacyPolicy": {
+      "id": "Id",
+      "title": "Title",
+      "action": "Action",
+      "update": "Update",
+      "updatePrivacyPolicy": {
+        "title": "Update Privacy Policy",
+        "lableInput": "Privacy Policy"
+      }
     }
   }
 }

@@ -57,7 +57,14 @@
     },
     "GeneralConditionTable": {
       "id": "ID",
-      "generalCondition": "Conditions générales"
+      "generalCondition": "Conditions générales",
+      "GeneralConditionToolbar": {
+        "newGeneralCondition": "Nouvel état général"
+      },
+      "createNewGeneraCondition": {
+        "title" : "Créer un nouvel emplacement d'emballage",
+        "lableInput": "Condition générale"
+      }
     },
     "Layout": {
       "LeftSideLayout": {
@@ -77,6 +84,36 @@
         "parkingSlot": "terrain de stationnement",
         "generalCondition": "conditions générales",
         "privacyPolicy": "politique de confidentialité"
+      }
+    },
+    "ParkingSlot":{
+      "id": "Id",
+      "location": "Emplacement",
+      "parkingSlot": "Emplacement de stationnement",
+      "address": "Adresse",
+      "Status": {
+        "status": "Statut",
+        "available": "disponible",
+        "busy": "occupé"
+      },
+      "ParkingSlotTableToolBar": {
+        "newParkingSlot": "Nouvelle place de stationnement"
+      },
+      "createNewParkingSlot": {
+        "title" : "Créer un nouvel emplacement d'emballage",
+        "inputLocation": "Emplacement",
+        "inputName": "Nom"
+      }
+
+    },
+    "PrivacyPolicy": {
+      "id": "Id",
+      "title": "Titre",
+      "action": "Action",
+      "update":"Mise à jour",
+      "updatePrivacyPolicy": {
+        "title" : "Mettre à jour la politique de confidentialité",
+        "lableInput": "Politique"
       }
     }
   }
