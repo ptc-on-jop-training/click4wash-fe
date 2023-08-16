@@ -45,9 +45,6 @@
         "accepted": "accepted",
         "refused": "refused",
         "done": "done"
-
-
-
       }
     },
     "LocationTable": {
@@ -61,12 +58,6 @@
     "GeneralConditionTable": {
       "id": "ID",
       "generalCondition": "General Conditions"
-    },
-    "TableToolBar": {
-      "gridToolbar.filterTooltip": "Filter",
-      "gridToolbar.columns": "Columns",
-      "gridToolbar.export": "Export",
-      "gridToolbar.filterPlaceholder": "Search..."
     },
     "Layout": {
       "LeftSideLayout": {

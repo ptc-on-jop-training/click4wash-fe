@@ -15,7 +15,6 @@
         "active": "actif",
         "suspend": "suspendre",
         "delete": "Supprimer"
-
       },
       "AccountTableToolBar": {
         "newUser": "nouvel utilisateur"
@@ -46,7 +45,6 @@
         "accepted": "accepté",
         "refused": "refusé",
         "done": "faite"
-
       }
     },
     "LocationTable": {
@@ -61,13 +59,6 @@
       "id": "ID",
       "generalCondition": "Conditions générales"
     },
-    "TableToolBar": {
-      "filterTooltip": "Filtre",
-      "columns": "Colonnes",
-      "export": "Exporter",
-      "filterPlaceholder": "Recherche..."
-    },
-
     "Layout": {
       "LeftSideLayout": {
         "emptySide": {
