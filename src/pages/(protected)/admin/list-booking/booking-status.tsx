@@ -15,6 +15,9 @@ function BookingStatus(props: BookingStatusProps) {
 
    useEffect(() => {
       switch (props.status) {
+      case BookingStatusEnum.requested:
+         setState({color: "primary", label: "requested"})
+         break
       case BookingStatusEnum.processing:
          setState({color: "error", label: t("admin.BookingTable.Status.processing")})
          break
