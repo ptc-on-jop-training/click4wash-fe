@@ -101,6 +101,10 @@
         "menuOption": {
           "Logout": "Se déconnecter",
           "Switch": "Passer à l'anglais"
+        },
+        "changeLanguageOption": {
+          "english" : "Passer à l'anglais",
+          "french": "Passer au français"
         }
       },
       "TabNab": {
