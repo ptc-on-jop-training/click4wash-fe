@@ -1,0 +1,50 @@
+{
+  "admin": {
+    "AccountTable": {
+      "id": "id",
+      "userName": "Nom d'utilisateur",
+      "Role": {
+        "role": "Rôle",
+        "admin": "administratrice",
+        "teamMember": "membre de l'équipe",
+        "driver": "conducteur"
+      },
+      "Email": "É-mail",
+      "Status": {
+        "status": "Statut",
+        "active": "actif",
+        "suspend": "suspendre"
+      },
+      "AccountTableToolBar": {
+        "newUser": "nouvel utilisateur"
+      }
+    },
+    "TableToolBar": {
+      "filterTooltip": "Filtre",
+      "columns": "Colonnes",
+      "export": "Exporter",
+      "filterPlaceholder": "Recherche..."
+    },
+    "Layout": {
+      "LeftSideLayout": {
+        "emptySide": {
+          "emptyHeading": "Rien à montrer",
+          "emptyText": "Sélectionnez quelque chose pour voir le détail"
+        },
+        "menuOption": {
+          "Logout": "Se déconnecter",
+          "Switch": "Passer à l'anglais"
+        }
+      },
+      "TabNab": {
+        "userManagement": "utilisations",
+        "listBooking": "réservations",
+        "locations": "Emplacements",
+        "parkingSlot": "terrain de stationnement",
+        "generalCondition": "conditions générales",
+        "privacyPolicy": "politique de confidentialité"
+
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "admin": {
+    "AccountTable": {
+      "id": "id",
+      "userName": "User Name",
+      "Role": {
+        "role": "role",
+        "admin": "admin",
+        "teamMember": "team-member",
+        "driver": "driver"
+      },
+      "Email": "Email",
+      "Status": {
+        "status": "Status",
+        "active": "active",
+        "suspend": "suspend"
+      },
+      "AccountTableToolBar": {
+        "newUser": "new user"
+      }
+    },
+    "TableToolBar": {
+      "gridToolbar.filterTooltip": "Filter",
+      "gridToolbar.columns": "Columns",
+      "gridToolbar.export": "Export",
+      "gridToolbar.filterPlaceholder": "Search..."
+    },
+    "Layout": {
+      "LeftSideLayout": {
+        "emptySide": {
+          "emptyHeading": "Nothing to show",
+          "emptyText": "Select something to see the detail"
+        },
+        "menuOption": {
+          "Logout": "Log out",
+          "Switch": "Switch to French"
+        }
+      },
+      "TabNab": {
+        "userManagement": "user management",
+        "listBooking": "List Booking",
+        "locations": "Locations",
+        "parkingSlot": "Parking Slot",
+        "generalCondition": "general condition",
+        "privacyPolicy": "Privacy Policy"
+
+      }
+
+    }
+  }
+}

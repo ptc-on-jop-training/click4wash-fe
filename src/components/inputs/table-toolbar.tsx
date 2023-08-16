@@ -18,7 +18,7 @@ function TableToolBar(props: TableToolBarProps) {
       <GridToolbarContainer {...cfn.gridToolBarStyles}>
          <Box {...cfn.gridToolBarBox}>
             {props.leftTool}
-            <GridToolbarFilterButton/>
+            <GridToolbarFilterButton />
             <GridToolbarColumnsButton size="small"/>
             <GridToolbarExport size="small"/>
          </Box>

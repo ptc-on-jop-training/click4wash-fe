@@ -19,8 +19,7 @@ function ParkingSlotTable(props: PackingSlotTableProps) {
          rows={parkingSlotList ?? []}
          slots={{
             toolbar: ParkingSlotToolBar
-         }}
-      />
+         }}      />
    )
 }
 
