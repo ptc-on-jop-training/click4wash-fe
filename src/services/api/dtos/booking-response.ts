@@ -13,8 +13,10 @@ interface BookingResponse
    address:string
    status: BookingStatus
    isCharge: boolean
-   comment:string
-   rating: number
+   review?: {
+      rating: number
+      comment?: string
+   }
 
    createdAt: Date
    historyList: BookingHistoryResponse[]
