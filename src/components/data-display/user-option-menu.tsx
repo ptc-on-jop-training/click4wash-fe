@@ -9,6 +9,7 @@ const UserOptionMenu = () => {
    const [subMenuAnchorEl, setSubMenuAnchorEl] = useState<null | HTMLElement>(null)
    const open = Boolean(anchorEl)
    const openChildMenu = Boolean(subMenuAnchorEl)
+
    const {logout} = useAuth0()
 
    const [t, i18n] = useTranslation('trans')
