@@ -40,7 +40,7 @@ const TimeSlots = Object.freeze({
 })
 function FormatTimeSlot(timeSlot: TimeSlot) {
    const { start, end } = timeSlot
-   return `${start} -> ${end}`
+   return `${start} - ${end}`
 }
 
 export {FormatTimeSlot}
