@@ -43,5 +43,5 @@ function FormatTimeSlot(timeSlot: TimeSlot) {
    return `${start} - ${end}`
 }
 
-export {FormatTimeSlot}
+export { FormatTimeSlot }
 export default TimeSlots
