@@ -4,7 +4,7 @@ import {ChangeEvent} from "react"
 import {DialogTitle, Dialog, DialogActions, Button, DialogContent, TextField, SelectChangeEvent} from "@mui/material"
 import {useDispatch} from "react-redux"
 import {pushToAllGeneralCondition} from "../../../../stores/general-condition-store.ts"
-
+import {useTranslation} from "react-i18next"
 interface CreateNewFormProps {
     isOpen: boolean
     handleClose: () => void
@@ -13,6 +13,7 @@ interface CreateNewFormProps {
 function CreateNewForm(props: CreateNewFormProps) {
 
    const dispatch = useDispatch()
+   const [t] = useTranslation('trans')
 
    const formValidation = Yup.object().shape({
       generalCondition: Yup.string().required('This field is required'),
@@ -49,7 +50,7 @@ function CreateNewForm(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"md"} fullWidth open={props.isOpen} onClose={props.handleClose}>
          <DialogTitle {...cfn.formTitle}>
-                Create General Conditions
+            {t("admin.GeneralConditionTable.createNewGeneraCondition.title")}
          </DialogTitle>
          <DialogContent>
             <TextField
@@ -57,14 +58,14 @@ function CreateNewForm(props: CreateNewFormProps) {
                helperText={touched.generalCondition && errors.generalCondition} value={values.generalCondition}
                onBlur={handleBlur} onChange={handleInputChange}
                fullWidth required name={"generalCondition"} multiline={true} minRows={10} maxRows={15}
-               margin={"normal"} label={"Type General Conditions"} type={"text"}/>
+               margin={"normal"} label= {t("admin.GeneralConditionTable.createNewGeneraCondition.lableInput")} type={"text"}/>
          </DialogContent>
          <DialogActions>
             <Button onClick={props.handleClose} color="secondary">
-                    Cancel
+               {t("admin.AccountTable.createNew.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-                    Save
+               {t("admin.AccountTable.createNew.submit")}
             </Button>
          </DialogActions>
       </Dialog>

@@ -13,8 +13,8 @@ function GeneralConditionPage() {
 const cfn = {
    table:{
       sx:{
-         height: "100%",
-         maxHeight: "calc(100vh - 129px)",
+         height: "100vh",
+         maxHeight: "calc(100vh - 130px)",
       }
    }
 }

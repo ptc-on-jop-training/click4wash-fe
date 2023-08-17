@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux"
 import {removeTeamMemberByIndex, setSelectedLocationById} from "../../../../stores/location-stores.ts"
 import AssignNewMemberForm from "./assign-new-member-form.tsx"
 import {useState} from "react"
+import {useTranslation} from "react-i18next"
 
 interface LocationDetailProps {
     LocationSelected?: LocationResponse,
@@ -13,6 +14,9 @@ interface LocationDetailProps {
 function LocationDetail(props: LocationDetailProps) {
 
    const dispatch = useDispatch()
+
+   const [t] = useTranslation('trans')
+
 
    const [isCreateFormOpen, setIsCreateFormOpen] = useState<boolean>(false)
 
@@ -41,11 +45,11 @@ function LocationDetail(props: LocationDetailProps) {
    return (
       <Box {...cfn.wrapper}>
 
-         <Typography {...cfn.title}> Location detail</Typography>
+         <Typography {...cfn.title}>{t("admin.LocationTable.locationDetail.heading")}</Typography>
 
          <Box>
             <Typography variant="body1" sx={{marginTop: 3, marginBottom: 3}}>
-                    Assigned Team Members for <b>{props.LocationSelected?.name}</b>:
+               {t("admin.LocationTable.locationDetail.title")} <b>{props.LocationSelected?.name}</b>:
             </Typography>
          </Box>
 
@@ -59,15 +63,15 @@ function LocationDetail(props: LocationDetailProps) {
                   onClick={() => setIsCreateFormOpen(true)}
                   color={"success"}
                   sx={{marginTop: "10px", textTransform: "none"}}>
-                  {"assign new member"}
+                  {t("admin.LocationTable.locationDetail.button")}
                </Button>
                <AssignNewMemberForm isOpen={isCreateFormOpen} handleClose={handleClose}
                   teamMember={props.LocationSelected?.teamMemberEmailList}
                   id={props.LocationSelected?.id || ''}
                />
                <ConfirmationDialog open={isOpen} onClose={() => setIsOpen(false)} onConfirm={handelDelete}
-                  title={'Confirm to remove assigner for location'}
-                  message={"Are you sure you want to remove this team member from the location?"}
+                  title={t("admin.LocationTable.locationDetail.ConfirmationDialog.title")}
+                  message={t("admin.LocationTable.locationDetail.ConfirmationDialog.message")}
                />
             </Box>
          </Box>
