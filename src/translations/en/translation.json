@@ -1,0 +1,148 @@
+{
+  "admin": {
+    "AccountTable": {
+      "id": "id",
+      "userName": "User Name",
+      "Role": {
+        "role": "role",
+        "admin": "admin",
+        "teamMember": "team-member",
+        "driver": "driver"
+      },
+      "Email": "Email",
+      "Status": {
+        "status": "Status",
+        "active": "active",
+        "suspend": "suspend",
+        "delete": "Delete"
+      },
+      "AccountTableToolBar": {
+        "newUser": "new user"
+      },
+      "createNew": {
+        "title": "Create New User",
+        "role": "team-member",
+        "helperText": "The admin just allow create Team Member",
+        "username": "username",
+        "email": "email",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      }
+    },
+    "BookingTable": {
+      "numberPlate": "Number Plate",
+      "day": "Day",
+      "timeSlot": "Time Slot",
+      "parkingSlot": "Parking Slot",
+      "Type": {
+        "type": "Type",
+        "motorcycle": "motorcycle",
+        "car": "car"
+      },
+      "Status": {
+        "status": "Status",
+        "processing": "processing",
+        "accepted": "accepted",
+        "refused": "refused",
+        "done": "done"
+      }
+    },
+    "LocationTable": {
+      "id": "ID",
+      "location" : "Location",
+      "address": "Address",
+      "LocationTableToolBar": {
+        "newLocation": "new location"
+      },
+      "createNew": {
+        "title": "Create New Location",
+        "name": "Name",
+        "province": "province/city",
+        "district": "District",
+        "wards": "wards",
+        "specificAddress": "specific address",
+        "Choose": "Choose Team member",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      },
+      "locationDetail":{
+        "heading": "Location detail",
+        "title": "Assigned Team Members for",
+        "button": "assign new member",
+        "ConfirmationDialog": {
+          "title": "Confirm to remove assigner for location",
+          "message": "Are you sure you want to remove this team member from the location?"
+        }
+      },
+      "AssignNewMemberForm": {
+        "title": "Assign new member",
+        "Choose": "Choose Team member",
+        "cancel": "Cancel",
+        "submit": "Submit"
+      }
+    },
+    "GeneralConditionTable": {
+      "id": "ID",
+      "generalCondition": "General Conditions",
+      "GeneralConditionToolbar": {
+        "newGeneralCondition": "New General Condition"
+      },
+      "createNewGeneraCondition": {
+        "title" : "Create General Condition",
+        "lableInput": "Type General Condition"
+      }
+
+    },
+    "Layout": {
+      "LeftSideLayout": {
+        "emptySide": {
+          "emptyHeading": "Nothing to show",
+          "emptyText": "Select something to see the detail"
+        },
+        "menuOption": {
+          "Logout": "Log out",
+          "Switch": "Switch to French"
+        }
+      },
+      "TabNab": {
+        "userManagement": "user management",
+        "listBooking": "List Booking",
+        "locations": "Locations",
+        "parkingSlot": "Parking Slot",
+        "generalCondition": "general condition",
+        "privacyPolicy": "Privacy Policy"
+
+      }
+
+    },
+    "ParkingSlot": {
+      "id": "Id",
+      "location": "Location",
+      "parkingSlot": "Parking Slot",
+      "address": "Address",
+      "Status": {
+        "status": "Status",
+        "available": "available",
+        "busy": "busy"
+      },
+      "ParkingSlotTableToolBar": {
+        "newParkingSlot": "New Parking Slot"
+      },
+      "createNewParkingSlot": {
+        "title" : "Create New Parking Slot",
+        "inputLocation": "Location",
+        "inputName": "Name"
+      }
+    },
+    "PrivacyPolicy": {
+      "id": "Id",
+      "title": "Title",
+      "action": "Action",
+      "update": "Update",
+      "updatePrivacyPolicy": {
+        "title": "Update Privacy Policy",
+        "lableInput": "Privacy Policy"
+      }
+    }
+  }
+}

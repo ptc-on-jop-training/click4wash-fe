@@ -2,6 +2,7 @@ import {Dialog, DialogTitle, DialogContent, TextField, Button, DialogActions} fr
 import React, {useEffect, useState} from "react"
 import {replacePolicyByNew, useRootDispatch} from "../../../../stores"
 import {PolicyResponse} from "../../../../services/api"
+import {useTranslation} from "react-i18next"
 interface FormUpdatePolicyProps
 {
    open: boolean;
@@ -14,6 +15,7 @@ interface FormUpdatePolicyProps
 function FormUpdatePolicy(props: FormUpdatePolicyProps) {
    const dispatch = useRootDispatch()
    const [updatedTitle, setUpdatedTitle] = useState(props.title)
+   const [t] = useTranslation('trans')
 
    useEffect(() => {
       setUpdatedTitle(props.title)
@@ -36,10 +38,10 @@ function FormUpdatePolicy(props: FormUpdatePolicyProps) {
    }
    return (
       <Dialog open={props.open} onClose={props.onClose} fullWidth>
-         <DialogTitle>Update Policy</DialogTitle>
+         <DialogTitle>{t("admin.PrivacyPolicy.updatePrivacyPolicy.title")}</DialogTitle>
          <DialogContent >
             <TextField
-               label="Policy"
+               label={t("admin.PrivacyPolicy.updatePrivacyPolicy.lableInput")}
                variant="outlined"
                fullWidth required name={"private Policy"} multiline={true} minRows={20} maxRows={30}
                value={updatedTitle}
@@ -49,10 +51,10 @@ function FormUpdatePolicy(props: FormUpdatePolicyProps) {
          </DialogContent>
          <DialogActions>
             <Button onClick={handleCancle} color="primary" variant="contained">
-               Cancel
+               {t("admin.AccountTable.createNew.cancel")}
             </Button>
             <Button onClick={handleUpdate} color="error" variant="contained">
-               Update
+               {t("admin.AccountTable.createNew.submit")}
             </Button>
          </DialogActions>
       </Dialog>

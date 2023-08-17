@@ -7,6 +7,7 @@ import CreateTeamMemberAccount from "../../../../services/auth0/usecases/create-
 import {useDispatch} from "react-redux"
 import {pushToAllAccountList} from "../../../../stores"
 import {RoleChip} from "../../../../components"
+import {useTranslation} from "react-i18next"
 
 
 interface CreateAccountFormModalProps {
@@ -19,6 +20,8 @@ const formValidation = Yup.object().shape({
    username: Yup.string().required("Display username is required"),
 })
 function CreateAccountFormModal(props: CreateAccountFormModalProps) {
+   const [t] = useTranslation('trans')
+
 
    const dispatch = useDispatch()
    const form = useFormik<CreateTeamMemberAccountRequest>({
@@ -53,12 +56,12 @@ function CreateAccountFormModal(props: CreateAccountFormModalProps) {
 
    return (
       <Dialog open={props.isOpen} onClose={props.handleClose}>
-         <DialogTitle>Create New User</DialogTitle>
+         <DialogTitle>{t("admin.AccountTable.createNew.title")}</DialogTitle>
          <DialogContent>
             <Select
                name={"role"}
                value={Role.teamMember}
-               label={"Role"}
+               label={t("admin.AccountTable.createNew.role")}
                required
                fullWidth
                margin={"dense"}
@@ -68,7 +71,7 @@ function CreateAccountFormModal(props: CreateAccountFormModalProps) {
                   <RoleChip role={Role.teamMember} />
                </MenuItem>
             </Select>
-            <FormHelperText>The admin just allow create Team Member</FormHelperText>
+            <FormHelperText>{t("admin.AccountTable.createNew.helperText")}</FormHelperText>
             <TextField
                error={!!(form.touched.username && form.errors.username)}
                helperText={form.touched.username && form.errors.username}
@@ -79,7 +82,7 @@ function CreateAccountFormModal(props: CreateAccountFormModalProps) {
                required
                name={"username"}
                margin={"normal"}
-               label={"username"}
+               label={t("admin.AccountTable.createNew.username")}
                type={"text"}
             />
             <TextField
@@ -92,16 +95,16 @@ function CreateAccountFormModal(props: CreateAccountFormModalProps) {
                required
                name={"email"}
                margin={"normal"}
-               label={"email"}
+               label={t("admin.AccountTable.createNew.email")}
                type={"email"}
             />
          </DialogContent>
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-               Cancel
+               {t("admin.AccountTable.createNew.cancel")}
             </Button>
             <Button onClick={() => form.handleSubmit()} variant="contained" color="primary" disabled={form.isSubmitting}>
-               Submit
+               {t("admin.AccountTable.createNew.submit")}
             </Button>
          </DialogActions>
       </Dialog>

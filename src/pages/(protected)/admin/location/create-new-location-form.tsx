@@ -14,6 +14,7 @@ import {addLocation} from "../../../../stores/location-stores.ts"
 import {useDispatch} from "react-redux"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
+import {useTranslation} from "react-i18next"
 
 interface CreateNewFormProps {
     isOpen: boolean
@@ -23,6 +24,8 @@ interface CreateNewFormProps {
 function CreateNewLocationFrom(props: CreateNewFormProps) {
 
    const dispatch = useDispatch()
+
+   const [t] = useTranslation('trans')
 
    const Users = useSelector((state: RootStateType) => state.account.accountList)
 
@@ -72,38 +75,38 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle>Create New Location</DialogTitle>
+         <DialogTitle>{t("admin.LocationTable.createNew.title")}</DialogTitle>
 
          <DialogContent>
             <TextField
                error={!!(touched.name && errors.name)}
                helperText={touched.name && errors.name} value={values.name}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"name"} margin={"normal"} label={"Name"} type={"text"}
+               fullWidth required name={"name"} margin={"normal"} label={t("admin.LocationTable.createNew.name")} type={"text"}
             />
             <TextField
                error={!!(touched.address?.line1 && errors.address?.line1)}
                helperText={touched.address?.line1 && errors.address?.line1} value={values.address?.line1}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"address.line1"} margin={"normal"} label={"province/city"} type={"text"}
+               fullWidth required name={"address.line1"} margin={"normal"} label={t("admin.LocationTable.createNew.province")} type={"text"}
             />
             <TextField
                error={!!(touched.address?.line2 && errors.address?.line2)}
                helperText={touched.address?.line2 && errors.address?.line2} value={values.address?.line2}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"address.line2"} margin={"normal"} label={"District"} type={"text"}
+               fullWidth required name={"address.line2"} margin={"normal"} label={t("admin.LocationTable.createNew.district")} type={"text"}
             />
             <TextField
                error={!!(touched.address?.line3 && errors.address?.line3)}
                helperText={touched.address?.line3 && errors.address?.line3} value={values.address?.line3}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"address.line3"} margin={"normal"} label={"wards"} type={"text"}
+               fullWidth required name={"address.line3"} margin={"normal"} label={t("admin.LocationTable.createNew.wards")} type={"text"}
             />
             <TextField
                error={!!(touched.address?.line4 && errors.address?.line4)}
                helperText={touched.address?.line4 && errors.address?.line4} value={values.address?.line4}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth name={"address.line4"} margin={"normal"} label={"specific address"} type={"text"}
+               fullWidth name={"address.line4"} margin={"normal"} label={t("admin.LocationTable.createNew.specificAddress")} type={"text"}
             />
             <Autocomplete
                multiple size="medium" sx={{marginTop: 2}}
@@ -115,7 +118,7 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
                renderInput={(params) => (
                   <TextField
                      {...params}
-                     required name="teamMember" label="Choose Team member" placeholder="Choose Team member"
+                     required name="teamMember" label={t("admin.LocationTable.createNew.Choose")} placeholder={t("admin.LocationTable.createNew.Choose")}
                      error={!!(touched.teamMember && errors.teamMember)}
                      helperText={touched.teamMember && errors.teamMember}
                   />
@@ -125,10 +128,10 @@ function CreateNewLocationFrom(props: CreateNewFormProps) {
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-                    Cancel
+               {t("admin.LocationTable.createNew.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-                    Save
+               {t("admin.LocationTable.createNew.submit")}
             </Button>
          </DialogActions>
       </Dialog>

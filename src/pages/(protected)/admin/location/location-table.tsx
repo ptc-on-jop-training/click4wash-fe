@@ -4,6 +4,7 @@ import LocationToolBar from "./location-toolbar.tsx"
 import {useDispatch, useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 import {setSelectedLocationById} from "../../../../stores/location-stores.ts"
+import {useTranslation} from "react-i18next"
 
 interface LocationTableProps {
     sx?: SxProps
@@ -16,6 +17,18 @@ function LocationTable(props: LocationTableProps) {
    const LocationList = useSelector((state: RootStateType) => state.location.locationList)
 
    const LocationSelected = useSelector((state: RootStateType) => state.location.locationSelected)
+
+   const [t] = useTranslation('trans')
+
+   const columns: GridColDef[] = [
+      {field: 'id', headerName: t("admin.LocationTable.id"), flex: 0.1},
+      {field: 'name', headerName: t("admin.LocationTable.location"), flex: 0.2},
+      {field: 'address', headerName: t("admin.LocationTable.address"), flex: 0.2, renderCell: (params: GridRenderCellParams) => {
+         const addressValue = params.row.address || {}
+         return Object.values(addressValue).join(', ')
+      }
+      }
+   ]
 
    const handleRowSelection = (rowSelectionModel: GridRowSelectionModel) => {
       dispatch(setSelectedLocationById({id: rowSelectionModel[0] as string}))
@@ -35,15 +48,7 @@ function LocationTable(props: LocationTableProps) {
    )
 }
 
-const columns: GridColDef[] = [
-   {field: 'id', headerName: 'ID', flex: 0.1, headerAlign: 'center', align: 'center'},
-   {field: 'name', headerName: 'Location', flex: 0.4},
-   {field: 'address', headerName: 'Address', flex: 0.4, renderCell: (params: GridRenderCellParams) => {
-      const addressValue = params.row.address || {}
-      return Object.values(addressValue).join(', ')
-   }
-   }
-]
+
 
 const cfg = {
    table: {

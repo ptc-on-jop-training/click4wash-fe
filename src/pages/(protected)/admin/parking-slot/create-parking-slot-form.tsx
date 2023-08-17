@@ -13,6 +13,7 @@ import {
 import {Select} from "../../../../components"
 import {useDispatch, useSelector} from "react-redux"
 import {pushPackingSlot, RootStateType} from "../../../../stores"
+import {useTranslation} from "react-i18next"
 
 interface CreateNewFormProps {
     isOpen: boolean
@@ -23,6 +24,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
 
    const dispatch = useDispatch()
    const Location = useSelector((state: RootStateType) => state.location.locationList)
+   const [t] = useTranslation('trans')
 
    const LocationList = Location?.map(location => {
       const address = location.address
@@ -82,7 +84,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
          <DialogTitle>
-                Create New Packing Slot
+            {t("admin.ParkingSlot.createNewParkingSlot.title")}
          </DialogTitle>
 
          <DialogContent>
@@ -91,7 +93,7 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
                helperText={touched.locationId && errors.locationId}
                name={"locationId"} value={values.locationId}
                onChange={handleInputChange} onBlur={handleBlur}
-               label={"Location"} required
+               label={t("admin.ParkingSlot.createNewParkingSlot.inputLocation")} required
                fullWidth margin={"normal"}
                renderOptions={renderLocationSelect}/>
 
@@ -99,16 +101,16 @@ function CreateParkingSlotFrom(props: CreateNewFormProps) {
                error={!!(touched.name && errors.name)}
                helperText={touched.name && errors.name} value={values.name}
                onBlur={handleBlur} onChange={handleInputChange}
-               fullWidth required name={"name"} margin={"normal"} label={"Name"} type={"text"}
+               fullWidth required name={"name"} margin={"normal"} label={t("admin.ParkingSlot.createNewParkingSlot.inputName")} type={"text"}
             />
          </DialogContent>
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-                    Cancel
+               {t("admin.AccountTable.createNew.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-                    Save
+               {t("admin.AccountTable.createNew.submit")}
             </Button>
          </DialogActions>
 
