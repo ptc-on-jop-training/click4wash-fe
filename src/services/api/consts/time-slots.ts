@@ -7,7 +7,7 @@ const TimeSlots = Object.freeze({
    },
    B: <TimeSlot>{
       start: "08:00",
-      end: "08:00",
+      end: "09:00",
    },
    C: <TimeSlot>{
       start: "09:00",
