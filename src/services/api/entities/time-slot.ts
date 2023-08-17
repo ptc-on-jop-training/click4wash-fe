@@ -1,7 +1,6 @@
-interface TimeSlot
-{
-   start: Date
-   end: Date
+interface TimeSlot {
+   start: string
+   end: string
 }
 
 export default TimeSlot
