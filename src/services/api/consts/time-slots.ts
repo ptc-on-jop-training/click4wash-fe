@@ -1,33 +1,47 @@
 import TimeSlot from "../entities/time-slot.ts"
 
 const TimeSlots = Object.freeze({
-   A: <TimeSlot> {
-      start: new Date(),
-      end: new Date()
+   A: <TimeSlot>{
+      start: "06:00",
+      end: "07:00",
    },
-   B: <TimeSlot> {
-      start: new Date(),
-      end: new Date()
+   B: <TimeSlot>{
+      start: "08:00",
+      end: "09:00",
    },
-   C: <TimeSlot> {
-      start: new Date(),
-      end: new Date()
+   C: <TimeSlot>{
+      start: "09:00",
+      end: "10:00",
    },
-   D: <TimeSlot> {
-      start: new Date(),
-      end: new Date()
+   D: <TimeSlot>{
+      start: "11:00",
+      end: "12:00",
+   },
+   E: <TimeSlot>{
+      start: "13:00",
+      end: "14:00",
+   },
+   F: <TimeSlot>{
+      start: "15:00",
+      end: "16:00",
+   },
+   G: <TimeSlot>{
+      start: "17:00",
+      end: "18:00",
+   },
+   H: <TimeSlot>{
+      start: "19:00",
+      end: "20:00",
+   },
+   I: <TimeSlot>{
+      start: "21:00",
+      end: "22:00",
    },
 })
 function FormatTimeSlot(timeSlot: TimeSlot) {
-
    const { start, end } = timeSlot
-   const startDate = new Date(start)
-   const endDate = new Date(end)
-   const startTime = `${startDate.getHours()}:${startDate.getMinutes()}`
-   const endTime = `${endDate.getHours()}:${endDate.getMinutes()}`
-
-   return `${startTime} - ${endTime}`
+   return `${start} - ${end}`
 }
 
-export {FormatTimeSlot}
+export { FormatTimeSlot }
 export default TimeSlots

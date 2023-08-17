@@ -14,7 +14,9 @@ import PrivacyPolicyPage from "./(protected)/admin/privacy-policy/_page.tsx"
 import AdminLayout from "./(protected)/admin/_layout.tsx"
 import DriverNoticePage from "./(protected)/(driver)/(driver-app)/notice/_page.tsx"
 import InitVehicleProfilePage from "./(protected)/(driver)/init-vehicle-profile/_page.tsx"
-
+import TeamMemberAppLayout from "./(protected)/team-member/_layout.tsx"
+import BookingsPage from "./(protected)/team-member/booking/_page.tsx"
+import TasksPage from "./(protected)/team-member/task/_page.tsx"
 export {
    RootLayout,
    WelcomePage,
@@ -32,4 +34,7 @@ export {
    DriverNoticePage,
    TeamMemberPage,
    InitVehicleProfilePage,
+   TeamMemberAppLayout,
+   BookingsPage,
+   TasksPage,
 }

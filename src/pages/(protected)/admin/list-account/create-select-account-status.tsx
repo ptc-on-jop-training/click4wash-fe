@@ -4,6 +4,7 @@ import { AccountStatusEnum } from "../../../../services/auth0"
 import AccountStatus from "./account-status.tsx"
 import {deleteAccountById,useRootDispatch} from "../../../../stores"
 import {ConfirmationDialog} from "../../../../components"
+import {useTranslation} from "react-i18next"
 
 interface CreateSelectAccountStatusProps {
    status: AccountStatusEnum
@@ -13,6 +14,9 @@ interface CreateSelectAccountStatusProps {
 function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
    const [status, setStatus] = useState<any>(props.status)
    const [newStatus, setNewStatus] = useState<string>(props.status)
+   const [t] = useTranslation('trans')
+
+
 
    const [idAccount,setIdAccount] = useState<string>("")
 
@@ -57,7 +61,7 @@ function CreateSelectAccountStatus(props: CreateSelectAccountStatusProps) {
                </MenuItem>
             ))}
             <MenuItem value={props.id}>
-               <Chip color={"error"} size={"medium"} variant={"filled"} label={"Delete"} />
+               <Chip color={"error"} size={"medium"} variant={"filled"} label={t("admin.AccountTable.Status.delete")} />
             </MenuItem>
          </Select>
 

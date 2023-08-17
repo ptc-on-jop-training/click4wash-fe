@@ -14,6 +14,7 @@ import {useDispatch} from "react-redux"
 import {useSelector} from "react-redux"
 import {RootStateType} from "../../../../stores"
 import {pushTeamMember, setSelectedLocationById} from "../../../../stores/location-stores.ts"
+import {useTranslation} from "react-i18next"
 
 interface CreateNewFormProps {
     isOpen: boolean
@@ -25,6 +26,8 @@ interface CreateNewFormProps {
 function AssignNewMemberForm(props: CreateNewFormProps) {
 
    const dispatch = useDispatch()
+
+   const [t] = useTranslation('trans')
 
    const Users = useSelector((state: RootStateType) => state.account.accountList)
 
@@ -58,7 +61,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle>Assign new member</DialogTitle>
+         <DialogTitle>{t("admin.LocationTable.locationDetail.AssignNewMemberForm.title")}</DialogTitle>
 
          <DialogContent>
 
@@ -76,7 +79,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
                renderInput={(params) => (
                   <TextField
                      {...params}
-                     required name="teamMember" label="Choose Team member" placeholder="Choose Team member"
+                     required name="teamMember" label={t("admin.LocationTable.locationDetail.AssignNewMemberForm.Choose")} placeholder={t("admin.LocationTable.locationDetail.AssignNewMemberForm.Choose")}
                      error={!!(touched.teamMember && errors.teamMember)}
                      helperText={touched.teamMember && errors.teamMember}
                   />
@@ -87,10 +90,10 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-                    Cancel
+               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-                    Save
+               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.submit")}
             </Button>
          </DialogActions>
 

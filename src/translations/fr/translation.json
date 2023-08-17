@@ -1,0 +1,150 @@
+{
+  "admin": {
+    "AccountTable": {
+      "id": "id",
+      "userName": "Nom d'utilisateur",
+      "Role": {
+        "role": "Rôle",
+        "admin": "administratrice",
+        "teamMember": "membre de l'équipe",
+        "driver": "conducteur"
+      },
+      "Email": "É-mail",
+      "Status": {
+        "status": "Statut",
+        "active": "actif",
+        "suspend": "suspendre",
+        "delete": "Supprimer"
+      },
+      "AccountTableToolBar": {
+        "newUser": "nouvel utilisateur"
+      },
+      "createNew": {
+        "title": "Créer un nouvel utilisateur",
+        "role": "membre de l'équipe",
+        "helperText": "l'administrateur autorise simplement la création d'un membre de l'équipe",
+        "username": "Nom d'utilisateur",
+        "email": "É-mail",
+        "cancel": "Annuler",
+        "submit": "Soumettre"
+      }
+    },
+    "BookingTable": {
+      "numberPlate": "Plaque d'immatriculation",
+      "day": "Jour",
+      "timeSlot": "Créneau horaire",
+      "parkingSlot": "terrain de stationnement",
+      "Type": {
+        "type": "Taper",
+        "motorcycle": "moto",
+        "car": "voiture"
+      },
+      "Status": {
+        "status": "Statut",
+        "processing": "poignée",
+        "accepted": "accepté",
+        "refused": "refusé",
+        "done": "faite"
+      }
+    },
+    "LocationTable": {
+      "id": "ID",
+      "location" : "Emplacement",
+      "address": "Adresse",
+      "LocationTableToolBar": {
+        "newLocation": "nouvel emplacement"
+      },
+      "createNew": {
+        "title": "Créer un nouvel emplacement",
+        "name": "Cnom",
+        "province": "mVille/de province",
+        "district": "District",
+        "wards": "quartiers",
+        "specificAddress": "adresse spécifique",
+        "Choose": "Choisissez un membre de l'équipe",
+        "cancel": "Annuler",
+        "submit": "Soumettre"
+      },
+      "locationDetail":{
+        "heading": "Détail de l'emplacement",
+        "title": "Membres de l'équipe affectés pour",
+        "button": "affecter un nouveau membre",
+        "ConfirmationDialog": {
+          "title": "Confirmer pour supprimer l'attribueur de l'emplacement",
+          "message": "Êtes-vous sûr de vouloir supprimer ce membre de l'équipe de l'emplacement?"
+        },
+        "AssignNewMemberForm": {
+          "title": "Attribuer un nouveau membre",
+          "Choose": "Choisissez un membre de l'équipe",
+          "cancel": "Annuler",
+          "submit": "Soumettre"
+        }
+      }
+    },
+    "GeneralConditionTable": {
+      "id": "ID",
+      "generalCondition": "Conditions générales",
+      "GeneralConditionToolbar": {
+        "newGeneralCondition": "Nouvel état général"
+      },
+      "createNewGeneraCondition": {
+        "title" : "Créer un nouvel emplacement d'emballage",
+        "lableInput": "Condition générale"
+      }
+    },
+    "Layout": {
+      "LeftSideLayout": {
+        "emptySide": {
+          "emptyHeading": "Rien à montrer",
+          "emptyText": "Sélectionnez quelque chose pour voir le détail"
+        },
+        "menuOption": {
+          "Logout": "Se déconnecter",
+          "Switch": "Passer à l'anglais"
+        },
+        "changeLanguageOption": {
+          "english" : "Passer à l'anglais",
+          "french": "Passer au français"
+        }
+      },
+      "TabNab": {
+        "userManagement": "utilisations",
+        "listBooking": "réservations",
+        "locations": "Emplacements",
+        "parkingSlot": "terrain de stationnement",
+        "generalCondition": "conditions générales",
+        "privacyPolicy": "politique de confidentialité"
+      }
+    },
+    "ParkingSlot":{
+      "id": "Id",
+      "location": "Emplacement",
+      "parkingSlot": "Emplacement de stationnement",
+      "address": "Adresse",
+      "Status": {
+        "status": "Statut",
+        "available": "disponible",
+        "busy": "occupé"
+      },
+      "ParkingSlotTableToolBar": {
+        "newParkingSlot": "Nouvelle place de stationnement"
+      },
+      "createNewParkingSlot": {
+        "title" : "Créer un nouvel emplacement d'emballage",
+        "inputLocation": "Emplacement",
+        "inputName": "Nom"
+      }
+
+    },
+    "PrivacyPolicy": {
+      "id": "Id",
+      "title": "Titre",
+      "action": "Action",
+      "update":"Mise à jour",
+      "updatePrivacyPolicy": {
+        "title" : "Mettre à jour la politique de confidentialité",
+        "lableInput": "Politique"
+      }
+    }
+  }
+}

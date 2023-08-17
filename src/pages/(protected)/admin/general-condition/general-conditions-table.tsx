@@ -3,6 +3,7 @@ import {Box, SxProps} from "@mui/material"
 import GeneralConditionsToolbar from "./general-condition-toolbar.tsx"
 import {RootStateType} from "../../../../stores"
 import {useSelector} from "react-redux"
+import {useTranslation} from "react-i18next"
 
 interface GeneralConditionsProps {
     sx?: SxProps
@@ -11,7 +12,15 @@ interface GeneralConditionsProps {
 function GeneralConditionsTable(props: GeneralConditionsProps)
 {
    const GeneralConditionList = useSelector((state: RootStateType) => state.generalCondition.generalCondition)
+   const [t] = useTranslation('trans')
+    
 
+   const columns: GridColDef[] = [
+      {field: 'id', headerName: t("admin.GeneralConditionTable.id"), flex: 0.1, headerClassName: 'bold-header', align: "center", headerAlign: "center"},
+      {field: 'generalCondition', headerName: t("admin.GeneralConditionTable.generalCondition"), flex: 0.5,align: "center", headerAlign: "center"},
+
+   ]
+    
    return (
       <Box sx={props.sx}>
          <DataGrid
@@ -33,10 +42,6 @@ const cfg = {
    }
 }
 
-const columns: GridColDef[] = [
-   {field: 'id', headerName: 'ID', flex: 0.1, headerClassName: 'bold-header', align: "center", headerAlign: "center"},
-   {field: 'generalCondition', headerName: 'General Conditions', flex: 0.5,align: "center", headerAlign: "center"},
 
-]
 
 export default GeneralConditionsTable
