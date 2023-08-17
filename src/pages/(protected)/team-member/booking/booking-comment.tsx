@@ -26,53 +26,59 @@ const BookingComment = (props: BookingCommentProps) => {
          setComment("")
       }
    }
-   return (
-      <Box marginTop={3} borderTop={1} paddingTop={1}>
-         <SectionTitle title={"Comment"} />
+   if (props.booking.review?.comment === "") {
+      return <></>
+   } else
+      return (
+         <Box marginTop={3} borderTop={1} paddingTop={1}>
+            <SectionTitle title={"Comment"} />
 
-         {props.variant === "driver" &&
-            props.booking.review?.comment === "" && (
-            <Stack spacing={2} marginBottom={3}>
-               <Stack spacing={2}>
-                  <TextField
-                     sx={{
-                        width: "100%",
-                     }}
-                     id="outlined-basic"
-                     label="Comment"
-                     variant="outlined"
-                     value={comment}
-                     onChange={(
-                        event: React.ChangeEvent<HTMLInputElement>
-                     ) => {
-                        setComment(event.target.value)
-                     }}
-                  />
-                  <Button variant="contained" onClick={handleComment}>
-                     send
-                  </Button>
-               </Stack>
-            </Stack>
-         )}
-         <Box marginLeft={2} marginTop={2}>
-            {props.booking.review?.comment && (
-               <Stack direction={"row"} marginBottom={2}>
-                  <Avatar
-                     sx={{
-                        width: 32,
-                        height: 32,
-                        bgcolor: "blueviolet",
-                     }}
-                  >
-                     Dr
-                  </Avatar>
-                  <Stack marginLeft={1}>
-                     <Typography> {props.booking.review?.comment}</Typography>
+            {props.variant === "driver" &&
+               props.booking.review?.comment === "" &&
+               (
+                  <Stack spacing={2} marginBottom={3}>
+                     <Stack spacing={2}>
+                        <TextField
+                           sx={{
+                              width: "100%",
+                           }}
+                           id="outlined-basic"
+                           label="Comment"
+                           variant="outlined"
+                           value={comment}
+                           onChange={(
+                              event: React.ChangeEvent<HTMLInputElement>
+                           ) => {
+                              setComment(event.target.value)
+                           }}
+                        />
+                        <Button variant="contained" onClick={handleComment}>
+                           send
+                        </Button>
+                     </Stack>
                   </Stack>
-               </Stack>
-            )}
+               )}
+            <Box marginLeft={2} marginTop={2}>
+               {props.booking.review?.comment && (
+                  <Stack direction={"row"} marginBottom={2}>
+                     <Avatar
+                        sx={{
+                           width: 32,
+                           height: 32,
+                           bgcolor: "blueviolet",
+                        }}
+                     >
+                        Dr
+                     </Avatar>
+                     <Stack marginLeft={1}>
+                        <Typography>
+                           {props.booking.review?.comment}
+                        </Typography>
+                     </Stack>
+                  </Stack>
+               )}
+            </Box>
          </Box>
-      </Box>
-   )
+      )
 }
 export default BookingComment

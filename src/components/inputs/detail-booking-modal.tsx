@@ -1,5 +1,5 @@
 import { SectionTitle } from ".."
-import { Container, IconButton, Modal, Typography } from "@mui/material"
+import { Container, IconButton, Modal, Stack, Typography } from "@mui/material"
 import { Close } from "@mui/icons-material"
 import {
    BookingRating,
@@ -35,9 +35,15 @@ const DetailTaskModal = (props: DetailTaskModalProps) => {
                   </IconButton>
                }
             />
-            <Typography>
-               {getDay(bookingDetail.createdAt.toString())}
-            </Typography>
+            <Stack marginLeft={2}>
+               <Typography>
+                  {getDay(bookingDetail.createdAt.toString())}
+               </Typography>
+               <Stack direction={"row"}>
+                  <Typography>{bookingDetail.vehicleType.toUpperCase()}:</Typography>
+                  <Typography marginLeft={1} fontWeight={600}>{bookingDetail.vehicleNumberPlate}</Typography>
+               </Stack>
+            </Stack>
             <BookingLocation
                address={bookingDetail.address}
                parkingSlotName={bookingDetail.parkingSlotName}

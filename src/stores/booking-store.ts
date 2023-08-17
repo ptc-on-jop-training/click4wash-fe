@@ -1,6 +1,5 @@
 import { BookingResponse, GetBookingList } from "../services/api"
 import {
-   createAsyncThunk,
    createSlice,
    PayloadAction,
    Dispatch,
@@ -8,18 +7,23 @@ import {
 
 interface BookingStoreType {
    bookingList: BookingResponse[]
+   isSet: boolean
 }
 
 const initialState: BookingStoreType = {
    bookingList: [],
+   isSet: false,
 }
 
-const FetchBookingList = createAsyncThunk(
-   "booking/FetchBookingtList",
-   async (): Promise<BookingResponse[] | null> => {
-      return (await GetBookingList()).payload ?? null
+const FetchBookingList = (isSet: boolean) => async (dispatch: Dispatch) => {
+   if (!isSet) {
+      const response = await GetBookingList()
+      if (response) {
+         dispatch(FetchBookingListReducer(response.payload))
+      }
    }
-)
+}
+
 
 const UpdateBookingHistoryList =
    (
@@ -107,18 +111,17 @@ const BookingSlice = createSlice({
       UpdateReviewReducer: (state, action) => {
          state.bookingList = action.payload
       },
-   },
-
-   extraReducers: (builder) => {
-      builder.addCase(FetchBookingList.fulfilled, (state, action) => {
-         state.bookingList = action.payload
-      })
+      FetchBookingListReducer: (state, action) => {
+         state.bookingList = action.payload,
+         state.isSet = true
+      },
    },
 })
 export const {
    PushToBookingList,
    UpdateBookingHistoryStatusReducer,
    UpdateReviewReducer,
+   FetchBookingListReducer,
 } = BookingSlice.actions
 export {
    FetchBookingList,

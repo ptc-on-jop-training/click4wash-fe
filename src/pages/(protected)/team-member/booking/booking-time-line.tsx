@@ -143,15 +143,13 @@ const BookingTimeLine = (props: BookingTimeLineProps) => {
                         <Typography variant="h6" component="span">
                            Processing
                         </Typography>
-                        <Typography>
-                           {props.bookingHistoryList[2] && (
-                              <Typography>
-                                 {getTime(
-                                    props.bookingHistoryList[2].createdAt.toString()
-                                 )}
-                              </Typography>
-                           )}
-                        </Typography>
+                        {props.bookingHistoryList[2] && (
+                           <Typography>
+                              {getTime(
+                                 props.bookingHistoryList[2].createdAt.toString()
+                              )}
+                           </Typography>
+                        )}
                      </TimelineContent>
                   </TimelineItem>
                   <TimelineItem>

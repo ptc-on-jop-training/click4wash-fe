@@ -21,7 +21,7 @@ const TeamMemberHandleBooking = ({
    const [rejectReason, setRejectReason] = useState("")
    const [isOpenReject, setOpenReject] = useState(false)
 
-   const handleUpdateStatus = (status: string, comment?: string) => {
+   const HandleUpdateStatus = (status: string, comment?: string) => {
       if (bookingList) {
          UpdateBookingHistoryList(
             bookingList,
@@ -34,7 +34,7 @@ const TeamMemberHandleBooking = ({
 
    const handleRejectBooking = () => {
       if (rejectReason) {
-         handleUpdateStatus("refused", rejectReason)
+         HandleUpdateStatus("refused", rejectReason)
       }
    }
 
@@ -54,7 +54,7 @@ const TeamMemberHandleBooking = ({
                {!isAccepted && isRequested && !isOpenReject && (
                   <Button
                      variant="contained"
-                     onClick={() => handleUpdateStatus("accepted")}
+                     onClick={() => HandleUpdateStatus("accepted")}
                   >
                      accept
                   </Button>
@@ -63,7 +63,7 @@ const TeamMemberHandleBooking = ({
                {isAccepted && (
                   <Button
                      variant="contained"
-                     onClick={() => handleUpdateStatus("processing")}
+                     onClick={() => HandleUpdateStatus("processing")}
                   >
                      mark as processing
                   </Button>
@@ -71,7 +71,7 @@ const TeamMemberHandleBooking = ({
                {isProcessing && (
                   <Button
                      variant="contained"
-                     onClick={() => handleUpdateStatus("done")}
+                     onClick={() => HandleUpdateStatus("done")}
                   >
                      mark as done
                   </Button>
