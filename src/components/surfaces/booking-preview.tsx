@@ -27,7 +27,10 @@ function BookingPreview(props: BookingPreviewProps)
             {props.isCharge && <Typography {...cfn.infoLine}>&#x2022; charge my car</Typography>}
          </Box>
          <Box {...cfn.left}>
-            {isAcceptBtnDisplay && <Button {...cfn.acceptBtn} onClick={props.onClickAccept}>accept</Button>}
+            {isAcceptBtnDisplay && <Button {...cfn.acceptBtn} onClick={(e) => {
+               e.stopPropagation()
+               props.onClickAccept && props.onClickAccept()
+            }}>accept</Button>}
          </Box>
       </Box>
    )
