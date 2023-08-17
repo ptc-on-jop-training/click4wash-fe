@@ -101,7 +101,11 @@
         },
         "menuOption": {
           "Logout": "Log out",
-          "Switch": "Switch to French"
+          "Switch": "Switch Language"
+        },
+        "changeLanguageOption": {
+          "english" : "Switch to English",
+          "french": "Switch to French"
         }
       },
       "TabNab": {
