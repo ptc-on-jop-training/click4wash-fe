@@ -12,9 +12,9 @@ function BookingPage() {
 }
 const cfn = {
    BookingTable: {
-      sx: {
-         height: "100%",
-         maxHeight: "calc(100vh - 129px)",
+      sx:{
+         height: "100vh",
+         maxHeight: "calc(100vh - 130px)",
       }
    }
 }
