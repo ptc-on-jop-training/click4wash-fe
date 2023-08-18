@@ -61,7 +61,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
    return (
       <Dialog maxWidth={"xs"} fullWidth open={props.isOpen} onClose={props.handleClose}>
 
-         <DialogTitle>{t("admin.LocationTable.locationDetail.AssignNewMemberForm.title")}</DialogTitle>
+         <DialogTitle>{t("admin.LocationTable.AssignNewMemberForm.title")}</DialogTitle>
 
          <DialogContent>
 
@@ -79,7 +79,7 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
                renderInput={(params) => (
                   <TextField
                      {...params}
-                     required name="teamMember" label={t("admin.LocationTable.locationDetail.AssignNewMemberForm.Choose")} placeholder={t("admin.LocationTable.locationDetail.AssignNewMemberForm.Choose")}
+                     required name="teamMember" label={t("admin.LocationTable.AssignNewMemberForm.Choose")} placeholder={t("admin.LocationTable.locationDetail.AssignNewMemberForm.Choose")}
                      error={!!(touched.teamMember && errors.teamMember)}
                      helperText={touched.teamMember && errors.teamMember}
                   />
@@ -90,10 +90,10 @@ function AssignNewMemberForm(props: CreateNewFormProps) {
 
          <DialogActions>
             <Button onClick={handleCancel} color="secondary">
-               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.cancel")}
+               {t("admin.LocationTable.AssignNewMemberForm.cancel")}
             </Button>
             <Button onClick={() => handleSubmit()} variant="contained" sx={{py: '12px', px: '16px'}}>
-               {t("admin.LocationTable.locationDetail.AssignNewMemberForm.submit")}
+               {t("admin.LocationTable.AssignNewMemberForm.submit")}
             </Button>
          </DialogActions>
 

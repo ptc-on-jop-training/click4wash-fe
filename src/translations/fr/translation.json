@@ -72,13 +72,13 @@
         "ConfirmationDialog": {
           "title": "Confirmer pour supprimer l'attribueur de l'emplacement",
           "message": "Êtes-vous sûr de vouloir supprimer ce membre de l'équipe de l'emplacement?"
-        },
-        "AssignNewMemberForm": {
-          "title": "Attribuer un nouveau membre",
-          "Choose": "Choisissez un membre de l'équipe",
-          "cancel": "Annuler",
-          "submit": "Soumettre"
         }
+      },
+      "AssignNewMemberForm": {
+        "title": "Attribuer un nouveau membre",
+        "Choose": "Choisissez un membre de l'équipe",
+        "cancel": "Annuler",
+        "submit": "Soumettre"
       }
     },
     "GeneralConditionTable": {
