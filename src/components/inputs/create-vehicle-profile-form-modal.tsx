@@ -1,11 +1,11 @@
-import {Button, Container, FormGroup, IconButton, Modal, TextField} from "@mui/material"
-import {SectionTitle} from "../index.ts"
+import {Button, Container, FormGroup, IconButton, MenuItem, Modal, TextField} from "@mui/material"
+import {SectionTitle, Select} from "../index.ts"
 import {Close} from '@mui/icons-material'
 import VehicleColorSelector from "./vehicle-color-selector.tsx"
 import * as Yup from "yup"
 import {useFormik} from "formik"
 import {ChangeEvent, useState} from "react"
-import {CreateVehicle, CreateVehicleRequest} from "../../services/api"
+import {CreateVehicle, CreateVehicleRequest, VehicleType} from "../../services/api"
 import {LoadingButton} from "@mui/lab"
 import {AddToHeadVehicleList} from "../../stores"
 import {useDispatch} from "react-redux"
@@ -27,13 +27,14 @@ function CreateVehicleProfileFormModal(props: CreateVehicleProfileFormModalProps
    const {
       values, touched,
       errors, resetForm,
-      handleSubmit, handleBlur, handleChange, setFieldError
+      handleSubmit, handleBlur, handleChange, setFieldValue, setFieldError
    } = useFormik<CreateVehicleRequest>({
 
       initialValues: {
          model: "",
          numberPlate: "",
-         color: ""
+         color: null,
+         type: null
       },
 
       validateOnChange: false,
@@ -74,6 +75,11 @@ function CreateVehicleProfileFormModal(props: CreateVehicleProfileFormModalProps
       props.handleClose && props.handleClose()
    }
 
+   const handleColorSelectorChange = (newValue: string | null) => {
+      setFieldError("color", "")
+      setFieldValue("color", newValue)
+   }
+
    return (
       <Modal open={props.isOpen} onClose={handleCloseForm}>
          <Container {...cfn.box}>
@@ -100,7 +106,21 @@ function CreateVehicleProfileFormModal(props: CreateVehicleProfileFormModalProps
                   helperText={touched.model && errors.model}
                   onBlur={handleBlur} onChange={handleInputChange}
                   label={"Model"} {...cfn.field}/>
-               <VehicleColorSelector/>
+               <Select
+                  required
+                  name={"type"} value={values.type}
+                  error={!!(touched.type && errors.type)}
+                  helperText={touched.type && errors.type}
+                  renderOptions={() => Object.values(VehicleType).map((type) => {
+                     return <MenuItem key={type} value={type}>{type}</MenuItem>
+                  })}
+                  onChange={handleChange} onBlur={handleBlur}
+                  id={"type"} label={"Type"}/>
+               <VehicleColorSelector
+                  value={values.color}
+                  error={touched.color && errors.color}
+                  onChange={handleColorSelectorChange}
+               />
 
                <LoadingButton {...cfn.submitBtn} loading={isSubmitBtnLoading} onClick={() => handleSubmit()}>Submit</LoadingButton>
             </FormGroup>
@@ -113,7 +133,8 @@ function CreateVehicleProfileFormModal(props: CreateVehicleProfileFormModalProps
 const validationSchema = Yup.object().shape({
    numberPlate: Yup.string().required("number plate is required"),
    model: Yup.string().required("model is required"),
-   // color: Yup.string().required("color is required"),
+   type: Yup.string().required("type is required"),
+   color: Yup.string().required("color is required")
 })
 
 const cfn = {

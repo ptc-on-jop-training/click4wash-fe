@@ -14,37 +14,36 @@ import {useTranslation} from "react-i18next"
 
 import {TabLabel} from "../../../components"
 
-const TabNav = () => {   
+const TabNav = () => {
    const [t] = useTranslation('trans')
-   
+
    const nav = useNavigate()
    const location = useLocation()
-   
-   const navData = [
 
+   const navData = [
       {
          label: <TabLabel label={t('admin.Layout.TabNab.userManagement')} icon={<People fontSize="medium"/>}/>,
-         value: "/admin",
+         value: "/",
       },
       {
          label: <TabLabel label={t('admin.Layout.TabNab.listBooking')} icon={<PlaylistAddCheckCircle fontSize="medium"/>}/>,
-         value: "/admin/booking",
+         value: "/booking",
       },
       {
          label: <TabLabel label={t('admin.Layout.TabNab.locations')} icon={<LocationOn fontSize="medium"/>}/>,
-         value: "/admin/location",
+         value: "/location",
       },
       {
          label: <TabLabel label={t('admin.Layout.TabNab.parkingSlot')} icon={<Garage fontSize="medium"/>}/>,
-         value: "/admin/parking-slot",
+         value: "/parking-slot",
       },
       {
          label: <TabLabel label={t('admin.Layout.TabNab.generalCondition')} icon={<Article fontSize="medium"/>}/>,
-         value: "/admin/general-condition",
+         value: "/general-condition",
       },
       {
          label: <TabLabel label={t('admin.Layout.TabNab.privacyPolicy')} icon={<PrivacyTip fontSize="medium"/>}/>,
-         value: "/admin/privacy-policy",
+         value: "/privacy-policy",
       },
    ]
 

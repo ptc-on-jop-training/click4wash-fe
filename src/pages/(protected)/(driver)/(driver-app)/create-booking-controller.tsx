@@ -42,7 +42,7 @@ function CreateBookingController(props: CreateBookingControllerProps)
          vehicleType: VehicleType.motorcycle,
          vehicleNumberPlate: vehicle.id,
          timeSlot: bookingInfo.timeSlot as any,
-         parkingSlotName: "etown 3",
+         parkingSlotName: "B1",
          address: "",
          status: BookingStatus.requested,
          isCharge: false,

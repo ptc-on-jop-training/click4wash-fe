@@ -1,7 +1,16 @@
+import {Box} from "@mui/material"
+
 function PageLoading()
 {
    return (
-      <div>loading is real...</div>
+      <Box sx={{
+         height: "100vh",
+         display: "flex",
+         alignItems: "center",
+         justifyContent: "center"
+      }}>
+         <div>loading...</div>
+      </Box>
    )
 }
 

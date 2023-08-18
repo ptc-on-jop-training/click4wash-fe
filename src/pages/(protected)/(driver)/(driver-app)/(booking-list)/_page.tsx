@@ -13,7 +13,7 @@ function HomePage()
          <Stack {...cfn.curBookingCont}>
             <SectionTitle {...cfn.bookingTitle} title={"Current Booking"}/>
             <Stack {...cfn.bookingStack}>
-               {bookingList?.filter(booking => !(booking.status === BookingStatus.refused || booking.status === BookingStatus.done)).map((booking, ind) => (
+               {bookingList?.filter(booking => !(booking.status === BookingStatus.refused || booking.status === BookingStatus.done)).slice(0, 3).map((booking, ind) => (
                   <BookingPreview variant={"driver"} {...booking} key={ind}/>
                ))}
             </Stack>

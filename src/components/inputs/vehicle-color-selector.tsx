@@ -1,22 +1,23 @@
 import {Box, TextField, Typography, FormHelperText} from "@mui/material"
-import {useEffect, useState} from "react"
+import {ReactNode, useEffect, useState} from "react"
 
-// interface VehicleColorSelectorProps
-// {
-//    value?: string,
-//    onChane?: (e: any) => void
-// }
+interface VehicleColorSelectorProps
+{
+   value?: string | null,
+   onChange?: (value: string | null) => void
+   error?: ReactNode
+}
 
-function VehicleColorSelector()
+function VehicleColorSelector(props: VehicleColorSelectorProps)
 {
    const csColorIndex = suggestColorList.length
 
    // TODO - merge these states into one state
-   const [value, setValue] = useState<string | null>(null)
+   const [value, setValue] = useState<string | null>(props.value ?? null)
    const [selectedIndex, setSelectedIndex] = useState<number | null>()
 
    useEffect(() => {
-      console.log(value)
+      props.onChange && props.onChange(value)
    }, [value])
 
    const handleSelectSuggestedColor = (value: string, index: number) => {
@@ -54,7 +55,7 @@ function VehicleColorSelector()
                onClick={handleOnClickCsColor}
                onChange={(e) => setValue(e.target.value)} {...handleCsColorStyle()}/>
          </Box>
-         <FormHelperText>select your vehicle color</FormHelperText>
+         <FormHelperText sx={{color: "#ba000d"}}>{props.error}</FormHelperText>
       </Box>
    )
 }

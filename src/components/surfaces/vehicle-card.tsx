@@ -1,10 +1,15 @@
-import {Box} from "@mui/material"
+import {Box, Typography} from "@mui/material"
 import {merge} from "lodash"
+import {VehicleType} from "../../services/api"
+import {VehicleIcon} from "../index.ts"
 
 interface VehicleCardProps
 {
    id: string
    numberPlate: string
+   type: VehicleType
+   color: string
+   model: string
    variant?: "primary" | "highlight"
    onClick?: (id: string) => void
 }
@@ -15,7 +20,14 @@ function VehicleCard(props: VehicleCardProps)
 
    return (
       <Box {...merge(cfn.container, variant.container)} onClick={() => props.onClick && props.onClick(props.id)}>
-         {props.numberPlate}
+         <Box sx={{margin: "0 40px"}}>
+            <VehicleIcon type={props.type}/>
+         </Box>
+         <Box>
+            <Typography {...cfn.lineInfo}>&#x2022; plate: {props.numberPlate}</Typography>
+            <Box sx={{fontSize: "15px", display: "flex", alignItems: "center", gap: 1}}><div>&#x2022; color:</div> <Box component={"div"} sx={{bgcolor: props.color, width: "40px", height: "10px"}}></Box></Box>
+            <Typography {...cfn.lineInfo}>&#x2022; model: {props.model}</Typography>
+         </Box>
       </Box>
    )
 }
@@ -26,6 +38,13 @@ const cfn = {
          width: "100%",
          minHeight: "90px",
          borderRadius: "5px",
+         display: "flex",
+         alignItems: "center"
+      }
+   },
+   lineInfo: {
+      sx: {
+         fontSize: "15px",
       }
    }
 }

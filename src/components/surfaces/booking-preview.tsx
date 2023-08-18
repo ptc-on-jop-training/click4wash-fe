@@ -17,7 +17,6 @@ interface BookingPreviewProps
 function BookingPreview(props: BookingPreviewProps)
 {
    const isAcceptBtnDisplay = props.variant === "team-member" && props.status == BookingStatus.requested
-
    return (
       <Box {...cfn.container} onClick={props.onClick}>
          <Typography {...cfn.parkingSlot}>{props.parkingSlotName}</Typography>
@@ -50,7 +49,7 @@ const cfn = {
    parkingSlot: {
       sx: {
          fontSize: "30px",
-         margin: "0 30px 0 15px",
+         margin: "0 50px",
          fontWeight: "bold"
       }
    },
@@ -63,7 +62,7 @@ const cfn = {
    infoLine: {
       sx: {
          textDecorationStyle: "dotted",
-         fontSize: "14px",
+         fontSize: "15px",
       }
    },
 
