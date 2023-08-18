@@ -1,5 +1,5 @@
-import {AppBar, Box, IconButton, Toolbar, Typography} from "@mui/material"
-import {AccountCircle} from "@mui/icons-material"
+import {AppBar, Box, Toolbar, Typography} from "@mui/material"
+import UserMenu from "./user-menu.tsx"
 
 interface HeaderProps
 {
@@ -11,11 +11,12 @@ function Header(props: HeaderProps)
    return (
       <AppBar position={props.position}>
          <Toolbar {...cfn.toolbar}>
-            <Typography>OKAY</Typography>
+            <Typography>Click4Wash</Typography>
             <Box>
-               <IconButton {...cfn.userMenuBtn}>
-                  <AccountCircle/>
-               </IconButton>
+               {/*<IconButton {...cfn.userMenuBtn}>*/}
+               {/*   <AccountCircle/>*/}
+               {/*</IconButton>*/}
+               <UserMenu/>
             </Box>
          </Toolbar>
       </AppBar>

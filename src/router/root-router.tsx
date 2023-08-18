@@ -1,71 +1,41 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import {
-   VehiclePage,
-   DriverAppLayout,
-   DriverHomePage,
-   DriverNoticePage,
-   ProtectedLayout,
-   RootLayout,
-   TeamMemberPage,
-   WelcomePage,
-   LocationPage,
-   GeneralConditionPage,
-   AccountPage,
-   BookingPage,
-   ParkingSlotPage,
-   PrivacyPolicyPage,
-   AdminLayout,
-   InitVehicleProfilePage,
-   TeamMemberAppLayout,
-   BookingsPage,
-   TasksPage,
-} from "../pages"
+import {useAuth0} from "@auth0/auth0-react"
+import {ReactNode, useEffect, useState} from "react"
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {WelcomePage} from "../pages"
+import AdminRouter from "./admin-router.tsx"
+import DriverRouter from "./driver-router.tsx"
+import LoadingRouter from "./loading-router.tsx"
+import TeamMemberRouter from "./team-member-router.tsx"
 
-function RootRouter() {
+function RootRouter()
+{
+   const {isLoading, isAuthenticated, getIdTokenClaims} = useAuth0()
+   const [renderRoutes, setRenderRoutes] = useState<ReactNode>(LoadingRouter)
+
+   useEffect(() => {
+      if (!isLoading) {
+         if (isAuthenticated) {
+            getIdTokenClaims()
+               .then(claims => {
+                  if (claims?.role === "driver" || claims?.role == null) {
+                     setRenderRoutes(DriverRouter)
+                  } else if (claims?.role === "team-member") {
+                     setRenderRoutes(TeamMemberRouter)
+                  } else if (claims?.role === "admin") {
+                     setRenderRoutes(AdminRouter)
+                  }
+               })
+         } else if (window.location.pathname !== "/welcome") {
+            window.location.href = "/welcome"
+         }
+      }
+   }, [isLoading, isAuthenticated, getIdTokenClaims])
+
    return (
       <BrowserRouter>
          <Routes>
-            <Route path={""} element={<RootLayout />}>
-               <Route path={"welcome"} element={<WelcomePage />} />
-
-               <Route path={""} element={<ProtectedLayout />}>
-                  <Route path={""} element={<DriverAppLayout />}>
-                     <Route path={""} element={<DriverHomePage />} />
-                     <Route path={"car"} element={<VehiclePage />} />
-                     <Route path={"notice"} element={<DriverNoticePage />} />
-                  </Route>
-
-                  <Route
-                     path={"init-vehicle-profile"}
-                     element={<InitVehicleProfilePage />}
-                  />
-
-                  <Route path={"admin"}>
-                     <Route path={""} element={<AccountPage />} />
-                     <Route path={"location"} element={<LocationPage />} />
-                     <Route path={"booking"} element={<BookingPage />} />
-                     <Route
-                        path={"parking-slot"}
-                        element={<ParkingSlotPage />}
-                     />
-                     <Route
-                        path={"general-condition"}
-                        element={<GeneralConditionPage />}
-                     />
-                     <Route
-                        path={"privacy-policy"}
-                        element={<PrivacyPolicyPage />}
-                     />
-                  </Route>
-
-                  <Route path={"team-member"} element={<TeamMemberAppLayout />}>
-                     <Route path={""} element={<TeamMemberPage />} />
-                     <Route path={"booking"} element={<BookingsPage />} />
-                     <Route path={"Task"} element={<TasksPage />} />
-                     <Route path={"notice"} element={<TeamMemberPage />} />
-                  </Route>
-               </Route>
-            </Route>
+            <Route path={"welcome"} element={<WelcomePage/>}/>
+            {renderRoutes}
          </Routes>
       </BrowserRouter>
    )

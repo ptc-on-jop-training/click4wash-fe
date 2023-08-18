@@ -25,7 +25,7 @@ function VehicleCard(props: VehicleCardProps)
          </Box>
          <Box>
             <Typography {...cfn.lineInfo}>&#x2022; plate: {props.numberPlate}</Typography>
-            <Typography {...cfn.lineInfo}>&#x2022; color: {props.color}</Typography>
+            <Box sx={{fontSize: "15px", display: "flex", alignItems: "center", gap: 1}}><div>&#x2022; color:</div> <Box component={"div"} sx={{bgcolor: props.color, width: "40px", height: "10px"}}></Box></Box>
             <Typography {...cfn.lineInfo}>&#x2022; model: {props.model}</Typography>
          </Box>
       </Box>
